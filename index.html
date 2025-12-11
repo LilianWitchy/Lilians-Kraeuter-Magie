@@ -2,36 +2,25 @@
 <html lang="de">
 
 <head>
-<head>
   <meta charset="UTF-8" />
   <meta name="description" content="Lilians Kräuter Magie –  Kräuter, Räuchern, Tee, Natur- und Energiearbeit, Klangheilung, Kräuterwissen & Inspiration für ein bewusstes Leben. Entdecke deine eigene Magie." />
   <meta name="keywords" content="Kräutermagie, Kräuter, Natur, Energiearbeit, Klangheilung, Lilian, Heilkräuter, Workshops, Kräuterwissen" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lilians Kräutermagie</title>
-  <!-- andere Tags wie Fonts, CSS etc. folgen hier -->
-
-  
-  <title>Lilians Kräuter Magie</title>
- 
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* =======================
-       Globales CSS
-       ======================= */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
 
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Crimson Pro', serif; /* neue Schriftart */
-      font-size: 20px; /* größere Basis-Schriftgröße */
-      line-height: 1.8; /* bessere Lesbarkeit */
-      background-color: #d8c9f2; /* sanftes Pastell-Lila */
+      font-family: 'Crimson Pro', serif;
+      font-size: 20px;
+      line-height: 1.8;
+      background-color: #d8c9f2;
       color: #3a3a3a;
       text-align: center;
       overflow-x: hidden;
@@ -42,6 +31,9 @@
       height: auto;
     }
 
+    /* =======================
+       Sterne – korrigiert
+       ======================= */
     .stars {
       position: fixed;
       top: 0;
@@ -49,16 +41,17 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: -1;
+      z-index: 0;
     }
 
     .star {
       position: absolute;
-      width: 3px;
-      height: 3px;
-      background-color: rgba(210, 200, 242, 0.6); /* sanftes Pastell-Lila für Sterne */
+      width: 5px;
+      height: 5px;
+      background-color: #ffd700; /* Gold */
       border-radius: 50%;
       opacity: 0;
+      box-shadow: 0 0 6px #ffd700; /* dezentes Leuchten */
       animation: twinkle linear infinite;
     }
 
@@ -67,8 +60,21 @@
       50% { opacity: 1; }
     }
 
+    /* Inhalt über Sternen */
+    .navbar,
+    #language-switcher,
+    .content,
+    footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* =======================
+       Restliches CSS wie gehabt
+       ======================= */
+
     h1 {
-      font-size: 3em; /* größere Überschrift */
+      font-size: 3em;
       margin: 20px 0 10px 0;
       display: flex;
       justify-content: center;
@@ -77,13 +83,10 @@
       color: #5e4b8b;
     }
 
-    h1 img {
-      max-width: 120px;
-      height: auto;
-    }
+    h1 img { max-width: 120px; height: auto; }
 
     h2 {
-      font-size: 2.5em; /* größere Unterüberschrift */
+      font-size: 2.5em;
       margin: 40px 0 20px 0;
       font-weight: 700;
       color: #5e4b8b;
@@ -96,13 +99,8 @@
       text-align: left;
     }
 
-    p {
-      font-size: 1.2em; /* Text leicht vergrößert */
-    }
+    p { font-size: 1.2em; }
 
-    /* =======================
-       Navigation
-       ======================= */
     .navbar {
       background-color: #c3e4d4;
       padding: 10px 20px;
@@ -146,7 +144,7 @@
     .navmenu a {
       text-decoration: none;
       color: #3a3a3a;
-      font-size: 20px; /* größere Menüeinträge */
+      font-size: 20px;
       padding: 10px;
       display: block;
     }
@@ -156,7 +154,6 @@
       border-radius: 5px;
     }
 
-    /* Dropdown-Menü */
     .dropdown-content {
       display: none;
       position: absolute;
@@ -182,11 +179,8 @@
       color: #5e4b8b;
     }
 
-    .navmenu li:hover .dropdown-content {
-      display: block;
-    }
+    .navmenu li:hover .dropdown-content { display: block; }
 
-    /* Media Query für kleinere Bildschirme */
     @media screen and (max-width: 768px) {
       .navbar {
         flex-direction: column;
@@ -252,17 +246,15 @@
 
   <div class="content">
     <h1>
- 
       Lilians Kräuter Magie
     </h1>
   </div>
 
-<div id="language-switcher">
+  <div id="language-switcher">
      <a href="index.html"><img src="picture/defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
-  <a href="/en/"><img src="picture/enfavicon.png" alt="English" title="English" width="24"></a>
-  <a href="/dk/"><img src="picture/dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
-</div>
-
+     <a href="/en/"><img src="picture/enfavicon.png" alt="English" title="English" width="24"></a>
+     <a href="/dk/"><img src="picture/dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+  </div>
 
   <div class="navbar">
     <div class="menu-toggle" onclick="toggleMenu()">
@@ -270,8 +262,8 @@
       <span></span>
       <span></span>
     </div>
+
     <ul class="navmenu" id="navmenu">
-      <!-- Menüeinträge bleiben unverändert -->
       <li class="dropdown">
         <a href="index.html">Startseite</a>
         <ul class="dropdown-content">
@@ -281,6 +273,7 @@
           <li><a href="angebot.html">Mein Angebot für dich</a></li>
         </ul>
       </li>
+
       <li class="dropdown">
         <a href="#">Mit sich selbst in Verbindung kommen</a>
         <ul class="dropdown-content">
@@ -290,6 +283,7 @@
           <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
         </ul>
       </li>
+
       <li class="dropdown">
         <a href="#">Bücher</a>
         <ul class="dropdown-content">
@@ -298,25 +292,28 @@
           <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
         </ul>
       </li>
+
       <li class="dropdown">
         <a href="#">Shop</a>
         <ul class="dropdown-content">
           <li><a href="shop.html">Mein Shop</a></li>
-           <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
           <li><a href="#">Räuchermischungen</a></li>
           <li><a href="#">Naturheilkunde</a></li>
           <li><a href="#">Salben & Balsam</a></li>
-           <li><a href="#">Körperprodukte</a></li>
+          <li><a href="#">Körperprodukte</a></li>
         </ul>
       </li>
+
       <li class="dropdown">
         <a href="#">Rezepte</a>
         <ul class="dropdown-content">
           <li><a href="rezepte.html">Warum DIY?</a></li>
           <li><a href="seife.html">Körper</a></li>
           <li><a href="haare.html">Haare</a></li>
-          </ul>
+        </ul>
       </li>
+
       <li><a href="kontakt.html">Kontakt</a></li>
       <li><a href="agb.html">AGB</a></li>
       <li><a href="impressum.html">Impressum</a></li>
@@ -347,13 +344,11 @@
   </footer>
 
   <script>
-    // Menü umschalten (mobil)
     function toggleMenu() {
       const menu = document.getElementById("navmenu");
       menu.classList.toggle("show");
     }
 
-    // Sterne beim Laden erzeugen & Dropdowns mobil
     document.addEventListener("DOMContentLoaded", function () {
       let starContainer = document.querySelector(".stars");
       for (let i = 0; i < 50; i++) {
@@ -375,5 +370,6 @@
       });
     });
   </script>
+
 </body>
 </html>
