@@ -449,6 +449,41 @@
     }
 
 
+// Feedback-Slider
+document.addEventListener('DOMContentLoaded', () => {
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  const sliderCards = document.querySelectorAll('.slider-card');
+  const prevBtn = document.querySelector('.feedback-slider .prev');
+  const nextBtn = document.querySelector('.feedback-slider .next');
+
+  let currentIndex = 0;
+
+  // Berechnet, wie viele Karten auf einmal angezeigt werden
+  const updateSlider = () => {
+    const visibleCards = Math.floor(sliderWrapper.parentElement.offsetWidth / (sliderCards[0].offsetWidth + 20)); // 20 = gap
+    const maxIndex = sliderCards.length - visibleCards;
+    if(currentIndex < 0) currentIndex = 0;
+    if(currentIndex > maxIndex) currentIndex = maxIndex;
+    sliderWrapper.style.transform = `translateX(-${currentIndex * (sliderCards[0].offsetWidth + 20)}px)`;
+  };
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex--;
+    updateSlider();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    updateSlider();
+  });
+
+  window.addEventListener('resize', updateSlider);
+
+  // Initial
+  updateSlider();
+});
+
+    
       const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
       dropdowns.forEach(dropdownToggle => {
         dropdownToggle.addEventListener('click', e => {
