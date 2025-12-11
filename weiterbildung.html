@@ -23,8 +23,8 @@
       font-family: 'Crimson Pro', serif;
       font-size: 16px;
       line-height: 1.6;
-      /* Hintergrund jetzt kräftiges Pastellbraun */
-      background-color: #b28b6b; /* gedecktes Braun, pastellig */
+      /* kräftiges Pastellbraun */
+      background-color: #b28b6b;
       color: #3a3a3a;
       text-align: center;
       overflow-x: hidden;
@@ -32,11 +32,36 @@
 
     img { max-width: 100%; height: auto; }
 
+    /* Hero-Bereich */
+    .hero-section { 
+      background-image: url('picture/wald2.png'); /* Bild unverändert */
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      position: relative; 
+    }
+    .hero-text { 
+      text-align: center; 
+      font-size: 30px; 
+      max-width: 90%; 
+      padding: 20px; 
+      background-color: rgba(0,0,0,0.5); 
+      border-radius: 10px; 
+    }
+    @media (max-width: 768px) { .hero-section { font-size: 1.8rem; } }
+    .hero-text { font-size: 1.2rem; padding: 10px; }
+    .hero-text p { font-size: 1rem; }
+
     h1 { font-size: 2.5em; margin: 20px 0 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; color: #5e4b8b; }   
     h1 img { max-width: 120px; height: auto; }
     h2 { font-size: 2em; margin: 40px 0 20px 0; font-weight: 700; color: #5e4b8b; }
     .content { max-width: 1000px; margin: auto; padding: 0 20px 40px 20px; text-align: left; }
-    p { font-size: 1rem; }
+    p {font-size: 1rem;}
 
     /* =======================
        Navigation
