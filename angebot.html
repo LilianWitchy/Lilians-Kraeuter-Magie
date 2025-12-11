@@ -2,25 +2,16 @@
 <html lang="de">
 
 <head>
-<head>
   <meta charset="UTF-8" />
   <meta name="description" content="Lilians Kräuter Magie –  Kräuter, Räuchern, Tee, Natur- und Energiearbeit, Klangheilung, Kräuterwissen & Inspiration für ein bewusstes Leben. Entdecke deine eigene Magie." />
   <meta name="keywords" content="Kräutermagie, Kräuter, Natur, Energiearbeit, Klangheilung, Lilian, Heilkräuter, Workshops, Kräuterwissen" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lilians Kräutermagie</title>
-  <!-- andere Tags wie Fonts, CSS etc. folgen hier -->
-
-  
   <title>Lilians Kräuter Magie</title>
- 
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* =======================
-       Globales CSS
-       ======================= */
     *, *::before, *::after {
       box-sizing: border-box;
     }
@@ -28,10 +19,10 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Crimson Pro', serif; /* neue Schriftart */
-      font-size: 20px; /* größere Basis-Schriftgröße */
-      line-height: 1.8; /* bessere Lesbarkeit */
-      background-color: #d8c9f2; /* sanftes Pastell-Lila */
+      font-family: 'Crimson Pro', serif;
+      font-size: 20px;
+      line-height: 1.8;
+      background-color: #d8c9f2;
       color: #3a3a3a;
       text-align: center;
       overflow-x: hidden;
@@ -56,7 +47,7 @@
       position: absolute;
       width: 3px;
       height: 3px;
-      background-color: rgba(210, 200, 242, 0.6); /* sanftes Pastell-Lila für Sterne */
+      background-color: rgba(210, 200, 242, 0.6);
       border-radius: 50%;
       opacity: 0;
       animation: twinkle linear infinite;
@@ -68,7 +59,7 @@
     }
 
     h1 {
-      font-size: 3em; /* größere Überschrift */
+      font-size: 3em;
       margin: 20px 0 10px 0;
       display: flex;
       justify-content: center;
@@ -83,7 +74,7 @@
     }
 
     h2 {
-      font-size: 2.5em; /* größere Unterüberschrift */
+      font-size: 2.5em;
       margin: 40px 0 20px 0;
       font-weight: 700;
       color: #5e4b8b;
@@ -97,7 +88,7 @@
     }
 
     p {
-      font-size: 1.2em; /* Text leicht vergrößert */
+      font-size: 1.2em;
     }
 
     /* =======================
@@ -146,7 +137,7 @@
     .navmenu a {
       text-decoration: none;
       color: #3a3a3a;
-      font-size: 20px; /* größere Menüeinträge */
+      font-size: 20px;
       padding: 10px;
       display: block;
     }
@@ -156,7 +147,6 @@
       border-radius: 5px;
     }
 
-    /* Dropdown-Menü */
     .dropdown-content {
       display: none;
       position: absolute;
@@ -186,7 +176,6 @@
       display: block;
     }
 
-    /* Media Query für kleinere Bildschirme */
     @media screen and (max-width: 768px) {
       .navbar {
         flex-direction: column;
@@ -240,9 +229,34 @@
       border-radius: 8px;
       display: block;
       width: fit-content;
-      max-width: 100%;
-      font-size: 1.2em;
-      line-height: 1.8;
+      max-width: 90%;
+      text-align: center; /* zentriert */
+      font-size: 0.95em; /* kleinere Schriftgröße */
+      line-height: 1.5;
+    }
+
+    .education-item h3 {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+    }
+
+    .education-item p {
+      margin: 8px 0;
+    }
+
+    .education-item a {
+      display: inline-block;
+      margin: 5px auto;
+      text-align: center;
+      font-size: 0.95em;
+      color: #5e4b8b;
+      text-decoration: underline;
+    }
+
+    .content img {
+      display: block;
+      margin: 20px auto;
+      max-width: 80%;
     }
   </style>
 </head>
@@ -251,20 +265,8 @@
   <div class="stars"></div>
 
   <div class="content">
-    <h1>
- 
-      Lilians Kräuter Magie
-    </h1>
+    <h1>Lilians Kräuter Magie</h1>
   </div>
-
-
-  <!-- Hero-Bereich -->
-<div class="hero-section">
-  <div class="hero-text">
-    <h1>energetische Klangheilung – Fernbehandlung über Zoom</h1>
-  </div>
-</div>
-  
 
   <div class="navbar">
     <div class="menu-toggle" onclick="toggleMenu()">
@@ -304,11 +306,11 @@
         <a href="#">Shop</a>
         <ul class="dropdown-content">
           <li><a href="shop.html">Mein Shop</a></li>
-           <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
           <li><a href="#">Räuchermischungen</a></li>
           <li><a href="#">Naturheilkunde</a></li>
           <li><a href="#">Salben & Balsam</a></li>
-           <li><a href="#">Körperprodukte</a></li>
+          <li><a href="#">Körperprodukte</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -317,7 +319,7 @@
           <li><a href="rezepte.html">Warum DIY?</a></li>
           <li><a href="seife.html">Körper</a></li>
           <li><a href="haare.html">Haare</a></li>
-          </ul>
+        </ul>
       </li>
       <li><a href="kontakt.html">Kontakt</a></li>
       <li><a href="agb.html">AGB</a></li>
@@ -325,121 +327,68 @@
     </ul>
   </div>
 
-	<div class="content-container">
-      
-      
+  <div class="content-container">
+    <ul class="education-list">
+      <li class="education-item">
+        <h3>Klangheilung als Fernbehandlung über Zoom</h3>
+        <p>Seit vielen Jahren begleiten mich die Themen Klänge, Energien, Frequenzen und die sanfte Unterstützung von Lösungsprozessen durch Klang auf meinem persönlichen Weg.</p>
+        <p>Ich durfte immer tiefer erfahren, wie fein Schwingungen wirken – auf körperlicher, seelischer und energetischer Ebene.</p>
+        <p>Um mein Wissen zu vertiefen und mit Nachweisen zu untermauern, habe ich Workshops im Bereich Klangarbeit besucht.</p>
+        <p>Aus dieser Erfahrung heraus darf ich dir ab sofort über meine Webseite eine Klangheilung als Fernbehandlung über Zoom anbieten – achtsam, individuell und mit viel Einfühlungsvermögen.</p>
+      </li>
 
-       <ul class="education-list">
-            <li class="education-item">
-                <h3> Klangheilung als Fernbehandlung über Zoom </h3>
-<p>Seit vielen Jahren begleiten mich die Themen Klänge, Energien,</p> 
-<p>Frequenzen und die sanfte Unterstützung von Lösungsprozessen durch</p>
- <p>Klang auf meinem persönlichen Weg. In dieser Zeit durfte ich immer tiefer</p>
- <p>erfahren, wie fein Schwingungen wirken können – auf körperlicher,</p> <p>seelischer und energetischer Ebene.</p>
-<p>Um mein Wissen zu vertiefen, aufzufrischen und auch mit einem</p> 
-<p>entsprechenden Nachweis zu untermauern, habe ich zusätzlich einen </p>
-<p>Workshop im Bereich Klangarbeit und energetische Anwendungen besucht.</p>
-<p>Aus dieser Erfahrung heraus darf ich dir ab sofort über meine Webseite </p>
-<p>eine Klangheilung als Fernbehandlung über Zoom anbieten – achtsam, </p>
-<p>individuell und mit viel Einfühlungsvermögen.</p>
- </li>
+      <div class="content">
+        <img src="heilung.jpg" alt="BildHeilung" />
+      </div>
+      <p>©Liliana Lübke, sämtliche Bilder und Texte</p>
 
+      <li class="education-item">
+        <h3>Ablauf der Klangheilung (30 Minuten)</h3>
+        <p>Die Sitzung findet als Einzeltermin über Zoom statt und dauert 30 Minuten.</p>
+        <p>Während der Behandlung arbeite ich je nach Bedarf mit Stimmgabeln oder Klangschalen.</p>
+        <p>Zur energetischen Begleitung nutze ich ein Körperbild mit Energie- bzw. Reikipunkten.</p>
+        <p>Jede Sitzung ist individuell auf dich und dein aktuelles Thema abgestimmt.</p>
+      </li>
 
-		   	    <!-- Bild  -->
+      <li class="education-item">
+        <h3>Vorbereitung vor dem Termin</h3>
+        <p>Bitte sende vorab ein Foto der betroffenen Körperstelle(n) und eine kurze Beschreibung deiner Beschwerden.</p>
+      </li>
 
-  <div class="content" style="text-align:center; padding-bottom: 40px;">
+      <li class="education-item">
+        <h3>Optionale Zusatzleistung: Individuelle Kräuterempfehlung</h3>
+        <p>Wenn du möchtest, erstelle ich dir zusätzlich eine individuelle Kräuterempfehlung abgestimmt auf deine Beschwerden.</p>
+      </li>
 
-    <img src="heilung.jpg" alt="BildHeilung" />
+      <li class="education-item">
+        <h3>Dein Wertschätzungsbeitrag für meine Arbeit:</h3>
+        <p>Klangheilung (30 Minuten, Fernbehandlung über Zoom): 57 €</p>
+        <a href="https://buy.stripe.com/14A14n61O7Mg3pQcEi8og0d" target="_blank">Bitte hier buchen</a>
+        <p>Individuelle Kräuterempfehlung zusätzlich: 25 €</p>
+        <a href="https://buy.stripe.com/9B628r89W7Mg5xY0VA8og0e" target="_blank">Bitte hier buchen</a>
+      </li>
+
+      <li class="education-item">
+        <h3>Wichtiger Hinweis</h3>
+        <p>Ich gebe keine Heil-, Erfolgs- oder Wunderversprechen.</p>
+        <p>Energetische Arbeit und Klangheilung werden unterschiedlich wahrgenommen.</p>
+        <p>Die Klangheilung versteht sich als energetische Begleitung und ersetzt keine medizinische Behandlung.</p>
+      </li>
+    </ul>
   </div>
-	<p>©Liliana Lübke, sämtliche Bilder und Texte</p>	   
 
- <li class="education-item">
-                <h3> Ablauf der Klangheilung (30 Minuten)</h3>
-        
-<p>Die Sitzung findet als Einzeltermin über Zoom statt und dauert 30 Minuten.</p>
-<p>Während der Behandlung arbeite ich je nach Bedarf mit:</p>
-      <p> - einer Stimmgabel und/ oder</p>
-      <p> - einer Klangschale</p>
-<p>Zur energetischen Begleitung nutze ich ein Körperbild mit Energie- bzw. Reikipunkten.</p> 
-<p>Ich arbeite sowohl an den Punkten, die in Zusammenhang mit deinen geschilderten </p>
-<p>Beschwerden stehen, als auch intuitiv mit den Bereichen, zu denen ich während der </p>
-<p>Sitzung geführt werde.</p>
-<p>Jede Sitzung ist ganz individuell auf dich und dein aktuelles Thema abgestimmt.</p>  
-<p>Meine Arbeitsweise ist achtsam, ruhig und von Vertrauen getragen.</p>
-<p>Zum Ende jeder Sitzung erhältst du von mir zusätzlich energetische Impulse und</p> <p>alltagstaugliche, sanfte Hinweise, wie du den Lösungsprozess deiner Beschwerden und </p>
-<p>dein persönliches Wohlbefinden auch nach der Sitzung weiter unterstützen kannst.</p>
-               
-            </li>
-
-
-           
-            
-           <li class="education-item">
-                <h3> Vorbereitung vor dem Termin </h3>
-            
-<p> Für eine einfühlsame Einstimmung auf dich und dein Anliegen bitte ich dich vorab um:</p>
-      <p> - ein Foto der betroffenen Körperstelle(n) per E-Mail (freiwillig, aber hilfreich)</p>
-      <p>  - eine kurze schriftliche Beschreibung deiner Beschwerden und Symptome</p>
-<p> So kann ich mich bereits vor unserem Termin ganz in Ruhe energetisch auf dich einstimmen.</p>
-              
-            </li>
-
-
-         
-           <li class="education-item">
-                <h3> Optionale Zusatzleistung: Individuelle Kräuterempfehlung</h3>
-            
-<p> Wenn du möchtest, erstelle ich dir zusätzlich gerne eine individuelle Kräuterempfehlung,</p>
-      <p>abgestimmt auf deine Beschwerden und zur sanften Begleitung </p><p>deines Wohlbefindens. Kräuter können das Lösen deiner Beschwerden positiv unterstützen.</p>
-      <p>Diese Zusatzleistung ist nicht im Preis der Klangheilung enthalten und</p>
-       <p>wird separat dazu gebucht und berechnet.</p>
-              
-       </li>
-
-
-   <li class="education-item">
-                <h3>Dein Wertschätzungsbeitrag für meine Arbeit:</h3>
- <p>Klangheilung (30 Minuten, Fernbehandlung über Zoom): 57 €</p>
-	   <a href="https://buy.stripe.com/14A14n61O7Mg3pQcEi8og0d" target="_blank"> Bitte hier buchen</a>
-
-	    <p>Warum 57 €?</p>
- <p>Der Preis von 57 € ist bewusst gewählt und trägt eine eigene energetische  Bedeutung.</p>
- <p>Die 5 steht für Veränderung, Bewegung und das Lösen alter Muster.</p>
- <p>Die 7 symbolisiert Intuition, Tiefe und spirituelle Entwicklung.</p>
- <p>Gemeinsam ergeben sie die 12, die wiederum zur 3 wird – einer Zahl, die für Leichtigkeit, Ausdruck und Herzöffnung steht.</p>
- <p>Diese Zahlenenergie spiegelt die Qualität der Klangheilung wider: </p>  <p> sanfte Veränderung, innere Bewegung und unterstützende Begleitung auf deinem persönlichen Weg.</p>
-
- <p>Individuelle Kräuterempfehlung zusätzlich: 25 €</p>
- <a href="https://buy.stripe.com/9B628r89W7Mg5xY0VA8og0e" target="_blank">Bitte hier buchen</a>
-	   
- </li>
-
-
-<h3>Wichtiger Hinweis</h3>
-<p> Ich gebe keine Heil-, Erfolgs- oder Wunderversprechen.</p>
-<p> Energetische Arbeit und Klangheilung werden von jedem Menschen unterschiedlich wahrgenommen. </p>
-<p> Es gibt Menschen, die sehr offen und empfänglich dafür sind </p>
-<p> und positive Veränderungen spüren, und es gibt Menschen, bei denen diese Arbeit keine spürbare Wirkung zeigt.</p>
-<p> Die Klangheilung versteht sich als energetische Begleitung und Unterstützung, ersetzt jedoch keine medizinische, psychotherapeutische oder heilpraktische Behandlung. </p>
-<p> Bei gesundheitlichen Beschwerden sollte immer auch ärztlicher oder therapeutischer Rat eingeholt werden.</p>
- </li>
-
-	
-
-		   <div id="language-switcher">
-  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
-  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
-  <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
-</div>
+  <div id="language-switcher">
+    <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+    <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+    <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+  </div>
 
   <script>
-    // Menü umschalten (mobil)
     function toggleMenu() {
       const menu = document.getElementById("navmenu");
       menu.classList.toggle("show");
     }
 
-    // Sterne beim Laden erzeugen & Dropdowns mobil
     document.addEventListener("DOMContentLoaded", function () {
       let starContainer = document.querySelector(".stars");
       for (let i = 0; i < 50; i++) {
@@ -463,3 +412,4 @@
   </script>
 </body>
 </html>
+
