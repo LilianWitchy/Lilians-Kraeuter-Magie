@@ -15,9 +15,7 @@
     /* =======================
        Globales CSS
        ======================= */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -26,17 +24,13 @@
       font-size: 20px;
       line-height: 1.8;
       background-color: #7f469e;
-      color: #3a3a3a;
+      color: #ffffff; /* Fließtext weiß */
       text-align: center;
       overflow-x: hidden;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+    img { max-width: 100%; height: auto; }
 
-  
     h1 {
       font-size: 3em;
       margin: 20px 0 10px 0;
@@ -44,31 +38,21 @@
       justify-content: center;
       align-items: center;
       gap: 10px;
-      color: #5e4b8b;
+      color: #FBCBA1; /* Pastellorange */
     }
 
-    h1 img {
-      max-width: 120px;
-      height: auto;
-    }
+    h1 img { max-width: 120px; height: auto; }
 
     h2 {
       font-size: 2.5em;
       margin: 40px 0 20px 0;
       font-weight: 700;
-      color: #5e4b8b;
+      color: #FBCBA1; /* Pastellorange */
     }
 
-    .content {
-      max-width: 1000px;
-      margin: auto;
-      padding: 0 20px 40px 20px;
-      text-align: left;
-    }
+    .content { max-width: 1000px; margin: auto; padding: 0 20px 40px 20px; text-align: left; }
 
-    p {
-      font-size: 1.2em;
-    }
+    p { font-size: 1.2em; color: #ffffff; }
 
     /* =======================
        Mission Container Anpassung
@@ -76,36 +60,20 @@
     .mission-container {
       max-width: 800px;
       margin: 50px auto;
-      text-align: center; /* zentriert */
+      text-align: center;
       padding: 0 20px;
     }
 
-    .mission-container h2 {
-      font-size: 2em;
-      margin: 30px 0 20px 0;
-      color: #5e4b8b;
-    }
+    .mission-container h2 { font-size: 2em; margin: 30px 0 20px 0; color: #FBCBA1; }
 
-    .mission-container p {
-      font-size: 1em; /* kleiner */
-      line-height: 1.6;
-      margin-bottom: 15px;
-      text-align: center; /* zentriert */
-    }
-
-    .mission-container .mission-text {
-      font-size: 1em;
-      font-weight: 500;
-      line-height: 1.6;
-      margin-bottom: 15px;
-      text-align: center; /* zentriert */
-    }
+    .mission-container p,
+    .mission-container .mission-text { font-size: 1em; font-weight: 500; line-height: 1.6; margin-bottom: 15px; text-align: center; color: #ffffff; }
 
     /* =======================
        Navigation
        ======================= */
     .navbar {
-      background-color: #c3e4d4;
+      background-color: #A3C89A; /* helles Grün */
       padding: 10px 20px;
       position: relative;
       z-index: 10;
@@ -162,7 +130,7 @@
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: #c3e4d4;
+      background-color: #A3C89A; /* Dropdown passend zum Menü */
       min-width: 180px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       z-index: 1000;
@@ -182,58 +150,23 @@
       color: #5e4b8b;
     }
 
-    .navmenu li:hover .dropdown-content {
-      display: block;
-    }
+    .navmenu li:hover .dropdown-content { display: block; }
 
     @media screen and (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .menu-toggle {
-        display: flex;
-        margin-left: auto;
-      }
-
-      .navmenu {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        margin-top: 10px;
-      }
-
-      .navmenu.show {
-        display: flex;
-      }
-
-      .navmenu li {
-        width: 100%;
-        margin: 0;
-      }
-
-      .navmenu li:hover .dropdown-content {
-        position: static;
-        box-shadow: none;
-      }
-
-      .dropdown-content {
-        background-color: #c3e4d4;
-      }
+      .navbar { flex-direction: column; align-items: flex-start; }
+      .menu-toggle { display: flex; margin-left: auto; }
+      .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+      .navmenu.show { display: flex; }
+      .navmenu li { width: 100%; margin: 0; }
+      .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+      .dropdown-content { background-color: #A3C89A; }
     }
 
-    footer {
-      background-color: #c3e4d4;
-      padding: 20px;
-      text-align: center;
-      color: #3a3a3a;
-      font-size: 18px;
-    }
+    footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: #3a3a3a; font-size: 18px; }
 
     .education-item {
-      background-color: #e6e0d9;
-      color: #3a3a3a;
+      background-color: #8B6A4B; /* kräftiges Pastellbraun */
+      color: #ffffff;
       padding: 20px;
       margin: 10px auto;
       border-radius: 8px;
