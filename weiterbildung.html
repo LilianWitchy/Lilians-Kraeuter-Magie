@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Lilians Kräuter Magie –  Kräuter, Räuchern, Tee, Natur- und Energiearbeit, Klangheilung, Kräuterwissen & Inspiration für ein bewusstes Leben. Entdecke deine eigene Magie." />
+  <meta name="keywords" content="Kräutermagie, Kräuter, Natur, Energiearbeit, Klangheilung, Lilian, Heilkräuter, Workshops, Kräuterwissen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lilians Kräutermagie</title>
+  <!-- andere Tags wie Fonts, CSS etc. folgen hier -->
+
+  
+  <title>Lilians Kräuter Magie</title>
+ 
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =======================
+       Globales CSS
+       ======================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Crimson Pro', serif; /* neue Schriftart */
+      font-size: 20px; /* größere Basis-Schriftgröße */
+      line-height: 1.8; /* bessere Lesbarkeit */
+      background-color: #d8c9f2; /* sanftes Pastell-Lila */
+      color: #3a3a3a;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: rgba(210, 200, 242, 0.6); /* sanftes Pastell-Lila für Sterne */
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 3em; /* größere Überschrift */
+      margin: 20px 0 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: #5e4b8b;
+    }
+
+    h1 img {
+      max-width: 120px;
+      height: auto;
+    }
+
+    h2 {
+      font-size: 2.5em; /* größere Unterüberschrift */
+      margin: 40px 0 20px 0;
+      font-weight: 700;
+      color: #5e4b8b;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 20px 40px 20px;
+      text-align: left;
+    }
+
+    p {
+      font-size: 1.2em; /* Text leicht vergrößert */
+    }
+
+    /* =======================
+       Navigation
+       ======================= */
+    .navbar {
+      background-color: #c3e4d4;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #3a3a3a;
+      cursor: pointer;
+      flex-direction: column;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #3a3a3a;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    .navmenu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .navmenu li {
+      margin-right: 30px;
+      position: relative;
+    }
+
+    .navmenu a {
+      text-decoration: none;
+      color: #3a3a3a;
+      font-size: 20px; /* größere Menüeinträge */
+      padding: 10px;
+      display: block;
+    }
+
+    .navmenu a:hover {
+      background-color: #d3e9dc;
+      border-radius: 5px;
+    }
+
+    /* Dropdown-Menü */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #c3e4d4;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      list-style: none;
+      padding: 0;
+    }
+
+    .dropdown-content li a {
+      color: #3a3a3a;
+      padding: 12px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #f0f0f0;
+      color: #5e4b8b;
+    }
+
+    .navmenu li:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Media Query für kleinere Bildschirme */
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: flex;
+        margin-left: auto;
+      }
+
+      .navmenu {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 10px;
+      }
+
+      .navmenu.show {
+        display: flex;
+      }
+
+      .navmenu li {
+        width: 100%;
+        margin: 0;
+      }
+
+      .navmenu li:hover .dropdown-content {
+        position: static;
+        box-shadow: none;
+      }
+
+      .dropdown-content {
+        background-color: #c3e4d4;
+      }
+    }
+
+    footer {
+      background-color: #c3e4d4;
+      padding: 20px;
+      text-align: center;
+      color: #3a3a3a;
+      font-size: 18px;
+    }
+
+    .education-item {
+      background-color: #e6e0d9;
+      color: #3a3a3a;
+      padding: 20px;
+      margin: 10px auto;
+      border-radius: 8px;
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      font-size: 1.2em;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars"></div>
+
+  <div class="content">
+    <h1>
+ 
+      Lilians Kräuter Magie
+    </h1>
+  </div>
+
+  <!-- Hero-Bereich -->
+<div class="hero-section">
+  <div class="hero-text">
+    <h1>Meine Weiterbildungen</h1>
+    <p>Hier findest du eine Übersicht meiner abgeschlossenen Weiterbildungen, die für meinen weiteren Lebensweg relevant sind. Ich liebe es, Neues zu lernen.</p>
+  </div>
+</div>
+
+  <div class="navbar">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="navmenu" id="navmenu">
+      <!-- Menüeinträge bleiben unverändert -->
+      <li class="dropdown">
+        <a href="index.html">Startseite</a>
+        <ul class="dropdown-content">
+          <li><a href="about.html">Über mich</a></li>
+          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+          <li><a href="meinemission.html">Meine Mission</a></li>
+          <li><a href="angebot.html">Mein Angebot für dich</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Mit sich selbst in Verbindung kommen</a>
+        <ul class="dropdown-content">
+          <li><a href="energie.html">Innere Balance</a></li>
+          <li><a href="basics.html">Die Basics</a></li>
+          <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+          <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Bücher</a>
+        <ul class="dropdown-content">
+          <li><a href="meinebücher.html">Meine Bücher</a></li>
+          <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+          <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Shop</a>
+        <ul class="dropdown-content">
+          <li><a href="shop.html">Mein Shop</a></li>
+           <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="#">Räuchermischungen</a></li>
+          <li><a href="#">Naturheilkunde</a></li>
+          <li><a href="#">Salben & Balsam</a></li>
+           <li><a href="#">Körperprodukte</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Rezepte</a>
+        <ul class="dropdown-content">
+          <li><a href="rezepte.html">Warum DIY?</a></li>
+          <li><a href="seife.html">Körper</a></li>
+          <li><a href="haare.html">Haare</a></li>
+          </ul>
+      </li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="agb.html">AGB</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </div>
+
+ <div class="content-container">
+      
+      
+
+       <ul class="education-list">
+            <li class="education-item">
+                <h3> 03/2012 - "Einführung in die Erlebnispädagogik"</h3>
+                <p>Inhalte der fortbildung:</p>
+                <p> - Selbsterfahrung in der Rolle als Teilnehmer/in in einer Reihe von Initiativübungen, kooperativen Abenteuerspielen und komplexen Lernprojekten </p>
+                <p> - Zielgerichteter pädagogigischer Einsatz kooperativer Abenteuerspiele </p>
+                <p> - Geschichte und Hintergründe der Erlebnispädagogik </p>
+                <p> - Ziele der Erlebnispädagogik </p>
+                <p> - Wirkungsmodelle und methodische Prinzipien </p>
+                <p> - Kennen lernen unterschiedlicher Reflexionsmethoden </p>
+                <p> Weiterbildungstrainer Hardy Lux und Jens Thomas</p>
+            </li>
+
+            <li class="education-item">
+                <h3> 10/2012 - "Kooperative Abenteuerspiele - praktische Erlebnispädagogik"</h3>
+                <p> - Zielgerichteter Einsatz kooperativer Abenteuerspiele und Initiativübungen</p>
+                <p> - Reflexionsmöglichkeiten und Transfer in den Alltag </p>
+                <p> - Phasen und Methodik der Spielleitung </p>
+                <p> - Sicherheit in der Erlebnispädagogik und bei kooperativen Abenteuerspielen </p>
+                <p> - Selbsterfahrung in der Anleitung kooperativer Abenteuerspiele und in der Moderation von Reflexionsrunden </p>
+                <p> Weiterbildungstrainer Hardy Lux und Jens Thomas</p>
+            </li>
+            
+           <li class="education-item">
+                <h3> 08/2013 - "Draußen unterwegs sein und lernen" </h3>
+                <p> - "Expedition" als Kernbestandteil erlebnispädagogischer Programme </p>
+                <p> - Selbsterfahrung: zweitägige Treckingtour in Gruppenselbststeuerung mit Biwak unter einfachen Bedingungen und mit intensiver Naturerfahrung</p>
+                <p> - Überlegungen zum pädagogischen Einsatz des Mediums "Expedition"</p>
+                <p> - Erwerb grundlegender Outdoorkompetenzen</p>
+                <p> - Naturerfahrungsübungen </p>
+                <p> - Gewährleistung der physischen und psychischen Sicherheit während einer Tour </p>
+                <p> Weiterbildungstrainer Hardy Lux und Jens Thomas</p>
+            </li>
+
+           <li class="education-item">
+                <h3> 07/2014 - "Umfangreiche Qualifizierung in der Methode der Erlebnispädagogik</h3>
+                <p> - Fachunterricht mit zusätzlich 99 Stunden absolvierte Ausbildung</p>
+                <p> - Diese Ausbildung (2011-2014) qualifiziert dazu, im eigenem Arbeitsfeld für unterschiedliche Zielgruppen erlebnispädagogische Angebote und Projekte zu entwickeln und umzusetzen. </p>
+                <p> - Modul 1 : Einführung in die Erlebnispädagogik, 3 Tage</p>
+                <p> - Modul 2: Kooperative Abenteuerspiele - praktische Erlebnospädagogik, 4 tage</p>
+                <p> - Modul 3: Draußen unterwegs sein und lernen, 3 Tage </p>
+                <p> Weiterbildungstrainer Hardy Lux und Jens Thomas und Abteilungsleiter der Fachschule für Sozialpädagogik Axel Lüttich</p>
+            </li>
+
+           <li class="education-item">
+                <h3> 01/2017 - "Erlebnispädagogik Spezial - Grenzerfahrung, Sicherheit und Risikomanagement"</h3>
+                <p> Ziele der Fortbildung: </p>
+                <p> - Auseinandersetzung mit eigener Grenzen </p>
+                <p> - Selbsterfahrung in herausfordernden Situationen in einer Gruppe</p>
+                <p> - Erwerb von Kenntnisse und Erfahrungen mit Herausforderungen und Grenzerfahrungen im pädagogischen Kontext</p>
+                <p> - Vertiefung des Verständnisses der Balance von Sicherheit und Risikoempfinden in erlebnispädagogischen Programmen</p>
+                <p> - eindrückliche Naturerfahrung </p>
+		<p> Inhalte der Fortbildung: </p>
+                <p> - dreitägige Wander- und Kanuexpedition in der winterlichen Uckermark </p>
+                <p> - Zeltbiwak und Kochen am Feuer in Gruppenselbststeuerung </p>
+                <p> - Befahrung des Baches "Küstrinchen" mit Kanu und winterlichen Bedingungen </p>
+                <p> - Reflexionen und Inputs zu den Themen: Herausforderung, Grenzerfahrung, Sicherheit </p>
+                <p> - Chancen und Grenzen des pädagogischen Einsatzes herausfordernder Unternehmungen </p>
+                <p> Weiterbildungstrainer Jens Thomas</p>
+            </li>
+
+            <li class="education-item">
+                <h3> 05/2019 bis 11/2019 - Ausbildung zur Praxisanleiterin</h3>
+                <p> Fortbildung von pädagogischen Fachkräften für die fachliche Anleitung und Betreuung von Praktikantinnen  und Praktikanten in  Einrichtungen der Kinder- und Jugendhilfe, sowie in Einrichtungen und Diensten der Behindertenhilfe</p>
+                <p> Modul 1: Grundlagen der Ausbildung von Erziehern und berufsrelevanten rechtlichen Rahmenbedingungen kennen, sowie Anforderungen an Praxisanleiter in den Unterschiedlichen Arbeitsfeldern reflektieren. </p>
+                <p> Modul 2: Den Ausbildungsprozess gemeinsam mit dem Team, sowie dem Praktikanten planen. </p>
+                <p> Modul 3: Beziehungen gestalten sowie Bildungsprozesse anregen und unterstützen. </p>
+                <p> Modul 4: Reflexionsgespräche führen, Feedback geben und beurteilen.</p>
+                <p> Modul 5: Lernortkooperation gestalten  </p>
+		<p> Weiterbildungsträger: BildungsBeratung, Monika Hütt</p>
+            </li>
+
+<li class="education-item">
+                <h3> 03/2018 - "Entspannungspädagogik" - zur direkten Anwendung mit Kindern </h3>
+                <p> - Wirkung von Ruhe und Entspannung </p>
+                <p> - Was ist Stress und was stresst Kinder? </p>
+                <p> - Autogenes Training </p>
+                <p> - Kindgerechtes Yoga</p>
+                <p> - Spezielle Wahrnemungsübungen (Wie geht es mir? Was brauche ich?) </p>
+                <p> - progressive Muskelentspannung </p>
+		<p> - spielerische Bewegung </p>
+                <p> - Selbsterfahrung und gruppendynamische Prozesse </p>
+                <p> - Bewältigungshilfen durch Aktionen </p>
+                <p> Weiterbildungsträger: Ländliche Erwachsenenbildung im Freistaat Sachsen e.V. (LEB), bei Nancy Seidel </p>
+            </li>
+
+
+           <li class="education-item">
+                <h3> 07/2018 - "Forschen rund um den Körper" </h3>
+                <p> Inhalte der Fortbildung: </p>
+                <p> - Fachliches Wissen über die Organe bzw. Organsysteme des menschlichen Körpers, sowie eigene Recherchen zu anatomischen und physiologischen Aspekten. </p>
+                <p> - Erfahrungsaustausch über die Körperwahrnehmung und das Körperwissen bei Kindern im Alter von 3-10 Jahren </p>
+                <p> - Impulse zur differenzierten Lernbegleitung der Kinder zum Thema Körper bei entdeckenden, sowie forschenden Aktivitäten. </p>
+                <p> - Ko-Konstruktive Entwicklung einfacher Struktur- und Funktionsmodellen und die didaktische Auseinandersetzung im modellkritischen Dialog. </p>
+                <p> - Highlight: Lebensmittel, wie Butter und Quark selbst herstellen.</p>
+                <p> Die Fortbildung wurde von der Handwerkskammer zu Leipzig durchgeführt, lokaler Netzwerkpartner der Stiftung "Haus der kleinen Forscher" </p>
+            </li>
+
+
+            <li class="education-item">
+                <h3> 11/2018 - "Kinder fordern uns heraus. Kinder mit Verhaltensaufälligkeiten erkennen, begleiten und unterstützen." </h3>
+                <p> Weiterbildungsträger: Soziale Initiative Camburg e.V., Seminarleiterin Brigitte Holz-Schöttler </p>
+            </li>
+
+           <li class="education-item">
+                <h3> 11/2018 - "Forschen zu Licht, Farben und Sehen - Als Lernbegleitung Projekte mit Kindern gestalten."  </h3>
+                <p> Inhalt der Fortbildung: </p>
+                <p> - Reflexion zu den bisherigen Höhepunkten des Forschens mit Kindern </p>
+                <p> - Auseinadersetzung mit verschiedenen Licht- und Farbphänomenen (z.B. Naturfarben, Farbmischungen, Farbsicht im  Dunkeln, ...) durch selbstständiges Experimentieren und Forschen. </p>
+                <p> - Kennenlernen der Bewertungskriterien guter Projektarbeit </p>
+                <p> - gemeinsame Entwicklung verschiedener Bausteine aus unterschiedlichen Bildungsbereichen, zu "Licht, Farben, Sehen" - Projekten. </p>
+                <p> Die Fortbildung wurde von der Handwerkskammer zu Leipzig durchgeführt, lokaler Netzwerkpartner der Stiftung "Haus der kleinen Forscher" </p>
+            </li>
+
+	       <li class="education-item">
+ <h3> 11/23 - fortlaufend - Ganzheitliches Wissen über Kräuter (Selbststudium)</h3>
+<p>- Erkennen und Unterscheiden von Kräutern, einschließlich Ähnlichkeit mit giftigen Pflanzen</p>
+<p>- Erscheinungsbild und Sammlung von Kräutern in Wäldern und im wohnlichen Umfeld</p>
+<p>- Erkennen heilender Bestandteile an eigentlich giftigen Pflanzen (z. B. essbare Früchte)</p>
+<p>- Heilwirkungen und Wechselwirkungen mit Medikamenten</p>
+<p>- Herstellung und Anwendung von Seifen, Salben, Badezusätzen und Ölen</p>
+<p>- Entwicklung und Zusammenstellung pflanzlicher Rezepturen für Beschwerden</p>
+<p>- Zubereitung und Wirkung von Kräutertees, Räuchermischungen sowie pflanzlichen Arzneimitteln</p>
+<p>- Erkenntnis, dass ein Kraut gegen viele Beschwerden helfen kann und dass es für eine Beschwerde mehrere hilfreiche Kräuter gibt</p>
+<p>- Herstellung pflanzlicher Medizin (Hustensirup, Schmerzmittel, natürliche Antibiotika, etc.)</p>
+<p>- Auseinandersetzung mit der entgiftenden Wirkung im Körper verschiedener Kräuter und auch das Entgiften durch Kräuter im Falle einer akuten Lebensmittelvergiftung!</p>
+<p>- Förderung der Gesundheit durch pflanzliche Heilmittel mit schonenderer Wirkung als synthetische Medikamente</p>
+<p>- Konservierungsmethoden für selbst hergestelle Pflege- und oder pflanzliche Medizinprodukte (Einkochen, Trocknung, Fermentation)</p>
+<p>- Erforschung traditioneller Heilmethoden und historischer Anwendungen</p>
+<p>- Beschäftigung mit Kräutern zur Verhütung und warum so viele Kräuter und Lebensmittel Wehen auslösen/ zu einem Schwanegrschaftsabbruch führen. Diese dann lieber gemieden werden sollten.</p>
+<p>- Auseinandersetzung mit Ayurveda und dessen Nutzen für körperliches und geistiges Wohlbefinden</p>
+
+		<li class="education-item">
+                <h3> 10/2023 bis 06/2024 - "Dänisch lernen" </h3>
+                <p> Mit der Hilfe von Sprachenlernen 24 </p>
+			<p> Für wirklich sicheres Merken, immer wieder von vorne gelernt. </p>
+	        <p> Inhalt: </p>
+	        <p> - Vokabeln </p>
+	        <p> - Satzbau </p>
+	        <p> - Grammatik </p>
+	        <p> Gelernte Vokabeln: 734 </p>
+	        <p> Erreichtes Niveau: A1 – Anfängerkenntnisse </p>
+            </li>
+		   
+		   
+		   <li class="education-item">
+                <h3> 04/2025 - "Human Design" Selbststudium, noch laufend ... </h3>
+                <p> Inhalt der Fortbildung: </p>
+                <p> - Charts lesen und auswerten lernen. </p>
+	 	<p> - Lernen und verstehen der vier (bzw. fünf) Typen- </p>
+                <p> - Die Bedeutung der Charts und Energiezentren für die Person verstehen und erläutern. </p>
+                <p> - Stärken, wie Schwächen erkennen. </p>
+                <p> - Lernen von Zielen und der Anwendung im realen Leben (Persönlichkeitsentwicklung, Partnerschaftsberatung, Berufliche Orientierung, Kindererziehung).</p>
+                <p> - Lernen der Strategien und Zentren. </p>
+	        <p> - Wie definiert das eine Person. </p>
+	        <p> - offene Chakren. </p>
+		<p> - Schatten und Entfaltung. </p>
+		<p> - Erstellen eines Workbooks. </p>	
+
+<li class="education-item">
+                <h3> 05/2025 - fotlaufend, Ausbildung zur zert. Kräuterpädagogin </h3>
+                <p> Wildkräuter Basics </p>
+	        <p> Kräuterküche</p>
+	        <p> Naturapotheke </p>
+	        <p> Pflanzenbasierte Kosmetik </p>
+	        <p> Wilde Früchtchen </p>
+	        <p> Green&Clean </p>
+	        <p> phänologische Jahreszeiten </p>
+	        <p>Pflanzen im Jahreskreislauf</p>
+	        <p> Waldmedizin Baumharz </p>
+	        <p> Kräuteranbau & Produkte </p>
+	        <p> Baum- und Knospenheilkunde </p>
+	        <p> Wurzelnschlagen (Kraft der Wurzeln)</p>
+ 	        <p> Familienbande (Pflanzenfamilien) </p>
+	        <p> Frauenkräuter </p>
+	        <p> Heilsame Wickel & Auflagen </p>
+	        <p> Unterschätzte Rituale - die Kunst des Räucherns </p>
+	        <p> Kräuter­pädagogik - Natur als Arbeitsplatz </p>
+	        <p> Drogen-, Gift- und Doldengewächse </p>
+            </li>
+
+		   
+<li class="education-item">
+                <h3> 06/2025 - Workshop "Arbeiten mit Stimmgabeln" </h3>
+                <p> Stephanie Schwipps - Klangtherapeutin/ Prüferin </p>
+	        <p> Workshopinhalt: </p>
+	        <p> Welt der Stimmgabeln </p>
+	        <p> Anwendung </p>
+	        <p> geeignete Frequenzen </p>
+	        <p> Energiepunkte bei Erwachsenen und Kindern </p>
+	        <p> Narbenstörung behandeln </p>
+            </li>
+
+<li class="education-item">
+                <h3> 07/2024 bis 08/2025 - "Dänisch lernen" </h3>
+                <p> Mit der Hilfe von Sprachenlernen 24 </p>
+			<p> Für wirklich sicheres Merken, Kurs immer wieder von vorne begonnen. </p>
+	        <p> Inhalt: </p>
+	        <p> - Vokabeln </p>
+	        <p> - Satzbau </p>
+	        <p> - Grammatik </p>
+	        <p> - Zeitformen </p>
+	        <p> - Vokabeln passend zu verschiedensten Alltagssituationen</p>
+	        <p> - Gelernte Vokabeln: 1474 </p>
+	        <p> Erreichtes Niveau: A2 – Grundlegende Kenntnisse </p>
+            </li>
+			 
+            </li>
+          </ul>
+		
+<div id="language-switcher">
+  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+  <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+</div>
+  <script>
+    // Menü umschalten (mobil)
+    function toggleMenu() {
+      const menu = document.getElementById("navmenu");
+      menu.classList.toggle("show");
+    }
+
+    // Sterne beim Laden erzeugen & Dropdowns mobil
+    document.addEventListener("DOMContentLoaded", function () {
+      let starContainer = document.querySelector(".stars");
+      for (let i = 0; i < 50; i++) {
+        let star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+        starContainer.appendChild(star);
+      }
+
+      const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+      dropdowns.forEach(dropdownToggle => {
+        dropdownToggle.addEventListener('click', e => {
+          e.preventDefault();
+          const parentLi = dropdownToggle.parentElement;
+          parentLi.classList.toggle('open');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
