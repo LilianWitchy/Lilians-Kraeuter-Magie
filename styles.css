@@ -240,19 +240,14 @@ footer {
 }
 
 /* =======================
-   Feedback Slider
+   Feedback-Slider Anpassungen
    ======================= */
-.feedback-slider {
-  position: relative;
-  overflow: hidden;
-  max-width: 1000px;
-  margin: 40px auto;
-}
-
 .slider-wrapper {
   display: flex;
   gap: 20px;
   transition: transform 0.3s ease-in-out;
+  /* Wichtig für Slider-Scroll: */
+  will-change: transform;
 }
 
 .slider-card {
@@ -261,19 +256,21 @@ footer {
   border-radius: 10px;
   min-width: 300px;
   max-width: 300px;
-  flex-shrink: 0;
+  flex-shrink: 0; /* verhindert, dass Karten schrumpfen */
   text-align: left;
   color: #3a3a3a;
   font-size: 18px;
   line-height: 1.8;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* optional für bessere Optik */
 }
 
+/* Pfeile */
 .prev,
 .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(94,75,139,0.5); /* Pastell-Lila halbtransparent */
+  background-color: rgba(94,75,139,0.5); /* halbtransparentes Lila */
   color: white;
   border: none;
   font-size: 24px;
@@ -286,10 +283,16 @@ footer {
 .prev { left: 10px; }
 .next { right: 10px; }
 
+/* Überschrift */
 .feedback-slider h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
+}
+
+/* Optional: Slider scrollbar entfernen, falls Browser-Scroll auftaucht */
+.feedback-slider .slider-wrapper {
+  overflow: hidden;
 }
 
 /* =======================
