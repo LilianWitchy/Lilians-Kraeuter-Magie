@@ -12,10 +12,12 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Globales CSS */
+    /* =======================
+       Globales CSS
+       ======================= */
     *, *::before, *::after {
       box-sizing: border-box;
     }
@@ -23,7 +25,9 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Cormorant Garamond', serif; /* neue Schriftart */
+      font-family: 'Crimson Pro', serif; /* neue Schriftart */
+      font-size: 20px; /* größere Basis-Schriftgröße */
+      line-height: 1.8; /* bessere Lesbarkeit */
       background-color: #d8c9f2; /* sanftes Pastell-Lila */
       color: #3a3a3a;
       text-align: center;
@@ -61,7 +65,7 @@
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 3em; /* größere Überschrift */
       margin: 20px 0 10px 0;
       display: flex;
       justify-content: center;
@@ -76,9 +80,9 @@
     }
 
     h2 {
-      font-size: 2em;
+      font-size: 2.5em; /* größere Unterüberschrift */
       margin: 40px 0 20px 0;
-      font-weight: 500;
+      font-weight: 700;
       color: #5e4b8b;
     }
 
@@ -87,12 +91,17 @@
       margin: auto;
       padding: 0 20px 40px 20px;
       text-align: left;
-      line-height: 1.6;
     }
 
-    /* Navigation */
+    p {
+      font-size: 1.2em; /* Text leicht vergrößert */
+    }
+
+    /* =======================
+       Navigation
+       ======================= */
     .navbar {
-      background-color: #c3e4d4; /* sanftes Pastellgrün */
+      background-color: #c3e4d4;
       padding: 10px 20px;
       position: relative;
       z-index: 10;
@@ -134,7 +143,7 @@
     .navmenu a {
       text-decoration: none;
       color: #3a3a3a;
-      font-size: 18px;
+      font-size: 20px; /* größere Menüeinträge */
       padding: 10px;
       display: block;
     }
@@ -160,7 +169,8 @@
 
     .dropdown-content li a {
       color: #3a3a3a;
-      padding: 10px;
+      padding: 12px;
+      font-size: 18px;
       text-decoration: none;
     }
 
@@ -216,6 +226,7 @@
       padding: 20px;
       text-align: center;
       color: #3a3a3a;
+      font-size: 18px;
     }
 
     .education-item {
@@ -227,6 +238,8 @@
       display: block;
       width: fit-content;
       max-width: 100%;
+      font-size: 1.2em;
+      line-height: 1.8;
     }
   </style>
 </head>
@@ -255,6 +268,7 @@
       <span></span>
     </div>
     <ul class="navmenu" id="navmenu">
+      <!-- Menüeinträge bleiben unverändert -->
       <li class="dropdown">
         <a href="index.html">Startseite</a>
         <ul class="dropdown-content">
@@ -359,4 +373,3 @@
   </script>
 </body>
 </html>
-
