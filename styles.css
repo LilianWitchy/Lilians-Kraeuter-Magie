@@ -1,6 +1,9 @@
+/* =======================
+   Globale Einstellungen
+   ======================= */
 body {
   font-family: 'Inter', sans-serif; /* moderne Sans-Serif Schrift */
-  color: #3a3a3a; /* dunkles Grau statt weiß */
+  color: #3a3a3a; /* dunkles Grau */
   background-color: #f8f6f9; /* helles Pastell-Lila */
   margin: 0;
   padding: 0;
@@ -13,7 +16,9 @@ footer {
   color: #3a3a3a; /* dunkles Grau */
 }
 
-/* Navbar – nur Balken grün */
+/* =======================
+   Navbar
+   ======================= */
 .navbar {
   background-color: #c3e4d4; /* Pastellgrün */
   padding: 10px 20px;
@@ -21,7 +26,6 @@ footer {
   z-index: 100;
 }
 
-/* Menü-Button für Mobile */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -34,11 +38,10 @@ footer {
 .menu-toggle span {
   display: block;
   height: 4px;
-  background-color: #3a3a3a; /* dunkles Grau für Hamburger */
+  background-color: #3a3a3a; /* Hamburger dunkelgrau */
   border-radius: 2px;
 }
 
-/* Hauptmenü */
 .navmenu {
   list-style-type: none;
   margin: 0;
@@ -56,7 +59,7 @@ footer {
 
 .navmenu > li > a {
   text-decoration: none;
-  color: #3a3a3a; /* Text dunkel */
+  color: #3a3a3a;
   font-size: 18px;
   padding: 15px 10px;
   display: block;
@@ -67,7 +70,9 @@ footer {
   border-radius: 5px;
 }
 
-/* Dropdown-Menü */
+/* =======================
+   Dropdown
+   ======================= */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -75,7 +80,7 @@ footer {
   left: 0;
   background-color: #f4eff8; /* helles Pastell-Lila */
   min-width: 180px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1000;
   padding: 0;
   list-style: none;
@@ -92,12 +97,12 @@ footer {
   background-color: #e6e0f3; /* Pastell-Lila Hover */
 }
 
-/* Dropdown auf Desktop per Hover */
+/* Desktop Hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Pfeil nach unten für Dropdown */
+/* Pfeil nach unten */
 .navmenu > li.dropdown > a::after {
   content: " ▼";
   font-size: 0.7em;
@@ -113,14 +118,12 @@ footer {
   content: " ▲";
 }
 
-/* === Responsive Layout ab 768px und kleiner === */
+/* =======================
+   Responsive <= 768px
+   ======================= */
 @media (max-width: 768px) {
-  /* Menü-Button anzeigen */
-  .menu-toggle {
-    display: flex;
-  }
+  .menu-toggle { display: flex; }
 
-  /* Menü wird vertikal und zuerst versteckt */
   .navmenu {
     flex-direction: column;
     display: none;
@@ -129,9 +132,7 @@ footer {
     align-items: flex-start;
   }
 
-  .navmenu.show {
-    display: flex;
-  }
+  .navmenu.show { display: flex; }
 
   .navmenu li {
     width: 100%;
@@ -147,7 +148,6 @@ footer {
     position: relative;
   }
 
-  /* Dropdowns nur bei Klick öffnen */
   .dropdown-content {
     display: none;
     position: static;
@@ -168,12 +168,8 @@ footer {
     font-size: 15px;
   }
 
-  /* Hover auf Mobil deaktiviert */
-  .dropdown:hover .dropdown-content {
-    display: none;
-  }
+  .dropdown:hover .dropdown-content { display: none; }
 
-  /* Pfeile für Mobil */
   .navmenu > li.dropdown > a::after {
     content: " ▼";
     position: absolute;
@@ -190,7 +186,9 @@ footer {
   }
 }
 
-/* Sprachumschalter */
+/* =======================
+   Sprachumschalter
+   ======================= */
 #language-switcher {
   position: fixed;
   top: 10px;
@@ -203,7 +201,9 @@ footer {
   cursor: pointer;
 }
 
-/* Feedback Slider */
+/* =======================
+   Feedback Slider
+   ======================= */
 .feedback-slider {
   position: relative;
   overflow: hidden;
@@ -233,7 +233,7 @@ footer {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(94, 75, 139, 0.5); /* Pastell-Lila halbtransparent */
+  background-color: rgba(94,75,139,0.5); /* Pastell-Lila halbtransparent */
   color: white;
   border: none;
   font-size: 24px;
@@ -243,15 +243,11 @@ footer {
   z-index: 10;
 }
 
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
+.prev { left: 10px; }
+.next { right: 10px; }
 
 .feedback-slider h2 {
   text-align: center;
   margin-bottom: 20px;
 }
+
