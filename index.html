@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Lilians Kräutermagie – Angebote für Erwachsene, Teams, Natur- und Energiearbeit, Klangheilung, Kräuterwissen & Inspiration für ein bewusstes Leben." />
+  <meta name="keywords" content="Kräutermagie, Natur, Energiearbeit, Klangheilung, Lilian, Heilkräuter, Workshops, Kräuterwissen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lilians Kräutermagie</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    /* Globales CSS */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f6f9; /* helles Pastell-Violett */
+      color: #3a3a3a;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: #dcd6f7; /* sanftes Pastell-Lila für Sterne */
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 20px 0 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: #5e4b8b; /* gedämpftes Lila */
+    }
+
+    h1 img {
+      max-width: 120px;
+      height: auto;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin: 40px 0 20px 0;
+      font-weight: 500;
+      color: #5e4b8b;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 20px 40px 20px;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    .navbar {
+      background-color: #c3e4d4; /* sanftes Pastellgrün */
+      padding: 10px 20px;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #3a3a3a;
+      cursor: pointer;
+      flex-direction: column;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #3a3a3a;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    .navmenu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .navmenu li {
+      margin-right: 30px;
+      position: relative;
+    }
+
+    .navmenu a {
+      text-decoration: none;
+      color: #3a3a3a;
+      font-size: 18px;
+      padding: 10px;
+      display: block;
+    }
+
+    .navmenu a:hover {
+      background-color: #d3e9dc; /* hellgrün Pastell beim Hover */
+      border-radius: 5px;
+    }
+
+    /* Dropdown-Menü */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #c3e4d4;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      list-style: none;
+      padding: 0;
+    }
+
+    .dropdown-content li a {
+      color: #3a3a3a;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #f0f0f0;
+      color: #5e4b8b;
+    }
+
+    .navmenu li:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Media Query für kleinere Bildschirme */
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: flex;
+        margin-left: auto;
+      }
+
+      .navmenu {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 10px;
+      }
+
+      .navmenu.show {
+        display: flex;
+      }
+
+      .navmenu li {
+        width: 100%;
+        margin: 0;
+      }
+
+      .navmenu li:hover .dropdown-content {
+        position: static;
+        box-shadow: none;
+      }
+
+      .dropdown-content {
+        background-color: #c3e4d4;
+      }
+    }
+
+    footer {
+      background-color: #c3e4d4;
+      padding: 20px;
+      text-align: center;
+      color: #3a3a3a;
+    }
+
+    .education-item {
+      background-color: #e6e0d9;
+      color: #3a3a3a;
+      padding: 20px;
+      margin: 10px auto;
+      border-radius: 8px;
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    /* Kleinere Überschriften */
+    h1 {
+      font-size: 1.8em;
+    }
+
+    h1 img {
+      max-width: 80px;
+    }
+  </style>
+  <!-- Google Fonts für moderne Schrift -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="stars"></div>
+
+  <div class="content">
+    <h1>
+      <img src="logo2.png" alt="Magic Logo" />
+      Lilians Kräutermagie
+      <img src="logo2.png" alt="Magic Logo" />
+    </h1>
+  </div>
+
+  <div id="language-switcher">
+    <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+    <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+    <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+  </div>
+
+  <div class="navbar">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="navmenu" id="navmenu">
+      <li class="dropdown">
+        <a href="index.html">Startseite</a>
+        <ul class="dropdown-content">
+          <li><a href="about.html">Über mich</a></li>
+          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+          <li><a href="meinemission.html">Meine Mission</a></li>
+          <li><a href="angebot.html">Mein Angebot für dich</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Mit sich selbst in Verbindung kommen</a>
+        <ul class="dropdown-content">
+          <li><a href="energie.html">Innere Balance</a></li>
+          <li><a href="basics.html">Die Basics</a></li>
+          <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+          <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Bücher</a>
+        <ul class="dropdown-content">
+          <li><a href="meinebücher.html">Meine Bücher</a></li>
+          <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+          <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Shop</a>
+        <ul class="dropdown-content">
+          <li><a href="shop.html">Mein Shop</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Rezepte</a>
+        <ul class="dropdown-content">
+          <li><a href="rezepte.html">Warum DIY?</a></li>
+          <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+          <li><a href="haare.html">Haarprodukte</a></li>
+          <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="#">Räuchermischungen</a></li>
+          <li><a href="#">Naturheilkunde</a></li>
+          <li><a href="#">Salben & Balsam</a></li>
+        </ul>
+      </li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="agb.html">AGB</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </div>
+
+  <div class="content" style="max-width: 1000px; margin: auto; padding: 40px 20px 40px 20px; text-align: left;">
+    <h2>Willkommen – wie schön, dass du hier bist.</h2>
+    <p>Unsere Welt steckt voller Möglichkeiten. Viele davon liegen verborgen im scheinbar Alltäglichen – und manchmal braucht es nur einen kleinen Perspektivwechsel, um sie zu entdecken.</p>
+    <p>Immer mehr Menschen spüren, dass da „mehr“ ist: ein feines Gefühl, eine Verbindung zu etwas Größerem – auch wenn wir es vielleicht nicht genau benennen können.</p>
+    <p>Gleichzeitig zeigt uns auch die Wissenschaft immer klarer, was viele längst intuitiv fühlen: Alles ist in Bewegung, alles ist Energie.</p>
+    <p>Und wenn wir beginnen, bewusster mit dieser Energie umzugehen, können wir unser Leben und unsere Umgebung aktiv mitgestalten.</p>
+    <p>Wir leben in einer Zeit des Wandels. Alte Denkweisen lösen sich, neue Möglichkeiten entstehen. Viele Menschen stellen Fragen, suchen Orientierung und möchten sich weiterentwickeln – persönlich, emotional, manchmal auch auf ganz neue Art.</p>
+    <p>Diese Seite ist eine Einladung, offen zu bleiben. Neugierig. Und vielleicht auch mutig – denn echte Veränderung beginnt oft leise: mit einem Impuls, einem Gedanken, einem ehrlichen Blick nach innen.</p>
+    <p>Ich möchte inspirieren – nicht belehren. Ich teile hier Gedanken, Erfahrungen und Ideen, die dich begleiten oder berühren können. Was du daraus machst, bleibt ganz bei dir.</p>
+    <p>Ich freue mich, dass du den Weg hierher gefunden hast.</p>
+    <p>Möge diese Seite dich stärken, inspirieren – und vielleicht auch ein kleines Bisschen verzaubern.</p>
+    <p><strong>Von Herzen, Lilian</strong></p>
+  </div>
+
+  <div class="content" style="text-align:center; padding-bottom: 40px;">
+    <img src="relax.png" alt="Relaxbild" />
+  </div>
+
+  <footer>
+    <p>© 2025 Elisabeth-Ann Wolf | Alle Rechte vorbehalten</p>
+    <p>Mit Besuch dieser Webseite werden die AGB akzeptiert.</p>
+  </footer>
+
+  <script>
+    // Menü umschalten (mobil)
+    function toggleMenu() {
+      const menu = document.getElementById("navmenu");
+      menu.classList.toggle("show");
+    }
+
+    // Sterne beim Laden erzeugen & Dropdowns mobil
+    document.addEventListener("DOMContentLoaded", function () {
+      let starContainer = document.querySelector(".stars");
+      for (let i = 0; i < 50; i++) {
+        let star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+        starContainer.appendChild(star);
+      }
+
+      const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+      dropdowns.forEach(dropdownToggle => {
+        dropdownToggle.addEventListener('click', e => {
+          e.preventDefault();
+          const parentLi = dropdownToggle.parentElement;
+          parentLi.classList.toggle('open');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
