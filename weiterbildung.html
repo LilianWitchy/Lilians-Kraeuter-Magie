@@ -17,65 +17,26 @@
        ======================= */
     *, *::before, *::after { box-sizing: border-box; }
 
-  body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Crimson Pro', serif;
-  font-size: 16px;  /* vorher 20px -> kleiner, angenehmer */
-  line-height: 1.6; /* vorher 1.8 -> etwas kompakter */
-  background-color: #d8c9f2;
-  color: #3a3a3a;
-  text-align: center;
-  overflow-x: hidden;
-}
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Crimson Pro', serif;
+      font-size: 16px;
+      line-height: 1.6;
+      /* Hintergrund jetzt kräftiges Pastellbraun */
+      background-color: #b28b6b; /* gedecktes Braun, pastellig */
+      color: #3a3a3a;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
     img { max-width: 100%; height: auto; }
 
-    .stars {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .star {
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      background-color: rgba(210, 200, 242, 0.6);
-      border-radius: 50%;
-      opacity: 0;
-      animation: twinkle linear infinite;
-    }
-
-    @keyframes twinkle { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
-
-    /* Hero-Bereich */
-    .hero-section { 
-      background-image: url('picture/wald2.png'); /* korrigierter Pfad */
-      background-size: cover;
-      background-position: center;
-      height: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-      position: relative; 
-    }
-    .hero-text { text-align: center; font-size: 30px; max-width: 90%; padding: 20px; background-color: rgba(0,0,0,0.5); border-radius: 10px; }
-    @media (max-width: 768px) { .hero-section { font-size: 1.8rem; } }
-    .hero-text { font-size: 1.2rem; padding: 10px; }
-    .hero-text p { font-size: 1rem; }
-
-    h1 { font-size: 2.5em;  /* vorher 3em */ margin: 20px 0 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; color: #5e4b8b; }   
+    h1 { font-size: 2.5em; margin: 20px 0 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; color: #5e4b8b; }   
     h1 img { max-width: 120px; height: auto; }
-    h2 { font-size: 2em;    /* vorher 2.5em */ margin: 40px 0 20px 0; font-weight: 700; color: #5e4b8b; }
+    h2 { font-size: 2em; margin: 40px 0 20px 0; font-weight: 700; color: #5e4b8b; }
     .content { max-width: 1000px; margin: auto; padding: 0 20px 40px 20px; text-align: left; }
-    p {font-size: 1rem; /* vorher 1.2em */}
+    p { font-size: 1rem; }
 
     /* =======================
        Navigation
@@ -103,11 +64,27 @@
     }
 
     footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: #3a3a3a; font-size: 18px; }
-    .education-item { background-color: #e6e0d9; color: #3a3a3a; padding: 20px; margin: 10px auto; border-radius: 8px; display: block; width: fit-content; max-width: 100%; font-size: 1.2em; line-height: 1.8; }
+
+    /* =======================
+       Weiterbildungen Kasten
+       ======================= */
+    .education-item {
+      background-color: #8c9b6a; /* kräftiges Pastellgrün */
+      color: #3a3a3a;
+      padding: 20px;
+      margin: 10px auto;
+      border-radius: 8px;
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      font-size: 1.2em;
+      line-height: 1.8;
+    }
   </style>
 </head>
 
 <body>
+
   <div class="stars"></div>
 
   <!-- Hero-Bereich -->
