@@ -187,56 +187,47 @@
       line-height: 1.8;
     }
 
-     /* =======================
-       Feedback-Slider Styles
-       ======================= */
-    .feedback-slider {
-      margin: 60px auto;
-      max-width: 1000px;
-      position: relative;
-    }
-
-    .slider-wrapper {
-      display: flex;
-      gap: 20px;
-      overflow: hidden;
-      scroll-behavior: smooth;
-    }
-
-    .slider-card {
-      background-color: #8B5E3C;
-      padding: 20px;
-      border-radius: 10px;
-      min-width: 300px;
-      flex: 0 0 auto;
-      text-align: left;
-    }
-
-    .slider-card p { margin: 5px 0; }
-
-    .feedback-slider button.prev,
-    .feedback-slider button.next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(255, 255, 255, 0.7);
-      border: none;
-      font-size: 2rem;
-      padding: 10px;
-      cursor: pointer;
-      z-index: 10;
-      border-radius: 50%;
-      color: #7f469e;
-    }
-
-    .feedback-slider button.prev { left: -40px; }
-    .feedback-slider button.next { right: -40px; }
-
-    @media screen and (max-width: 768px) {
-      .slider-card { min-width: 90%; }
-      .feedback-slider button.prev { left: 10px; }
-      .feedback-slider button.next { right: 10px; }
-    }
+     /* Feedback Slider */
+.feedback-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+.slider-wrapper {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+.slider-card {
+  background-color: #8B5E3C;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
+  max-width: 300px;
+  flex-shrink: 0;
+  text-align: left;
+  color: white;
+}
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+.feedback-slider h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
     
   </style>
 </head>
@@ -400,91 +391,86 @@
      <p>Weiteres folgt in Kürze.</p>
   </div>
 
-     <!-- ===== KORRIGIERTER FEEDBACK-SLIDER ===== -->
-    <div class="feedback-slider">
-      <h2>Rückmeldungen & Resonanzen</h2>
-      <button class="prev">&#10094;</button>
-      <div class="slider-wrapper">
-        <div class="slider-card">
-          <p class="name-country">Claudia</p>
-          <p class="test-hint">Produkttest – kostenfrei & unverbindlich</p> 
-          <p class="feedback-text">„Ich habe die Ringelblumensalbe einfach Mal bei meiner kleinen Tochter getestet. Sie verträgt sonst gar nichts.“</p> 
-          <p class="feedback-text">„Doch ich kenne Lilian persönlich und weiß, dass sie bei ihren Produkten nur natürliche Zutaten nutzt, wie Kräuter und Bienenwachs.“</p> 
-          <p class="feedback-text">„Kein Gedöns oder KrimsKrams! Und die Salbe hat meiner kleinen Maus noch besser geholfen, als erhofft.“</p>
-          <p class="feedback-text">„Auch bei Wehwechen oder Stürzen hat sie das Aua schnell wieder heile gemacht.“</p> 
-        </div>
+   <!-- ===== KORRIGIERTER FEEDBACK-SLIDER ===== -->
+<div class="feedback-slider">
+  <h2>Rückmeldungen & Resonanzen</h2>
 
- 
-<!-- Block 2 --> 
-<div class="slider-card"> 
-<p class="name-country">Manuela </p>
- <p class="test-hint">Buchkauf - Traumreisen mit Baldur Band 1</p> 
-<p class="feedback-text">„Die Geschichten sind mit Herzblut geschrieben. Man merkt richtig, wie viel Liebe darin steckt.“</p>
- <p class="feedback-text">„Ich habe das Buch meinem Enkel zu Weihnachten geschenkt, damals gab es das nur bei Amazon und seit dem ist es sein absolutes Lieblingsbuch.“</p>
- <p class="feedback-text">„Er hat es sogar als Lieblingsbuch beim Freundebuch eines Schulkameraden eingetragen. Habe ich Lilian direkt ein Foto geschickt.“</p>
- <p class="feedback-text">„Ich habe selbst auch Hunde und muss die Baldurbücher unbedingt auch für mich kaufen.“</p> 
-</div>
+  <button class="prev">&#10094;</button>
 
-<div class="slider-card"> 
-<p class="name-country">Netti </p>
-  <p class="test-hint">Produkttest – kostenfrei & unverbindlich</p>
-<p class="feedback-text">„Ich bin gegen Phenoxythanol allergisch. Das ist eine Substanz die von der Industrie als Konservierungsmittel in der Kosmetik, Hygiene und auch in Lebensmitteln verwendet wird. “</p>  
- <p class="feedback-text">„ Ich neige seit Jahren unter fleckigem Ausschlag im Gesicht und auf dem Körper sowie unter Zahnentzündungen. “</p> 
-  <p class="feedback-text">„ Ich benutze jetzt Lilians Rosencreme als Basic für morgens und als Beruhigung der Haut vor dem Schlafen gehen. “</p> 
- <p class="feedback-text">„ Der Ausschlag im Gesicht ist weg mehr gibt es dazu nicht zu sagen. Danke Lilian.“</p> 
-      
+  <div class="slider-wrapper">
 
- <!-- Block 3 --> 
-<div class="slider-card"> 
-<p class="name-country">Tanja</p>
- <p class="test-hint">Produkttest&Klangheilung – kostenfrei & unverbindlich</p>
- <p class="feedback-text">„Unsere Rettung. Eins meiner Kinder wurde von einem Hund gebissen. Mitten ins Bein. Lilian hat ganz selbstbewusst und mit Feingefühl ein paar mal die Stimmgabel aufgelegt.“</p> 
-<p class="feedback-text">„Das war TOTAL VERRÜCKT! Der Biss schien sofort zu heilen. Wenig später machte sie noch ihre selbstgemachte Ringelblumensalbe drauf. Am nächstem Tag war kaum noch etwas vom Vorfall zu sehen.“</p> 
-<p class="feedback-text">„Ich danke dir von Herzen. Auch wenn ich nicht verstehe, wie das möglich war. “</p>
-</div>
+    <!-- Block 1 -->
+<p class="name-country">Claudia</p> 
+    <p class="test-hint">Produkttest – kostenfrei & unverbindlich</p> 
+    <p class="feedback-text">„Ich habe die Ringelblumensalbe einfach Mal bei meiner kleinen Tochter getestet. Sie verträgt sonst gar nichts.“</p> 
+    <p class="feedback-text">„Doch ich kenne Lilian persönlich und weiß, dass sie bei ihren Produkten nur natürliche Zutaten nutzt, wie Kräuter und Bienenwachs.“</p> 
+    <p class="feedback-text">„Kein Gedöns oder KrimsKrams! Und die Salbe hat meiner kleinen Maus noch besser geholfen, als erhofft.“</p> 
+    <p class="feedback-text">„Auch bei Wehwechen oder Stürzen hat sie das Aua schnell wieder heile gemacht.“</p> 
+  </div>
 
+    <!-- Block 2 -->
+    <div class="slider-card">
+   <p class="name-country">Manuela </p> 
+      <p class="test-hint">Buchkauf - Traumreisen mit Baldur Band 1</p> 
+      <p class="feedback-text">„Die Geschichten sind mit Herzblut geschrieben. Man merkt richtig, wie viel Liebe darin steckt.“</p> 
+      <p class="feedback-text">„Ich habe das Buch meinem Enkel zu Weihnachten geschenkt, damals gab es das nur bei Amazon und seit dem ist es sein absolutes Lieblingsbuch.“</p> 
+      <p class="feedback-text">„Er hat es sogar als Lieblingsbuch beim Freundebuch eines Schulkameraden eingetragen. Habe ich Lilian direkt ein Foto geschickt.“</p> 
+      <p class="feedback-text">„Ich habe selbst auch Hunde und muss die Baldurbücher unbedingt auch für mich kaufen.“</p> </div>
 
+   <div class="slider-card">
+     <p class="name-country">Netti </p> 
+     <p class="test-hint">Produkttest – kostenfrei & unverbindlich</p> 
+     <p class="feedback-text">„Ich bin gegen Phenoxythanol allergisch. Das ist eine Substanz die von der Industrie als Konservierungsmittel in der Kosmetik, Hygiene und auch in Lebensmitteln verwendet wird. “</p>
+     <p class="feedback-text">„ Ich neige seit Jahren unter fleckigem Ausschlag im Gesicht und auf dem Körper sowie unter Zahnentzündungen. “</p> 
+     <p class="feedback-text">„ Ich benutze jetzt Lilians Rosencreme als Basic für morgens und als Beruhigung der Haut vor dem Schlafen gehen. “</p> 
+     <p class="feedback-text">„ Der Ausschlag im Gesicht ist weg mehr gibt es dazu nicht zu sagen. Danke Lilian.“</p>
 
-
- <!-- Block 3 --> 
-<div class="slider-card"> 
-<p class="name-country">Christian</p>
- <p class="test-hint">Buchkauf und Rezension bei Amazon - bewusste und achtsame Traumreisen für Erwachsene</p>
-<p class="feedback-text">„Dieses Buch hat mich sehr berührt. Die geführten Traumreisen helfen, alte Belastungen loszulassen und wieder mehr Vertrauen und Ruhe in sich selbst zu finden.“</p>
-<p class="feedback-text">„  Alles ist liebevoll und achtsam geschrieben, sodass ich mich sofort aufgehoben gefühlt habe. Eine wunderschöne Unterstützung auf dem Weg zu mehr innerem Frieden.“</p>
-</div>
-
-  
- <!-- Block 3 --> 
-<div class="slider-card"> 
-<p class="name-country">Gryffindor</p>
- <p class="test-hint">Buchkauf und Rezension bei Amazon - bewusste und achtsame Traumreisen für Erwachsene</p>
- <p class="feedback-text"> „In diesen turbulenten Zeiten ist es wichtig, Mittel und Wege zu finden, sich zu entspannen, abzuschalten und wieder zu sich selbst zu finden.“ </p>
-<p class="feedback-text">„  Geführte Meditationen sind ein wundervoller Weg, dies zu tun und es empfiehlt sich, eine Zeitlang abends eine der schönen Traumreisen auszuwählen und sich so in den Schlaf begleiten zu lassen.“</p>
-</div>
-
-<div class="slider-card"> 
-<p class="name-country">Annette</p>
- <p class="test-hint">Produkttests - verschiedenster Salben und Cremes und einer energetischen Klangheilung </p>
- <p class="feedback-text"> „Ich habe seit September 2025 eine Epping Plastik in der Hand. Die Narben sind nicht richtig verheilt und die Hand blockiert bis zum Ellenbogen.“ </p>
- <p class="feedback-text"> „Nach einer Behandlung mit der Stimmgabel habe ich ein besseres Gefühl in der Hand festgestellt.“ </p>
- <p class="feedback-text"> „Der Dauerschmerz ist minimiert und gibt mir Hoffnung auf eine komplette Heilung. Ich werde noch weitere Behandlungen bei Lilian buchen. Sie erreicht mehr als die monatelange Ergotherapie.“ </p>
- <p class="feedback-text"> „Zur Narben Pflege und für alle weiteren Wehwehchen benutze ich schon eine Weile die Ringelblumensalbe.“ </p>
-  <p class="feedback-text"> „Der erste große Tiegel ist bereits alle und der nächste schon bestellt.“ </p>
-      
-  
- <!-- Block 3 --> 
-<div class="slider-card"> 
-<p class="name-country">Deniz</p>
-   <p class="test-hint">Buchkauf und Rezension bei Amazon - Traumreisen mit Baldur - Band 2</p>
-<p class="feedback-text">„Sehr gutes Buch, super!“</p>
-</div>
-
-
-
-   </div>
-      <button class="next">&#10095;</button>
+    <!-- Block 4 -->
+    <div class="slider-card"> 
+      <p class="name-country">Tanja</p> 
+      <p class="test-hint">Produkttest&Klangheilung – kostenfrei & unverbindlich</p>
+      <p class="feedback-text">„Unsere Rettung. Eins meiner Kinder wurde von einem Hund gebissen. Mitten ins Bein. Lilian hat ganz selbstbewusst und mit Feingefühl ein paar mal die Stimmgabel aufgelegt.“</p> 
+      <p class="feedback-text">„Das war TOTAL VERRÜCKT! Der Biss schien sofort zu heilen. Wenig später machte sie noch ihre selbstgemachte Ringelblumensalbe drauf. Am nächstem Tag war kaum noch etwas vom Vorfall zu sehen.“</p> 
+      <p class="feedback-text">„Ich danke dir von Herzen. Auch wenn ich nicht verstehe, wie das möglich war. “</p> 
     </div>
+
+    <!-- Block 5 -->
+  <div class="slider-card"> 
+    <p class="name-country">Christian</p> 
+    <p class="test-hint">Buchkauf und Rezension bei Amazon - bewusste und achtsame Traumreisen für Erwachsene</p> 
+    <p class="feedback-text">„Dieses Buch hat mich sehr berührt. Die geführten Traumreisen helfen, alte Belastungen loszulassen und wieder mehr Vertrauen und Ruhe in sich selbst zu finden.“</p> 
+    <p class="feedback-text">„ Alles ist liebevoll und achtsam geschrieben, sodass ich mich sofort aufgehoben gefühlt habe. Eine wunderschöne Unterstützung auf dem Weg zu mehr innerem Frieden.“</p>
+  </div>
+
+    <!-- Block 6 -->
+    <div class="slider-card">
+      <p class="name-country">Gryffindor</p>
+      <p class="test-hint">Buchkauf und Rezension bei Amazon - bewusste und achtsame Traumreisen für Erwachsene</p> 
+      <p class="feedback-text"> „In diesen turbulenten Zeiten ist es wichtig, Mittel und Wege zu finden, sich zu entspannen, abzuschalten und wieder zu sich selbst zu finden.“ </p> 
+      <p class="feedback-text">„ Geführte Meditationen sind ein wundervoller Weg, dies zu tun und es empfiehlt sich, eine Zeitlang abends eine der schönen Traumreisen auszuwählen und sich so in den Schlaf begleiten zu lassen.“</p> 
+    </div>
+
+    <!-- Block 7 -->
+<div class="slider-card">
+  <p class="name-country">Annette</p> 
+  <p class="test-hint">Produkttests - verschiedenster Salben und Cremes und einer energetischen Klangheilung </p>
+  <p class="feedback-text"> „Ich habe seit September 2025 eine Epping Plastik in der Hand. Die Narben sind nicht richtig verheilt und die Hand blockiert bis zum Ellenbogen.“ </p>
+  <p class="feedback-text"> „Nach einer Behandlung mit der Stimmgabel habe ich ein besseres Gefühl in der Hand festgestellt.“ </p> 
+  <p class="feedback-text"> „Der Dauerschmerz ist minimiert und gibt mir Hoffnung auf eine komplette Heilung. Ich werde noch weitere Behandlungen bei Lilian buchen. Sie erreicht mehr als die monatelange Ergotherapie.“ </p> 
+  <p class="feedback-text"> „Zur Narben Pflege und für alle weiteren Wehwehchen benutze ich schon eine Weile die Ringelblumensalbe.“ </p> 
+  <p class="feedback-text"> „Der erste große Tiegel ist bereits alle und der nächste schon bestellt.“ </p>
+   
+  <!-- Block 8 -->
+    <div class="slider-card"> 
+      <p class="name-country">Deniz</p>
+      <p class="test-hint">Buchkauf und Rezension bei Amazon - Traumreisen mit Baldur - Band 2</p> 
+      <p class="feedback-text">„Sehr gutes Buch, super!“</p>
+    </div>
+
+  </div>
+
+  <button class="next">&#10095;</button>
+</div>
 
   <div id="language-switcher">
     <a href="/"><img src="picture/defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
@@ -502,36 +488,31 @@
 
 
  document.addEventListener('DOMContentLoaded', () => {
-      // Feedback-Slider
-      const sliderWrapper = document.querySelector('.slider-wrapper');
-      const sliderCards = document.querySelectorAll('.slider-card');
-      const prevBtn = document.querySelector('.feedback-slider .prev');
-      const nextBtn = document.querySelector('.feedback-slider .next');
+   
+      // Slider
+  const sliderWrapper = document.querySelector(".slider-wrapper");
+  const slides = document.querySelectorAll(".slider-card");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  let currentIndex = 0;
 
-      let currentIndex = 0;
+  function updateSlider() {
+    if(slides.length === 0) return;
+    const slideWidth = slides[0].offsetWidth + 20; // +20 für gap
+    sliderWrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
 
-      const updateSlider = () => {
-        const cardWidth = sliderCards[0].offsetWidth + 20; // gap
-        const visibleCards = Math.floor(sliderWrapper.parentElement.offsetWidth / cardWidth);
-        const maxIndex = sliderCards.length - visibleCards;
-        if(currentIndex < 0) currentIndex = 0;
-        if(currentIndex > maxIndex) currentIndex = maxIndex;
-        sliderWrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-      };
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) currentIndex--;
+    updateSlider();
+  });
 
-      prevBtn.addEventListener('click', () => {
-        currentIndex--;
-        updateSlider();
-      });
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < slides.length - 1) currentIndex++;
+    updateSlider();
+  });
 
-      nextBtn.addEventListener('click', () => {
-        currentIndex++;
-        updateSlider();
-      });
-
-      window.addEventListener('resize', updateSlider);
-      updateSlider();
-
+  window.addEventListener("resize", updateSlider);
     
       const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
       dropdowns.forEach(dropdownToggle => {
