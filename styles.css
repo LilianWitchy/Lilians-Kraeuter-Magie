@@ -2,9 +2,9 @@
    Globale Einstellungen
    ======================= */
 body {
-  font-family: 'Inter', sans-serif; /* moderne Sans-Serif Schrift */
+  font-family: 'Cormorant Garamond', serif; /* elegante Serif-Schrift für mehr Persönlichkeit */
   color: #3a3a3a; /* dunkles Grau */
-  background-color: #f8f6f9; /* helles Pastell-Lila */
+  background-color: #d8c9f2; /* dunkleres Pastell-Lila */
   margin: 0;
   padding: 0;
   text-align: center;
@@ -78,7 +78,7 @@ footer {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #f4eff8; /* helles Pastell-Lila */
+  background-color: #d8c9f2; /* dunkleres Pastell-Lila */
   min-width: 180px;
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1000;
@@ -94,7 +94,7 @@ footer {
 }
 
 .dropdown-content li a:hover {
-  background-color: #e6e0f3; /* Pastell-Lila Hover */
+  background-color: #cfc0eb; /* sanftes Pastell-Lila Hover */
 }
 
 /* Desktop Hover */
@@ -218,7 +218,7 @@ footer {
 }
 
 .slider-card {
-  background-color: #f3e8f1; /* Pastell-Lila */
+  background-color: #d8c9f2; /* dunkleres Pastell-Lila */
   padding: 20px;
   border-radius: 10px;
   min-width: 300px;
@@ -250,4 +250,3 @@ footer {
   text-align: center;
   margin-bottom: 20px;
 }
-
