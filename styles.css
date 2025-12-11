@@ -3,8 +3,8 @@
    ======================= */
 body {
   font-family: 'Crimson Pro', serif; /* elegante Serifenschrift */
-  font-size: 20px; /* größere Basis-Schriftgröße für bessere Lesbarkeit */
-  line-height: 1.8; /* größere Zeilenhöhe für angenehmere Lesbarkeit */
+  font-size: 18px; /* reduziert von 20px auf 18px */
+  line-height: 1.6; /* leicht angepasst für angenehmere Zeilenhöhe */
   color: #3a3a3a; /* dunkles Grau */
   margin: 0;
   padding: 0;
