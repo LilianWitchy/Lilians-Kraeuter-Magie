@@ -70,14 +70,14 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
   transition: transform 0.3s ease-in-out;
 }
 .slider-card {
-  background-color: #9e7555;
+  background-color: #8B5E3C;
   padding: 20px;
   border-radius: 10px;
   min-width: 300px;
   max-width: 300px;
   flex-shrink: 0;
   text-align: left;
-  color: black;
+  color: white;
 }
 .prev, .next {
   position: absolute;
@@ -98,6 +98,7 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
   text-align: center;
   margin-bottom: 20px;
 }
+  
 </style>
 </head>
 <body>
@@ -258,6 +259,7 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
     <h2>Rückmeldungen & Resonanzen</h2>
     <div class="slider-wrapper">
       <!-- Hier kannst du die Slider-Cards einfügen wie zuvor -->
+      
 <!-- Block 1 --> 
 <div class="slider-card">
  <p class="name-country">Claudia</p>
@@ -361,7 +363,7 @@ document.addEventListener("DOMContentLoaded", function () {
     starContainer.appendChild(star);
   }
 
-  // Slider
+ // Slider
   const sliderWrapper = document.querySelector(".slider-wrapper");
   const slides = document.querySelectorAll(".slider-card");
   const prevBtn = document.querySelector(".prev");
