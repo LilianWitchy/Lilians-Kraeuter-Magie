@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Lilians Kräuter Magie –  Kräuter, Räuchern, Tee, Natur- und Energiearbeit, Klangheilung, Kräuterwissen & Inspiration für ein bewusstes Leben. Entdecke deine eigene Magie." />
+  <meta name="keywords" content="Kräutermagie, Kräuter, Natur, Energiearbeit, Klangheilung, Lilian, Heilkräuter, Workshops, Kräuterwissen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lilians Kräutermagie</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =======================
+       Globales CSS
+       ======================= */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Crimson Pro', serif;
+      font-size: 20px;
+      line-height: 1.8;
+      background-color: #7f469e;
+      color: #ffffff; /* Fließtext weiß */
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; }
+
+    h1 {
+      font-size: 3em;
+      margin: 20px 0 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: #FBCBA1; /* Pastellorange */
+    }
+
+    h1 img { max-width: 120px; height: auto; }
+
+    h2 {
+      font-size: 2.5em;
+      margin: 40px 0 20px 0;
+      font-weight: 700;
+      color: #FBCBA1; /* Pastellorange */
+    }
+
+    .content { max-width: 1000px; margin: auto; padding: 0 20px 40px 20px; text-align: left; }
+
+    p { font-size: 1.2em; color: #ffffff; }
+
+    /* =======================
+       Mission Container Anpassung
+       ======================= */
+    .mission-container {
+      max-width: 800px;
+      margin: 50px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .mission-container h2 { font-size: 2em; margin: 30px 0 20px 0; color: #FBCBA1; }
+
+    .mission-container p,
+    .mission-container .mission-text { font-size: 1em; font-weight: 500; line-height: 1.6; margin-bottom: 15px; text-align: center; color: #ffffff; }
+
+    /* =======================
+       Navigation
+       ======================= */
+    .navbar {
+      background-color: #A3C89A; /* helles Grün */
+      padding: 10px 20px;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #3a3a3a;
+      cursor: pointer;
+      flex-direction: column;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #3a3a3a;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    .navmenu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .navmenu li {
+      margin-right: 30px;
+      position: relative;
+    }
+
+    .navmenu a {
+      text-decoration: none;
+      color: #3a3a3a;
+      font-size: 20px;
+      padding: 10px;
+      display: block;
+    }
+
+    .navmenu a:hover {
+      background-color: #d3e9dc;
+      border-radius: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #A3C89A; /* Dropdown passend zum Menü */
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      list-style: none;
+      padding: 0;
+    }
+
+    .dropdown-content li a {
+      color: #3a3a3a;
+      padding: 12px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #f0f0f0;
+      color: #5e4b8b;
+    }
+
+    .navmenu li:hover .dropdown-content { display: block; }
+
+    @media screen and (max-width: 768px) {
+      .navbar { flex-direction: column; align-items: flex-start; }
+      .menu-toggle { display: flex; margin-left: auto; }
+      .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+      .navmenu.show { display: flex; }
+      .navmenu li { width: 100%; margin: 0; }
+      .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+      .dropdown-content { background-color: #A3C89A; }
+    }
+
+    footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: #3a3a3a; font-size: 18px; }
+
+    .education-item {
+      background-color: #8B6A4B; /* kräftiges Pastellbraun */
+      color: #ffffff;
+      padding: 20px;
+      margin: 10px auto;
+      border-radius: 8px;
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      font-size: 1.2em;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars"></div>
+
+  <div class="content">
+    <h1>Basics</h1>
+  </div>
+
+  <div id="language-switcher">
+    <a href="index.html"><img src="picture/defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+    <a href="/en/"><img src="picture/enfavicon.png" alt="English" title="English" width="24"></a>
+    <a href="/dk/"><img src="picture/dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+  </div>
+
+  <div class="navbar">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="navmenu" id="navmenu">
+      <!-- Menüeinträge unverändert -->
+      <li class="dropdown">
+        <a href="index.html">Startseite</a>
+        <ul class="dropdown-content">
+          <li><a href="about.html">Über mich</a></li>
+          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+          <li><a href="meinemission.html">Meine Mission</a></li>
+          <li><a href="angebot.html">Mein Angebot für dich</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Bücher</a>
+        <ul class="dropdown-content">
+          <li><a href="meinebücher.html">Meine Bücher</a></li>
+          <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+          <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Shop</a>
+        <ul class="dropdown-content">
+          <li><a href="shop.html">Mein Shop</a></li>
+          <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="#">Räuchermischungen</a></li>
+          <li><a href="#">Naturheilkunde</a></li>
+          <li><a href="#">Salben & Balsam</a></li>
+          <li><a href="#">Körperprodukte</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Mit sich selbst in Verbindung kommen</a>
+        <ul class="dropdown-content">
+          <li><a href="energie.html">Innere Balance</a></li>
+          <li><a href="basics.html">Die Basics</a></li>
+          <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+          <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Rezepte</a>
+        <ul class="dropdown-content">
+          <li><a href="rezepte.html">Warum DIY?</a></li>
+          <li><a href="seife.html">Körper</a></li>
+          <li><a href="haare.html">Haare</a></li>
+        </ul>
+      </li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="agb.html">AGB</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </div>
+
+   <h1>  Energie verstehen: Die Grundlage für Veränderung und Entwicklung</h1>
+<h2>Alles ist Energie – ein Perspektivwechsel</h2>
+
+<p>Ob in der modernen Physik oder in uralten Weisheitslehren: Der Gedanke, dass alles, was existiert, letztlich aus Energie besteht, gewinnt immer mehr an Bedeutung. </p>
+ <p> Was wir als Materie erleben – Dinge, Gedanken, Gefühle – ist auf fundamentaler Ebene Schwingung, Bewegung, Frequenz. Die Quantenphysik beschreibt genau das: </p>
+ <p> Auch das scheinbar Feste besteht aus Energie in Bewegung.</p>
+
+<p>Diese Sichtweise ist nicht nur faszinierend, sondern auch praktisch: Denn wenn alles in Bewegung ist, können auch wir bewusst Einfluss nehmen – auf unser Denken, Fühlen, Handeln. 
+  <p>Unsere Gedanken und Emotionen senden Impulse aus, die unser Erleben mitprägen. </p>
+    <p>So wie unser Körper Nahrung braucht, um leistungsfähig zu sein, braucht auch unsere innere „Energie“ Aufmerksamkeit, Ausrichtung und Pflege.</p>
+
+<p>Gedanken als Impulsgeber
+<p>Gedanken sind mehr als nur stille Prozesse im Kopf. Sie wirken. Sie beeinflussen, wie wir uns fühlen, wie wir handeln – und wie wir unsere Umwelt wahrnehmen. </p>
+  <p>Ein positiver, klarer Gedanke kann uns stärken, während belastende Überzeugungen blockierend wirken können. </p>
+    <p>Genau hier setzt energetisches Arbeiten an: Es macht diese inneren Vorgänge bewusst und hilft dabei, Veränderungen gezielt einzuleiten.</p>
+
+<p>Ob durch bewusste Reflexion, durch Meditation oder durch einfache, alltagsnahe Übungen – wer beginnt, seine innere Haltung aktiv zu gestalten, kann Veränderung in vielen Bereichen erleben. </p>
+  <p>Energie folgt der Aufmerksamkeit – und wo wir unseren Fokus hinlenken, dort entsteht Wirkung.</p>
+
+<h2>Die hermetischen Gesetze – universelle Prinzipien für ein bewussteres Leben</h2>
+<p>Die sogenannten hermetischen Gesetze stammen aus einer philosophischen Tradition, die auf die Lehren des Hermes Trismegistos zurückgeht. </p>
+  <p>Auch wenn die Herkunft teils im Mythos liegt, bieten diese sieben Prinzipien eine zeitlose Orientierung, wie wir mit uns selbst, anderen und der Welt in Beziehung treten können. </p>
+    <p>Sie beschreiben Gesetzmäßigkeiten, die sich sowohl im Alltag als auch auf tieferen Ebenen des Denkens und Erlebens widerspiegeln – unabhängig davon, ob man sie spirituell versteht oder nicht.</p>
+
+<h2>1. Das Gesetz der Mentalität – „Alles beginnt im Geist“</h2>
+<p>Unsere Gedanken prägen unsere Realität. Was wir denken, formt unser Erleben – nicht magisch, sondern über die Art und Weise, wie wir mit Situationen umgehen, was wir erwarten und wie wir handeln. </p>
+  <p>Dieses Gesetz lädt dazu ein, die Verantwortung für das eigene Denken zu übernehmen.</p>
+
+<h2>2. Das Gesetz der Entsprechung – „Wie innen, so außen“</h2>
+<p>Was in unserem Inneren vorgeht, spiegelt sich oft im Außen wider – und umgekehrt. 
+  <p>Das Prinzip beschreibt Zusammenhänge zwischen Mikro- und Makrokosmos, zwischen persönlichen Mustern und größeren Strukturen. Wer sich selbst versteht, beginnt auch das Außen klarer zu erkennen.</p>
+
+<h2>3. Das Gesetz der Schwingung – „Nichts ist still“</h2>
+<p>Alles bewegt sich, alles schwingt. Auch Emotionen, Gedanken und Stimmungen tragen eine bestimmte „Frequenz“. </p>
+  <p>Dieses Gesetz erinnert daran, dass Veränderung immer möglich ist – weil nichts statisch ist. Je nachdem, womit wir uns innerlich verbinden, verändert sich unsere Wahrnehmung.</p>
+
+<h2>4. Das Gesetz der Polarität – „Gegensätze gehören zusammen“</h2>
+<p>Licht und Schatten, Freude und Schmerz, Aktivität und Ruhe – alles hat zwei Seiten. </p>
+  <p>Dieses Gesetz hilft uns, Widersprüche nicht als Problem, sondern als Teil eines größeren Ganzen zu sehen. </p>
+    <p>Es geht nicht um das Vermeiden des einen, sondern um das Integrieren beider Pole.</p>
+
+<h2>5. Das Gesetz des Rhythmus – „Alles hat seinen Takt“</h2>
+<p>Das Leben verläuft in Zyklen: Hochs und Tiefs, Anspannung und Entspannung, Veränderung und Stabilität. </p>
+  <p>Dieses Prinzip kann helfen, Zeiten des Stillstands oder der Herausforderung nicht als Rückschritt zu werten, sondern als Teil eines natürlichen Entwicklungsprozesses.</p>
+
+<h2>6. Das Gesetz von Ursache und Wirkung – „Was wir tun, hat Wirkung“</h2>
+<p>Nichts geschieht ohne Grund. Gedanken, Worte und Handlungen setzen Prozesse in Gang – manchmal sichtbar, manchmal subtil. </p>
+  <p>Wer sich dessen bewusst ist, kann gezielter handeln, bewusster wählen – und so aktiver gestalten, statt sich vom Leben treiben zu lassen.</p>
+
+<h2>7. Das Gesetz des Geschlechts – „In allem wirkt eine schöpferische Balance“</h2>
+<p>Dieses Gesetz beschreibt das Zusammenspiel von aktiven und empfangenden Kräften – unabhängig von biologischem Geschlecht. </p>
+  <p>In uns allen wirken kreative, strukturierende, intuitive und gestaltende Aspekte. Wenn diese Kräfte im Gleichgewicht sind, entsteht innere Stabilität und Klarheit.</p>
+
+<p>Energie bewusst leben – das Leben aktiv gestalten</p>
+<p>Das Verständnis energetischer Zusammenhänge – ob auf wissenschaftlicher, philosophischer oder persönlicher Ebene – eröffnet neue Möglichkeiten: </p>
+  <p>für Wachstum, Klarheit und Selbstverantwortung. Die hermetischen Gesetze geben keine fertigen Antworten, aber sie bieten Orientierung. Sie helfen, Muster zu erkennen, Zusammenhänge zu verstehen – und bewusste Entscheidungen zu treffen.</p>
+
+<p>Energiearbeit in diesem Sinne bedeutet: sich selbst ernst zu nehmen. Die eigene Wirkungskraft anzuerkennen. </p>
+  <p>Und neue Wege zu gehen – Schritt für Schritt, mit Neugier und Klarheit.</p>
+     
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("navmenu");
+      menu.classList.toggle("show");
+    }
+
+
+      const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+      dropdowns.forEach(dropdownToggle => {
+        dropdownToggle.addEventListener('click', e => {
+          e.preventDefault();
+          const parentLi = dropdownToggle.parentElement;
+          parentLi.classList.toggle('open');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
