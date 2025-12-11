@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Lilians Kräuter Magie –  Kräuter, Räuchern, Tee, Natur- und Energiearbeit, Klangheilung, Kräuterwissen & Inspiration für ein bewusstes Leben. Entdecke deine eigene Magie." />
+  <meta name="keywords" content="Kräutermagie, Kräuter, Natur, Energiearbeit, Klangheilung, Lilian, Heilkräuter, Workshops, Kräuterwissen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lilians Kräutermagie</title>
+  <!-- andere Tags wie Fonts, CSS etc. folgen hier -->
+
+  
+  <title>Lilians Kräuter Magie</title>
+ 
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =======================
+       Globales CSS
+       ======================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Crimson Pro', serif; /* neue Schriftart */
+      font-size: 20px; /* größere Basis-Schriftgröße */
+      line-height: 1.8; /* bessere Lesbarkeit */
+      background-color: #d8c9f2; /* sanftes Pastell-Lila */
+      color: #3a3a3a;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: rgba(210, 200, 242, 0.6); /* sanftes Pastell-Lila für Sterne */
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 3em; /* größere Überschrift */
+      margin: 20px 0 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: #5e4b8b;
+    }
+
+    h1 img {
+      max-width: 120px;
+      height: auto;
+    }
+
+    h2 {
+      font-size: 2.5em; /* größere Unterüberschrift */
+      margin: 40px 0 20px 0;
+      font-weight: 700;
+      color: #5e4b8b;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 20px 40px 20px;
+      text-align: left;
+    }
+
+    p {
+      font-size: 1.2em; /* Text leicht vergrößert */
+    }
+
+    /* =======================
+       Navigation
+       ======================= */
+    .navbar {
+      background-color: #c3e4d4;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #3a3a3a;
+      cursor: pointer;
+      flex-direction: column;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #3a3a3a;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    .navmenu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .navmenu li {
+      margin-right: 30px;
+      position: relative;
+    }
+
+    .navmenu a {
+      text-decoration: none;
+      color: #3a3a3a;
+      font-size: 20px; /* größere Menüeinträge */
+      padding: 10px;
+      display: block;
+    }
+
+    .navmenu a:hover {
+      background-color: #d3e9dc;
+      border-radius: 5px;
+    }
+
+    /* Dropdown-Menü */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #c3e4d4;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      list-style: none;
+      padding: 0;
+    }
+
+    .dropdown-content li a {
+      color: #3a3a3a;
+      padding: 12px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #f0f0f0;
+      color: #5e4b8b;
+    }
+
+    .navmenu li:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Media Query für kleinere Bildschirme */
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: flex;
+        margin-left: auto;
+      }
+
+      .navmenu {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 10px;
+      }
+
+      .navmenu.show {
+        display: flex;
+      }
+
+      .navmenu li {
+        width: 100%;
+        margin: 0;
+      }
+
+      .navmenu li:hover .dropdown-content {
+        position: static;
+        box-shadow: none;
+      }
+
+      .dropdown-content {
+        background-color: #c3e4d4;
+      }
+    }
+
+    footer {
+      background-color: #c3e4d4;
+      padding: 20px;
+      text-align: center;
+      color: #3a3a3a;
+      font-size: 18px;
+    }
+
+    .education-item {
+      background-color: #e6e0d9;
+      color: #3a3a3a;
+      padding: 20px;
+      margin: 10px auto;
+      border-radius: 8px;
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      font-size: 1.2em;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars"></div>
+
+  <div class="content">
+    <h1>
+ 
+      Lilians Kräuter Magie
+    </h1>
+  </div>
+
+<div id="language-switcher">
+  <a href="/"><img src="picture/defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+  <a href="/en/"><img src="picture/enfavicon.png" alt="English" title="English" width="24"></a>
+  <a href="/dk/"><img src="picture/dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+</div>
+
+
+  <div class="navbar">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="navmenu" id="navmenu">
+      <!-- Menüeinträge bleiben unverändert -->
+      <li class="dropdown">
+        <a href="index.html">Startseite</a>
+        <ul class="dropdown-content">
+          <li><a href="about.html">Über mich</a></li>
+          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+          <li><a href="meinemission.html">Meine Mission</a></li>
+          <li><a href="angebot.html">Mein Angebot für dich</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Mit sich selbst in Verbindung kommen</a>
+        <ul class="dropdown-content">
+          <li><a href="energie.html">Innere Balance</a></li>
+          <li><a href="basics.html">Die Basics</a></li>
+          <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+          <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Bücher</a>
+        <ul class="dropdown-content">
+          <li><a href="meinebücher.html">Meine Bücher</a></li>
+          <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+          <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Shop</a>
+        <ul class="dropdown-content">
+          <li><a href="shop.html">Mein Shop</a></li>
+           <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="#">Räuchermischungen</a></li>
+          <li><a href="#">Naturheilkunde</a></li>
+          <li><a href="#">Salben & Balsam</a></li>
+           <li><a href="#">Körperprodukte</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Rezepte</a>
+        <ul class="dropdown-content">
+          <li><a href="rezepte.html">Warum DIY?</a></li>
+          <li><a href="seife.html">Körper</a></li>
+          <li><a href="haare.html">Haare</a></li>
+          </ul>
+      </li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="agb.html">AGB</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </div>
+
+  <div class="mission-container" id="mission">
+        <h2>Meine Mission: Licht, Heilung und Wachstum</h2>
+        <p class="mission-text">
+            Schön, dass du hier bist! 💜  
+            In meiner Arbeit geht es darum, dir zu helfen, dein inneres Gleichgewicht zu finden und dein Leben in Einklang mit dir selbst und der Natur zu bringen. Sei es durch meine Bücher, die dich auf spirituelle Reisen führen, durch Kräuter, die dein Wohlbefinden auf natürliche Weise unterstützen, oder durch Entspannungspraktiken wie Yoga – ich möchte dir Werkzeuge an die Hand geben, die dich in deinem Alltag begleiten, dich unterstützen und dir helfen, in deine eigene Kraft zu kommen. Jeder Schritt auf diesem Weg ist ein Schritt hin zu mehr Heilung, Klarheit und innerer Ruhe.
+        </p>
+
+        <h2>Über meine Bücher:</h2>
+        <p>Mit meinen Büchern möchte ich dir die Möglichkeit geben, tief in dein inneres Selbst einzutauchen und auf eine Reise zu gehen, die dich zu deinem wahren Ich führt. Besonders meine Traumreisen haben eine starke transformative Kraft. Sie helfen dir, Blockaden loszulassen, dich von alten Mustern zu befreien und den Weg zu innerem Frieden zu finden. Diese Bücher sind nicht nur Worte auf Papier – sie sind Wegweiser, die dir helfen, deine innere Weisheit zu entdecken, deine Seele zu heilen und dich in deinem vollen Licht zu entfalten. Jedes Buch, das du liest, ist ein Schritt hin zur Selbstverwirklichung und zur Freiheit.</p>
+
+        <h2>Kräuter & Naturheilkunde:</h2>
+        <p>Die Natur bietet uns unzählige Schätze, die uns auf unserer Reise zu Gesundheit und Wohlbefinden begleiten können. Ich arbeite mit Kräutern und Pflanzen, um dir natürliche Heilmittel zur Unterstützung deines Körpers und Geistes zu bieten. Meine Kräuterprodukte – von Tees über Räucherungen bis hin zu kosmetischen Anwendungen – sind darauf ausgerichtet, dein Immunsystem zu stärken, dein inneres Gleichgewicht zu fördern und dir ein Gefühl der Verbundenheit mit der Natur zu vermitteln. Die Pflanzen, die ich in meinen Produkten verwende, sind nicht nur Heilmittel, sondern auch liebevolle Begleiter auf deinem Weg zur Gesundheit und zum inneren Frieden.</p>
+
+        <h2>Erlebnispädagogik:</h2>
+        <p>In meiner Erlebnispädagogik geht es darum, auf spielerische Weise mehr über uns selbst und unsere Mitmenschen zu lernen. Mit Gruppenspielen für Erwachsene und kreativen Angeboten für Kinder möchte ich dir helfen, Vertrauen in deine eigenen Fähigkeiten zu gewinnen und gleichzeitig das Miteinander zu stärken. Diese Aktivitäten fördern das Selbstbewusstsein, helfen Blockaden zu lösen und ermöglichen es, sich als Teil eines größeren Ganzen zu sehen. Durch das gemeinsame Erleben und Erforschen wirst du neue Perspektiven gewinnen und die Freude am Leben wieder entdecken.</p>
+
+        <p> Der andere Aspekt der Erlebnispädagogik ist es, bei jedem Wetter draußen zu sein. "Es gibt kein falsches Wetter, nur falsche Kleidung". Auch bei Wind, Regen und Minusgraden gibt es viel in der Welt zu entdecken.  </p>
+        <p> Auch ein besonderer Punkt in der Erlebnispädagogik ist es, aus der Komfortzone heraus zu kommen. Neues zu lernen und seinen Horizont zu erweitern. Was besonders gut funktioniert, da es einen festen Sicherheitsrahmen gibt, der abgesteckt und geplant ist, wodurch man sich wirklich "fallen" lassen und auf die Übungen einlassen kann.</p>
+        
+        <h2>Yoga & Entspannung:</h2>
+        <p>Yoga und Entspannungsübungen sind kraftvolle Werkzeuge, um Körper und Geist in Einklang zu bringen. Ich biete dir einfache Techniken, die du in deinem Alltag integrieren kannst, um mehr Ruhe, Fokus und Energie zu finden. Mit Achtsamkeit und gezielten Übungen lernst du, dich von den äußeren Ablenkungen des Lebens zu lösen und wieder in deine Mitte zu kommen. Lass uns gemeinsam herausfinden, wie du deine innere Balance wiederfinden kannst – auch in stressigen oder herausfordernden Zeiten.</p>
+
+        <h2>Hinweise & Tipps:</h2>
+        <p>Obwohl ich viele meiner Angebote derzeit noch nicht offiziell bereitstellen kann, möchte ich dir schon jetzt wertvolle Hinweise und Tipps geben, die du leicht in deinem Leben umsetzen kannst. Ich teile einfache Übungen, Rezepte und Anleitungen, die dir helfen, mehr Harmonie, Heilung und Wohlbefinden in deinen Alltag zu integrieren. Diese Inspirationen sind erste Schritte, um dich auf deinem eigenen Weg zu mehr Selbstverwirklichung, Gesundheit und innerer Stärke zu unterstützen.</p>
+    </div>
+
+  <script>
+    // Menü umschalten (mobil)
+    function toggleMenu() {
+      const menu = document.getElementById("navmenu");
+      menu.classList.toggle("show");
+    }
+
+    // Sterne beim Laden erzeugen & Dropdowns mobil
+    document.addEventListener("DOMContentLoaded", function () {
+      let starContainer = document.querySelector(".stars");
+      for (let i = 0; i < 50; i++) {
+        let star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+        starContainer.appendChild(star);
+      }
+
+      const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+      dropdowns.forEach(dropdownToggle => {
+        dropdownToggle.addEventListener('click', e => {
+          e.preventDefault();
+          const parentLi = dropdownToggle.parentElement;
+          parentLi.classList.toggle('open');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
