@@ -24,11 +24,14 @@ body::before {
   width: 200%;
   height: 200%;
   background: linear-gradient(
-    45deg,
-    #d8c9f2,
-    #fbe4e1,
-    #c3e4d4,
-    #fbe4e1
+  45deg,
+  #d8c9f2,  /* helles Pastell-Lila */
+  #fbe4e1,  /* helles Pastell-Rosa */
+  #e1d8f2,  /* sanftes Pastell-Lila für Variation */
+  #ffd8b5,  /* sanftes Pastell-Orange */
+  #fbe4e1   /* helles Pastell-Rosa */
+);
+
   );
   background-size: 400% 400%;
   z-index: -1;
