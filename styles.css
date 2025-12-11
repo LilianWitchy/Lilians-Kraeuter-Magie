@@ -242,35 +242,49 @@ footer {
 /* =======================
    Feedback-Slider Anpassungen
    ======================= */
+
+/* ÄUSSERER CONTAINER – WICHTIG */
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;        /* sorgt dafür, dass 3 Karten nebeneinander passen */
+  margin: 0 auto;
+  overflow: hidden;         /* blendet Karten aus, die außerhalb liegen */
+  padding: 20px 40px;       /* Platz für Pfeile links/rechts */
+  box-sizing: border-box;
+}
+
+/* SLIDER INNEN: horizontale Bewegung */
 .slider-wrapper {
   display: flex;
   gap: 20px;
   transition: transform 0.3s ease-in-out;
-  /* Wichtig für Slider-Scroll: */
   will-change: transform;
+  overflow: hidden;
 }
 
+/* KARTEN */
 .slider-card {
   background-color: #f3e8f1; /* Pastell-Lila */
   padding: 20px;
   border-radius: 10px;
   min-width: 300px;
   max-width: 300px;
-  flex-shrink: 0; /* verhindert, dass Karten schrumpfen */
+  flex-shrink: 0;
   text-align: left;
   color: #3a3a3a;
   font-size: 18px;
   line-height: 1.8;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* optional für bessere Optik */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Pfeile */
+/* PFEILE */
 .prev,
 .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(94,75,139,0.5); /* halbtransparentes Lila */
+  background-color: rgba(94,75,139,0.5);
   color: white;
   border: none;
   font-size: 24px;
@@ -283,17 +297,13 @@ footer {
 .prev { left: 10px; }
 .next { right: 10px; }
 
-/* Überschrift */
+/* ÜBERSCHRIFT */
 .feedback-slider h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
 }
 
-/* Optional: Slider scrollbar entfernen, falls Browser-Scroll auftaucht */
-.feedback-slider .slider-wrapper {
-  overflow: hidden;
-}
 
 /* =======================
    Inhalt über Hintergrund
