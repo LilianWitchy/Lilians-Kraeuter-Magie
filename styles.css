@@ -256,3 +256,43 @@ footer {
   margin-bottom: 20px;
   font-size: 24px;
 }
+
+/* =======================
+   Hintergrund-Sterne
+   ======================= */
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0; /* sichtbar, aber hinter dem Inhalt */
+}
+
+.star {
+  position: absolute;
+  width: 5px;       /* etwas größer */
+  height: 5px;
+  background-color: #ffd700; /* Gold */
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 6px #ffd700; /* leichtes Leuchten */
+  animation: twinkle linear infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Inhalt darüber */
+.navbar,
+#language-switcher,
+.content,
+footer {
+  position: relative;
+  z-index: 2;
+}
+
