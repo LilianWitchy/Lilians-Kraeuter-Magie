@@ -1,0 +1,257 @@
+body {
+  font-family: 'Inter', sans-serif; /* moderne Sans-Serif Schrift */
+  color: #3a3a3a; /* dunkles Grau statt weiß */
+  background-color: #f8f6f9; /* helles Pastell-Lila */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header,
+footer {
+  background-color: #c3e4d4; /* sanftes Pastellgrün */
+  color: #3a3a3a; /* dunkles Grau */
+}
+
+/* Navbar – nur Balken grün */
+.navbar {
+  background-color: #c3e4d4; /* Pastellgrün */
+  padding: 10px 20px;
+  position: relative;
+  z-index: 100;
+}
+
+/* Menü-Button für Mobile */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 4px;
+  background-color: #3a3a3a; /* dunkles Grau für Hamburger */
+  border-radius: 2px;
+}
+
+/* Hauptmenü */
+.navmenu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  flex-wrap: wrap;
+}
+
+.navmenu > li {
+  position: relative;
+  margin-right: 30px;
+}
+
+.navmenu > li > a {
+  text-decoration: none;
+  color: #3a3a3a; /* Text dunkel */
+  font-size: 18px;
+  padding: 15px 10px;
+  display: block;
+}
+
+.navmenu > li > a:hover {
+  background-color: #d3e9dc; /* sanftes Hellgrün */
+  border-radius: 5px;
+}
+
+/* Dropdown-Menü */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f4eff8; /* helles Pastell-Lila */
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 0;
+  list-style: none;
+}
+
+.dropdown-content li a {
+  padding: 12px 16px;
+  display: block;
+  color: #5e4b8b; /* gedämpftes Lila */
+  text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+  background-color: #e6e0f3; /* Pastell-Lila Hover */
+}
+
+/* Dropdown auf Desktop per Hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Pfeil nach unten für Dropdown */
+.navmenu > li.dropdown > a::after {
+  content: " ▼";
+  font-size: 0.7em;
+  margin-left: 6px;
+}
+
+/* Geöffnetes Dropdown */
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+.dropdown.open > a::after {
+  content: " ▲";
+}
+
+/* === Responsive Layout ab 768px und kleiner === */
+@media (max-width: 768px) {
+  /* Menü-Button anzeigen */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Menü wird vertikal und zuerst versteckt */
+  .navmenu {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    background-color: #c3e4d4; /* Pastellgrün */
+    align-items: flex-start;
+  }
+
+  .navmenu.show {
+    display: flex;
+  }
+
+  .navmenu li {
+    width: 100%;
+    border-top: 1px solid #a6d6c2;
+  }
+
+  .navmenu > li > a {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+    white-space: normal;
+    cursor: pointer;
+    position: relative;
+  }
+
+  /* Dropdowns nur bei Klick öffnen */
+  .dropdown-content {
+    display: none;
+    position: static;
+    box-shadow: none;
+    background-color: transparent;
+    padding-left: 20px;
+    width: 100%;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown-content li a {
+    color: #3a3a3a;
+    padding: 10px 0 10px 30px;
+    font-size: 15px;
+  }
+
+  /* Hover auf Mobil deaktiviert */
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  /* Pfeile für Mobil */
+  .navmenu > li.dropdown > a::after {
+    content: " ▼";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+  }
+
+  .dropdown.open > a::after {
+    transform: translateY(-50%) rotate(180deg);
+    content: " ▲";
+  }
+}
+
+/* Sprachumschalter */
+#language-switcher {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+#language-switcher img {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* Feedback Slider */
+.feedback-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.slider-wrapper {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider-card {
+  background-color: #f3e8f1; /* Pastell-Lila */
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
+  max-width: 300px;
+  flex-shrink: 0;
+  text-align: left;
+  color: #3a3a3a;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(94, 75, 139, 0.5); /* Pastell-Lila halbtransparent */
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.feedback-slider h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
