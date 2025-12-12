@@ -368,11 +368,7 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
 </div>
 
 <script>
-// Menü umschalten (mobil)
-function toggleMenu() {
-  const menu = document.getElementById("navmenu");
-  menu.classList.toggle("show");
-}
+
 
 document.addEventListener("DOMContentLoaded", function () {
   // Sterne erzeugen
@@ -415,14 +411,12 @@ window.addEventListener("resize", updateSlider);
 // Anfangsposition setzen
 updateSlider();
 
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
 
-  // Dropdown mobile
-  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
-  dropdowns.forEach(dropdownToggle => {
-    dropdownToggle.addEventListener('click', e => {
-      e.preventDefault();
-      const parentLi = dropdownToggle.parentElement;
-      parentLi.classList.toggle('open');
+
     });
   });
 });
