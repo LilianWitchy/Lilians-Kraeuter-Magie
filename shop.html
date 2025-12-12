@@ -7,9 +7,19 @@
 
 <style>
 /* Globales CSS */
-*, *::before, *::after { box-sizing: border-box; }
-body { font-family: Garamond, serif; color: white; background-color: #6e9976; margin: 0; padding: 0; text-align: center; overflow-x: hidden; }
-img { max-width: 100%; height: auto; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Garamond, serif;
+  font-size: 20px;       /* größere Basis-Schriftgröße */
+  line-height: 1.8;      /* bessere Lesbarkeit */
+  background-color: #6e9976;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+  
 
 /* Sterne Hintergrund */
 .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
@@ -21,7 +31,7 @@ img { max-width: 100%; height: auto; }
 .hero-text { text-align: center; font-size: 30px; max-width: 90%; padding: 20px; background-color: rgba(0,0,0,0.5); border-radius: 10px; }
 @media (max-width: 768px) { .hero-section { font-size: 1.8rem; } }
 .hero-text { font-size: 1.2rem; padding: 10px; }
-.hero-text p { font-size: 1rem; }
+.hero-text p { font-size: 1.1rem; }
 
 h1 { font-size: 3.5em; margin: 20px 0 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; }
 h1 img { max-width: 150px; height: auto; }
