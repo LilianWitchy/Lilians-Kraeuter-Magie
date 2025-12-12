@@ -226,9 +226,9 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   // Sterne erzeugen
-  let starContainer = document.querySelector(".stars");
+  const starContainer = document.querySelector(".stars");
   for (let i = 0; i < 50; i++) {
-    let star = document.createElement("div");
+    const star = document.createElement("div");
     star.className = "star";
     star.style.top = Math.random() * 100 + "vh";
     star.style.left = Math.random() * 100 + "vw";
@@ -236,14 +236,14 @@ document.addEventListener("DOMContentLoaded", function () {
     starContainer.appendChild(star);
   }
 
-  // Hamburger-Menü toggle
+  // Hamburger toggle
   window.toggleMenu = function() {
     document.getElementById("navmenu").classList.toggle("show");
   }
 
-  // Mobile Dropdown per Klick
-  const dropdowns = document.querySelectorAll('.navmenu .dropdown > a');
-  dropdowns.forEach(link => {
+  // Mobile Dropdown Klick
+  const dropdownLinks = document.querySelectorAll('.navmenu .dropdown > a');
+  dropdownLinks.forEach(link => {
     link.addEventListener('click', function(e){
       if(window.innerWidth <= 768){
         e.preventDefault();
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Menü zurücksetzen bei Resize
+  // Fenstergröße prüfen
   window.addEventListener('resize', function(){
     if(window.innerWidth > 768){
       document.getElementById("navmenu").classList.remove("show");
