@@ -67,8 +67,9 @@ footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: wh
 /* Feedback Slider */
 .feedback-slider { position: relative; max-width: 1000px; margin: 40px auto; }
 .slider-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-.slider-wrapper { display: flex; gap: 20px; transition: transform 0.3s ease-in-out; overflow: hidden; }
-.slider-card { background-color: #6fbdb8; padding: 20px; border-radius: 10px; flex: 0 0 calc(33.333% - 20px); text-align: left; color: black; }
+.slider-wrapper { display: flex; gap: 20px; overflow-x: auto; scroll-behavior: smooth; }
+.slider-wrapper::-webkit-scrollbar { display: none; }
+.slider-card { background-color: #6fbdb8; padding: 20px; border-radius: 10px; flex: 0 0 calc(33.333% - 20px); text-align: left; color: black; box-sizing: border-box; }
 @media screen and (max-width: 1024px) { .slider-card { flex: 0 0 calc(50% - 20px); } }
 @media screen and (max-width: 768px) { .slider-card { flex: 0 0 100%; } }
 
@@ -161,7 +162,7 @@ footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: wh
     </li>
   </ul>
 
-  <!-- Feedback Slider jetzt außerhalb der UL -->
+  <!-- Feedback Slider -->
   <div class="feedback-slider">
     <div class="slider-header">
       <h2>Rückmeldungen & Resonanzen</h2>
@@ -172,7 +173,7 @@ footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: wh
     </div>
     <div class="slider-wrapper">
 
-      <!-- Block 1 --> 
+      <!-- Blocks wie zuvor, alle Karten unverändert -->
       <div class="slider-card">
         <p class="name-country">Claudia</p>
         <p class="test-hint">Produkttest – kostenfrei & unverbindlich</p> 
@@ -182,7 +183,6 @@ footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: wh
         <p class="feedback-text">„Auch bei Wehwechen oder Stürzen hat sie das Aua schnell wieder heile gemacht.“</p> 
       </div>
 
-      <!-- Block 2 --> 
       <div class="slider-card"> 
         <p class="name-country">Manuela </p>
         <p class="test-hint">Buchkauf - Traumreisen mit Baldur Band 1</p> 
@@ -192,7 +192,6 @@ footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: wh
         <p class="feedback-text">„Ich habe selbst auch Hunde und muss die Baldurbücher unbedingt auch für mich kaufen.“</p> 
       </div>
 
-      <!-- Block 3 --> 
       <div class="slider-card"> 
         <p class="name-country">Anja</p>
         <p class="test-hint">Produkttest&Klangheilung – kostenfrei & unverbindlich</p>
@@ -201,7 +200,6 @@ footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: wh
         <p class="feedback-text">„Ich danke dir von Herzen. Auch wenn ich nicht verstehe, wie das möglich war. “</p>
       </div>
 
-      <!-- Block 4 --> 
       <div class="slider-card"> 
         <p class="name-country">Christian</p>
         <p class="test-hint">Buchkauf und Rezension bei Amazon - bewusste und achtsame Traumreisen für Erwachsene</p>
@@ -209,7 +207,6 @@ footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: wh
         <p class="feedback-text">„Alles ist liebevoll und achtsam geschrieben, sodass ich mich sofort aufgehoben gefühlt habe. Eine wunderschöne Unterstützung auf dem Weg zu mehr innerem Frieden.“</p>
       </div>
 
-      <!-- Block 5 --> 
       <div class="slider-card"> 
         <p class="name-country">Gryffindor</p>
         <p class="test-hint">Buchkauf und Rezension bei Amazon - bewusste und achtsame Traumreisen für Erwachsene</p>
@@ -217,7 +214,6 @@ footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: wh
         <p class="feedback-text">„Geführte Meditationen sind ein wundervoller Weg, dies zu tun und es empfiehlt sich, eine Zeitlang abends eine der schönen Traumreisen auszuwählen und sich so in den Schlaf begleiten zu lassen.“</p>
       </div>
 
-      <!-- Block 6 --> 
       <div class="slider-card"> 
         <p class="name-country">Annette</p>
         <p class="test-hint">Produkttests - verschiedenster Salben und Cremes und einer energetischen Klangheilung </p>
@@ -228,7 +224,6 @@ footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: wh
         <p class="feedback-text">„Der erste große Tiegel ist bereits alle und der nächste schon bestellt.“</p>
       </div>    
 
-      <!-- Block 7 --> 
       <div class="slider-card"> 
         <p class="name-country">Deniz</p>
         <p class="test-hint">Buchkauf und Rezension bei Amazon - Traumreisen mit Baldur - Band 2</p>
@@ -269,37 +264,28 @@ document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slider-card");
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
-  let index = 0;
 
-  function getVisibleSlides() {
-    if(window.innerWidth >= 1024) return 3;
-    if(window.innerWidth >= 768) return 2;
-    return 1;
+  // gleiche Höhe für alle Karten
+  function setEqualHeight() {
+    let maxHeight = 0;
+    slides.forEach(slide => {
+      slide.style.height = "auto"; // Reset
+      if(slide.offsetHeight > maxHeight) maxHeight = slide.offsetHeight;
+    });
+    slides.forEach(slide => slide.style.height = maxHeight + "px");
   }
+  setEqualHeight();
+  window.addEventListener("resize", setEqualHeight);
 
-  function updateSlider() {
-    const visible = getVisibleSlides();
-    const gap = 20; // entspricht CSS gap
+  // Slider Buttons
+  function scrollSlider(direction) {
+    const gap = 20; // CSS gap
     const cardWidth = slides[0].offsetWidth + gap;
-
-    const maxIndex = slides.length - visible;
-    if(index > maxIndex) index = maxIndex;
-    if(index < 0) index = 0;
-
-    sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+    sliderWrapper.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
   }
 
-  prevBtn.addEventListener("click", () => {
-    index--;
-    updateSlider();
-  });
-  nextBtn.addEventListener("click", () => {
-    index++;
-    updateSlider();
-  });
-
-  window.addEventListener("resize", updateSlider);
-  updateSlider();
+  prevBtn.addEventListener("click", () => scrollSlider(-1));
+  nextBtn.addEventListener("click", () => scrollSlider(1));
 });
 </script>
 
