@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lilians Kräutermagie</title>
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -27,14 +28,32 @@
 
     img { max-width: 100%; height: auto; }
 
-    h1 { font-size:3em; margin:20px 0 10px 0; display:flex; justify-content:center; align-items:center; gap:10px; color:#FBCBA1; }
-    h1 img { max-width:120px; height:auto; }
-    h2 { font-size:2.5em; margin:40px 0 20px 0; font-weight:700; color:#FBCBA1; }
-    .content { max-width:1000px; margin:auto; padding:0 20px 40px 20px; text-align:left; }
-    p { font-size:1.2em; color:#ffffff; }
+    h1 {
+      font-size: 3em;
+      margin: 20px 0 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: #FBCBA1;
+    }
 
-    .book { background-color:#8B6A4B; border-radius:8px; padding:15px; margin:10px; max-width:300px; flex:1; text-align:center; }
+    h1 img { max-width: 120px; height: auto; }
 
+    h2 {
+      font-size: 2.5em;
+      margin: 40px 0 20px 0;
+      font-weight: 700;
+      color: #FBCBA1;
+    }
+
+    .content { max-width: 1000px; margin: auto; padding: 0 20px 40px 20px; text-align: left; }
+
+    p { font-size: 1.2em; color: #ffffff; }
+
+    /* =======================
+       Navigation
+       ======================= */
     .navbar {
       background-color: #A3C89A;
       padding: 10px 20px;
@@ -44,28 +63,95 @@
       justify-content: space-between;
       align-items: center;
     }
-    .menu-toggle { display: none; background: none; border: none; font-size:28px; color:#3a3a3a; cursor:pointer; flex-direction: column; }
-    .menu-toggle span { height:3px; width:25px; background-color:#3a3a3a; margin:5px 0; border-radius:2px; }
-    .navmenu { list-style:none; padding:0; margin:0; display:flex; }
-    .navmenu li { margin-right:30px; position:relative; }
-    .navmenu a { text-decoration:none; color:#3a3a3a; font-size:20px; padding:10px; display:block; }
-    .navmenu a:hover { background-color:#d3e9dc; border-radius:5px; }
-    .dropdown-content { display:none; position:absolute; top:100%; left:0; background-color:#A3C89A; min-width:180px; box-shadow:0 8px 16px rgba(0,0,0,0.2); z-index:1000; list-style:none; padding:0; }
-    .dropdown-content li a { color:#3a3a3a; padding:12px; font-size:18px; text-decoration:none; }
-    .dropdown-content li a:hover { background-color:#f0f0f0; color:#5e4b8b; }
-    .navmenu li:hover .dropdown-content { display:block; }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #3a3a3a;
+      cursor: pointer;
+      flex-direction: column;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #3a3a3a;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    .navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+
+    .navmenu li { margin-right: 30px; position: relative; }
+
+    .navmenu a { text-decoration: none; color: #3a3a3a; font-size: 20px; padding: 10px; display: block; }
+
+    .navmenu a:hover { background-color: #d3e9dc; border-radius: 5px; }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #A3C89A;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      list-style: none;
+      padding: 0;
+    }
+
+    .dropdown-content li a { color: #3a3a3a; padding: 12px; font-size: 18px; text-decoration: none; }
+
+    .dropdown-content li a:hover { background-color: #f0f0f0; color: #5e4b8b; }
+
+    .navmenu li:hover .dropdown-content { display: block; }
 
     @media screen and (max-width: 768px) {
       .navbar { flex-direction: column; align-items: flex-start; }
-      .menu-toggle { display: flex; margin-left:auto; }
-      .navmenu { flex-direction: column; width:100%; display:none; margin-top:10px; }
-      .navmenu.show { display:flex; }
-      .navmenu li { width:100%; margin:0; }
-      .navmenu li:hover .dropdown-content { position:static; box-shadow:none; }
-      .navmenu li.open .dropdown-content { display:block; }
+      .menu-toggle { display: flex; margin-left: auto; }
+      .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+      .navmenu.show { display: flex; }
+      .navmenu li { width: 100%; margin: 0; }
+      .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+      .navmenu li.open .dropdown-content { display: block; }
     }
 
-    footer { background-color:#c3e4d4; padding:20px; text-align:center; color:#3a3a3a; font-size:18px; }
+    footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: #3a3a3a; font-size: 18px; }
+
+    /* =======================
+       Bücher-Grid
+       ======================= */
+    .books-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-items: center;
+      padding: 0 10px 40px 10px;
+    }
+
+    .book {
+      background-color: #8B6A4B;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      width: 100%;
+      max-width: 300px;
+      box-sizing: border-box;
+    }
+
+    .book img { width: 100%; height: auto; border-radius: 8px; }
+
+    @media screen and (max-width: 1024px) {
+      .books-container { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media screen and (max-width: 768px) {
+      .books-container { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 
@@ -111,8 +197,8 @@
           <li><a href="schätze.html">geschriebene Schätze</a></li>
           <li><a href="tee.html">gemütliche Teemomente</a></li>
           <li><a href="räuchern.html">Räuchermischungen</a></li>
-         <li><a href="#">Kerzenlicht&Zauber</a></li>
-         <li><a href="#">Online Kurse</a></li>
+          <li><a href="#">Kerzenlicht&Zauber</a></li>
+          <li><a href="#">Online Kurse</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -139,72 +225,64 @@
   </div>
 
   <!-- Bücher -->
-    <h2>Meine Buchempfehlungen</h2>
+  <h2>Meine Buchempfehlungen</h2>
+  <div class="books-container">
+    <div class="book">
+      <a href="https://www.amazon.de/Kraftstein-Schatten-T-Ben-Talion-ebook/dp/B0DJK71WNW" target="_blank">
+        <img src="picture/kraftstein1.jpg" alt="Kraftstein">
+        <p><strong>Buch 1: Kraftstein - Licht und Schatten</strong></p>
+      </a>
+    </div>
 
     <div class="book">
-        <a href="https://www.amazon.de/Kraftstein-Schatten-T-Ben-Talion-ebook/dp/B0DJK71WNW?__mk_de_DE=ÅMÅŽÕÑ&crid=11XYZS91MK0NW&dib=eyJ2IjoiMSJ9.VoXe3eBWUsSSVqMobz2Rdx5qoPT5WZEugpoj6PEeEMe4OWMf6ZncBf_Oq_gQiUUCAlQPrlz3iumGEdGkG2YMARVspXX0y3GnpZhV0RGVRK-x6_QyEdKTEOPEupoFPgRl78xuRlGs7c9bYxbdmBPXTSUr4w0o7XmtcwT5KTsxoVE.2CnXo2EIZeFG5zPibY2E6ST49BYF9Ur8A7mKuleK3eg&dib_tag=se&keywords=t+ben+talion&qid=1742064785&sprefix=t+ben+talion%2Caps%2C198&sr=8-2" target="_blank">
-            <img src="picture/kraftstein1.jpg" alt="name bilddatei">
-            <p><strong>Buch 1: Kraftstein - Licht und Schatten</strong></p>
-        </a>
+      <a href="https://www.storl.de/shop/meine-buecher/hexenmedizin/" target="_blank">
+        <img src="picture/hexenmedizin.PNG" alt="Hexenwissen">
+        <p><strong>Buch 2: Hexenwissen</strong></p>
+        <p>Ich muss dazu sagen, dass ich viele seiner Bücher liebe und empfehlen kann.</p>
+      </a>
     </div>
-
-   
 
     <div class="book">
-        <a href="https://www.storl.de/shop/meine-buecher/hexenmedizin/" target="_blank">
-            <img src="picture/hexenmedizin.PNG" alt="Hexenwissen">
-            <p><strong>Buch 2: Hexenwissen</strong></p>
-            <p>Ich muss dazu sagen, dass ich viele seiner Bücher liebe und empfehlen kann.</p>
-        </a>
+      <a href="https://www.hugendubel.de/de/buch_gebunden/wolf_dieter_storl-heilkraeuter_und_zauberpflanzen_zwischen_haustuer_und_gartentor-33055164-produkt-details.html" target="_blank">
+        <img src="picture/zauberpflanzen.jpg" alt="Zauberpflanzen">
+        <p>Buch 3: Heilkräuter und Zauberpflanzen zwischen Haustür und Gartentor</p>
+      </a>
     </div>
-
- 
 
     <div class="book">
-        <a href=" https://www.hugendubel.de/de/buch_gebunden/wolf_dieter_storl-heilkraeuter_und_zauberpflanzen_zwischen_haustuer_und_gartentor-33055164-produkt-details.html " target="_blank">
-            <img src="picture/zauberpflanzen.jpg " alt="Zauberpflanzen">
-            <p>Buch 3: Heilkräuter und Zauberpflanzen zwischen Haustür und Gartentor</p>
-        </a>
+      <a href="https://www.thalia.de/shop/home/artikeldetails/A1050289193?ProvID=15322706" target="_blank">
+        <img src="picture/heilpflanzen.jpg" alt="Antibiotische Heilpflanzen">
+        <p>Buch 4: Antibiotische Heilpflanzen</p>
+      </a>
     </div>
 
-   <div class="book">
-        <a href=" https://www.thalia.de/shop/home/artikeldetails/A1050289193?ProvID=15322706&gad_source=1&gad_campaignid=17338972729&gclid=Cj0KCQjw-4XFBhCBARIsAAdNOkv3Du-by67CpTHn3QlScSTcCSn3UMXbEyZhrxGpZi42VVJRDEeDkZ8aAndXEALw_wcB " target="_blank">
-            <img src=" picture/heilpflanzen.jpg " alt="nAntibiotische Heilpflanzen">
-            <p>Buch 4: Antibiotische Heilpflanzen</p>
-        </a>
+    <div class="book">
+      <a href="https://www.thalia.de/shop/home/artikeldetails/A1073177357" target="_blank">
+        <img src="picture/aperol.jpg" alt="Wiedersehen mit dir selbst">
+        <p>Buch 5: Wiedersehen mit mir selbst.</p>
+        <p>Sie schreibt unglaublich tolle Bücher.</p>
+      </a>
     </div>
 
-   <div class="book">
-        <a href=" https://www.thalia.de/shop/home/artikeldetails/A1073177357 " target="_blank">
-            <img src="picture/aperol.jpg " alt="Wiedersehen mit dir sebst.">
-            <p>Buch 5: Wiedersehen mit mir selbst.</p>
-            <p>Sie schreibt unglaublich tolle Bücher.</p>
-        </a>
+    <div class="book">
+      <img src="picture/kinder.JPG" alt="Kinder fordern uns heraus">
+      <p>Buch 6: Kinder fordern uns heraus.</p>
+      <p>Dieses Buch ist gold wert. Es gibt noch mehrere Teile.</p>
+      <p>Habe ich vor vielen Jahren von meiner Praxisanleiterin bekommen.</p>
+      <p>Hier werden viele Situationen beschrieben, warum Kinder sich so verhalten und handeln, wie sie es tun.</p>
+      <p>Alles hat einen Grund.</p>
     </div>
+  </div>
 
-<div class="book">
-       
-            <img src="picture/kinder.JPG " alt=" Kinder fordern uns heraus.">
-            <p>Buch 6: Kinder fordern uns heraus.</p>
-            <p> Dieses Buch ist gold wert. Es gibt noch mehrere Teile.</p>
-    <p> Habe ich vor vielen vielen Jahren von meiner Praxisanleiterin bekommen.</p>
-    <p> Hier werden viele Situationen beschrieben, warum Kinder sich so verhalten und handeln, wie sie es tun .</p>
-        <p> Alles hat einen Grund. </p>
-        </a>
-    </div>
-
-
-
-
-<script>
+  <script>
     function toggleMenu() {
       document.getElementById("navmenu").classList.toggle("show");
     }
 
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
       dropdowns.forEach(dropdownToggle => {
-        dropdownToggle.addEventListener('click', function(e) {
+        dropdownToggle.addEventListener('click', function (e) {
           e.preventDefault();
           this.parentElement.classList.toggle('open');
         });
