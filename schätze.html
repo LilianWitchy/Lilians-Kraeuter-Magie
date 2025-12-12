@@ -13,18 +13,11 @@ body {
   font-family: 'Crimson Pro', serif;
   font-size: 22px;
   line-height: 1.8;
-  background-color: #855c9c;  /* <-- hier ist die Hintergrundfarbe */
+  background-color: #855c9c;
   color: #3a3a3a;
   text-align: center;
   overflow-x: hidden;
 }
-
-  color: #3a3a3a;
-  text-align: center;
-  overflow-x: hidden;
-}
-
-  
 
 /* Sterne Hintergrund */
 .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
@@ -34,8 +27,7 @@ body {
 /* Hero-Bereich */
 .hero-section { background-image: url('picture/test.jpg'); background-size: cover; background-position: center; height: 400px; display: flex; justify-content: center; align-items: center; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); position: relative; }
 .hero-text { text-align: center; font-size: 30px; max-width: 90%; padding: 20px; background-color: rgba(0,0,0,0.5); border-radius: 10px; }
-@media (max-width: 768px) { .hero-section { font-size: 1.8rem; } }
-.hero-text { font-size: 1.2rem; padding: 10px; }
+@media (max-width: 768px) { .hero-section { font-size: 1.8rem; } .hero-text { font-size: 1.2rem; padding: 10px; } }
 .hero-text p { font-size: 1.1rem; }
 
 h1 { font-size: 3.5em; margin: 20px 0 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; }
@@ -66,13 +58,11 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
   .navbar { flex-direction: column; align-items: flex-start; }
   .menu-toggle { display: flex; margin-left: auto; }
   .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
-  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu.show { display: flex; }
   .navmenu li { width: 100%; margin: 0; }
   .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
   .dropdown-content { background-color: #0aa667; }
 }
-
-  
 </style>
 </head>
 <body>
@@ -84,11 +74,10 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
 <div class="hero-section">
   <div class="hero-text">
     <h1>Meine geschriebenen Schätze</h1>
-  
   </div>
 </div>
 
-<!-- Navigationsleiste mit Dropdown-Menüs -->
+<!-- Navigationsleiste -->
 <div class="navbar">
   <div class="menu-toggle" onclick="toggleMenu()">
     <span></span>
@@ -102,7 +91,7 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
         <li><a href="about.html">Über mich</a></li>
         <li><a href="weiterbildung.html">Weiterbildungen</a></li>
         <li><a href="mission.html">Meine Mission</a></li>
-        <li><a href="angebot.html">Mein Angebot für dich</a></li>  
+        <li><a href="angebot.html">Mein Angebot für dich</a></li>
       </ul>
     </li>
     <li class="dropdown">
@@ -118,13 +107,12 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
       <ul class="dropdown-content">
         <li><a href="shop.html">Mein Shop</a></li>
         <li><a href="schätze.html">geschriebene Schätze</a></li>
-       <li><a href="tee.html">gemütliche Teemomente</a></li>
-        <li><a href="räuchern.html">Räuchermischungen</a></li>
-        <li><a href="#">Naturheilkunde</a></li>
-        <li><a href="#">Salben & Balsam</a></li>
+        <li><a href="tee.html">gemütliche Teemomente</a></li>
+        <li><a href="#">Kerzenlicht&Zauber</a></li>
+        <li><a href="#">Online Kurse</a></li>
       </ul>
     </li>
-       <li class="dropdown">
+    <li class="dropdown">
       <a href="#">Mit sich selbst in Verbindung kommen</a>
       <ul class="dropdown-content">
         <li><a href="energie.html">Innere Balance</a></li>
@@ -233,35 +221,49 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
 </div>
 
 <script>
-
-
 document.addEventListener("DOMContentLoaded", function () {
   // Sterne erzeugen
-  let starContainer = document.querySelector(".stars");
-  for (let i = 0; i < 50; i++) {
-    let star = document.createElement("div");
+  const starContainer = document.querySelector(".stars");
+  for (let i=0; i<50; i++){
+    const star = document.createElement("div");
     star.className = "star";
-    star.style.top = Math.random() * 100 + "vh";
-    star.style.left = Math.random() * 100 + "vw";
-    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    star.style.top = Math.random()*100 + "vh";
+    star.style.left = Math.random()*100 + "vw";
+    star.style.animationDuration = (Math.random()*2+1) + "s";
     starContainer.appendChild(star);
   }
 
+  // Hamburger-Menü toggle
+  window.toggleMenu = function() {
+    document.getElementById("navmenu").classList.toggle("show");
+  }
 
-
-// Bei Fenstergröße Änderungen neu berechnen
-window.addEventListener("resize", updateSlider);
-
-// Anfangsposition setzen
-updateSlider();
-
-function toggleMenu() {
-  const menu = document.getElementById("navmenu");
-  menu.classList.toggle("show");
-}
-
-
+  // Dropdowns für Mobile per Klick
+  const dropdownToggles = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      if(window.innerWidth <= 768){
+        e.preventDefault();
+        const parentLi = this.parentElement;
+        const dropdown = parentLi.querySelector('.dropdown-content');
+        if(dropdown.style.display === 'block'){
+          dropdown.style.display = 'none';
+          parentLi.classList.remove('open');
+        } else {
+          dropdown.style.display = 'block';
+          parentLi.classList.add('open');
+        }
+      }
     });
+  });
+
+  // Bei Resize alles schließen, wenn Desktop
+  window.addEventListener('resize', function() {
+    if(window.innerWidth > 768){
+      document.querySelectorAll('.dropdown-content').forEach(d => d.style.display = '');
+      document.querySelectorAll('.navmenu li.dropdown').forEach(li => li.classList.remove('open'));
+      document.getElementById("navmenu").classList.remove("show");
+    }
   });
 });
 </script>
