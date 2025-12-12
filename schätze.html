@@ -27,7 +27,10 @@ body {
 /* Hero-Bereich */
 .hero-section { background-image: url('picture/test.jpg'); background-size: cover; background-position: center; height: 400px; display: flex; justify-content: center; align-items: center; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); position: relative; }
 .hero-text { text-align: center; font-size: 30px; max-width: 90%; padding: 20px; background-color: rgba(0,0,0,0.5); border-radius: 10px; }
-@media (max-width: 768px) { .hero-section { font-size: 1.8rem; } .hero-text { font-size: 1.2rem; padding: 10px; } }
+@media (max-width: 768px) { 
+  .hero-section { font-size: 1.8rem; } 
+  .hero-text { font-size: 1.2rem; padding: 10px; } 
+}
 .hero-text p { font-size: 1.1rem; }
 
 h1 { font-size: 3.5em; margin: 20px 0 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; }
@@ -53,7 +56,7 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
 .dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
 .navmenu li:hover .dropdown-content { display: block; }
 
-/* Media Query für kleinere Bildschirme */
+/* Mobile Styles */
 @media screen and (max-width: 768px) {
   .navbar { flex-direction: column; align-items: flex-start; }
   .menu-toggle { display: flex; margin-left: auto; }
@@ -61,7 +64,8 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
   .navmenu.show { display: flex; }
   .navmenu li { width: 100%; margin: 0; }
   .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
-  .dropdown-content { background-color: #0aa667; }
+  .dropdown-content { background-color: #0aa667; display: none; }
+  .navmenu li.open .dropdown-content { display: block; }
 }
 </style>
 </head>
@@ -77,7 +81,7 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
   </div>
 </div>
 
-<!-- Navigationsleiste -->
+<!-- Navigation -->
 <div class="navbar">
   <div class="menu-toggle" onclick="toggleMenu()">
     <span></span>
@@ -91,7 +95,7 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
         <li><a href="about.html">Über mich</a></li>
         <li><a href="weiterbildung.html">Weiterbildungen</a></li>
         <li><a href="mission.html">Meine Mission</a></li>
-        <li><a href="angebot.html">Mein Angebot für dich</a></li>
+        <li><a href="angebot.html">Mein Angebot für dich</a></li>  
       </ul>
     </li>
     <li class="dropdown">
@@ -108,8 +112,9 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
         <li><a href="shop.html">Mein Shop</a></li>
         <li><a href="schätze.html">geschriebene Schätze</a></li>
         <li><a href="tee.html">gemütliche Teemomente</a></li>
-        <li><a href="#">Kerzenlicht&Zauber</a></li>
-        <li><a href="#">Online Kurse</a></li>
+        <li><a href="räuchern.html">Räuchermischungen</a></li>
+        <li><a href="#">Naturheilkunde</a></li>
+        <li><a href="#">Salben & Balsam</a></li>
       </ul>
     </li>
     <li class="dropdown">
@@ -223,13 +228,13 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   // Sterne erzeugen
-  const starContainer = document.querySelector(".stars");
-  for (let i=0; i<50; i++){
-    const star = document.createElement("div");
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
     star.className = "star";
-    star.style.top = Math.random()*100 + "vh";
-    star.style.left = Math.random()*100 + "vw";
-    star.style.animationDuration = (Math.random()*2+1) + "s";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
     starContainer.appendChild(star);
   }
 
@@ -238,31 +243,22 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("navmenu").classList.toggle("show");
   }
 
-  // Dropdowns für Mobile per Klick
-  const dropdownToggles = document.querySelectorAll('.navmenu > li.dropdown > a');
-  dropdownToggles.forEach(toggle => {
-    toggle.addEventListener('click', function(e) {
+  // Mobile Dropdown per Klick
+  const dropdowns = document.querySelectorAll('.navmenu .dropdown > a');
+  dropdowns.forEach(link => {
+    link.addEventListener('click', function(e){
       if(window.innerWidth <= 768){
         e.preventDefault();
-        const parentLi = this.parentElement;
-        const dropdown = parentLi.querySelector('.dropdown-content');
-        if(dropdown.style.display === 'block'){
-          dropdown.style.display = 'none';
-          parentLi.classList.remove('open');
-        } else {
-          dropdown.style.display = 'block';
-          parentLi.classList.add('open');
-        }
+        this.parentElement.classList.toggle('open');
       }
     });
   });
 
-  // Bei Resize alles schließen, wenn Desktop
-  window.addEventListener('resize', function() {
+  // Menü zurücksetzen bei Resize
+  window.addEventListener('resize', function(){
     if(window.innerWidth > 768){
-      document.querySelectorAll('.dropdown-content').forEach(d => d.style.display = '');
-      document.querySelectorAll('.navmenu li.dropdown').forEach(li => li.classList.remove('open'));
       document.getElementById("navmenu").classList.remove("show");
+      document.querySelectorAll('.navmenu li').forEach(li => li.classList.remove('open'));
     }
   });
 });
