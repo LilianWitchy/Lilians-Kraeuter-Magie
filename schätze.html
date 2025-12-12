@@ -63,11 +63,13 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
     flex-direction: column; 
     width: 100%; 
     margin-top: 10px; 
+    background-color: #0aa667;
   }
   .navmenu.show { display: flex; }
   .navmenu li { width: 100%; margin: 0; }
-  .navmenu li:hover .dropdown-content { display: none; } /* kein Hover */
-  .navmenu li.open .dropdown-content { display: block; }
+  .navmenu li:hover .dropdown-content { display: none; } /* Hover nicht für Mobile */
+  .navmenu li.open .dropdown-content { display: flex; flex-direction: column; }
+  .dropdown-content li a { padding-left: 20px; }
 }
 </style>
 </head>
@@ -82,7 +84,7 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
 </div>
 
 <div class="navbar">
-  <div class="menu-toggle" onclick="toggleMenu()">
+  <div class="menu-toggle" id="menuToggle">
     <span></span>
     <span></span>
     <span></span>
@@ -138,6 +140,7 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
     <li><a href="impressum.html">Impressum</a></li>
   </ul>
 </div>
+  
 <div class="content-container">
 
   <ul class="education-list">
@@ -225,25 +228,17 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  // Sterne erzeugen
-  const starContainer = document.querySelector(".stars");
-  for (let i = 0; i < 50; i++) {
-    const star = document.createElement("div");
-    star.className = "star";
-    star.style.top = Math.random() * 100 + "vh";
-    star.style.left = Math.random() * 100 + "vw";
-    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-    starContainer.appendChild(star);
-  }
+  // Hamburger Button
+  const toggle = document.getElementById("menuToggle");
+  const menu = document.getElementById("navmenu");
 
-  // Hamburger toggle
-  window.toggleMenu = function() {
-    document.getElementById("navmenu").classList.toggle("show");
-  }
+  toggle.addEventListener("click", function() {
+    menu.classList.toggle("show");
+  });
 
-  // Mobile Dropdown Klick
-  const dropdownLinks = document.querySelectorAll('.navmenu .dropdown > a');
-  dropdownLinks.forEach(link => {
+  // Dropdown per Klick auf Mobile
+  const dropdowns = document.querySelectorAll('.navmenu .dropdown > a');
+  dropdowns.forEach(link => {
     link.addEventListener('click', function(e){
       if(window.innerWidth <= 768){
         e.preventDefault();
@@ -255,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Fenstergröße prüfen
   window.addEventListener('resize', function(){
     if(window.innerWidth > 768){
-      document.getElementById("navmenu").classList.remove("show");
+      menu.classList.remove("show");
       document.querySelectorAll('.navmenu li').forEach(li => li.classList.remove('open'));
     }
   });
