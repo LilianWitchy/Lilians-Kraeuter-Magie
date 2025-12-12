@@ -64,11 +64,19 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
   max-width: 1000px;
   margin: 40px auto;
 }
+
+/* WICHTIG: wrapper bekommt pointer-events none, damit Buttons Klicks "bekommen".
+   Die einzelnen Karten bekommen pointer-events:auto, falls sie Links o.Ä. enthalten. */
 .slider-wrapper {
   display: flex;
   gap: 20px;
   transition: transform 0.3s ease-in-out;
+  pointer-events: none; /* verhindert, dass der Wrapper Klicks abfängt */
+  will-change: transform; /* Performance hint */
+  /* transform wird zur Laufzeit gesetzt; das erzeugt eine Stacking-Context,
+     daher setzen wir Buttons extra hoch (s.u.) */
 }
+
 .slider-card {
   background-color: #8B5E3C;
   padding: 20px;
@@ -78,7 +86,10 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
   flex-shrink: 0;
   text-align: left;
   color: white;
+  pointer-events: auto; /* Karten selbst bleiben klickbar (z.B. Links) */
 }
+
+/* Buttons oben auflegen und Klicks sicherstellen */
 .prev, .next {
   position: absolute;
   top: 50%;
@@ -90,16 +101,17 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
   padding: 12px;
   cursor: pointer;
   border-radius: 50%;
-  z-index: 9999;          /* Damit sie wirklich ganz oben liegen */
-  pointer-events: auto;   /* Klicks sicherstellen */
+  z-index: 9999;         /* ganz oben */
+  pointer-events: auto;  /* sicherstellen, dass Buttons Klicks empfangen */
 }
-
 .prev { left: 10px; }
 .next { right: 10px; }
+
 .feedback-slider h2 {
   text-align: center;
   margin-bottom: 20px;
 }
+
   
 </style>
 </head>
@@ -378,17 +390,22 @@ document.addEventListener("DOMContentLoaded", function () {
     sliderWrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
   }
 
-  prevBtn.addEventListener("click", () => {
-    if (currentIndex > 0) currentIndex--;
-    updateSlider();
-  });
+prevBtn.addEventListener("click", () => {
+  if (currentIndex > 0) currentIndex--;
+  updateSlider();
+});
 
-  nextBtn.addEventListener("click", () => {
-    if (currentIndex < slides.length - 1) currentIndex++;
-    updateSlider();
-  });
+nextBtn.addEventListener("click", () => {
+  if (currentIndex < slides.length - 1) currentIndex++;
+  updateSlider();
+});
 
-  window.addEventListener("resize", updateSlider);
+// Bei Fenstergröße Änderungen neu berechnen
+window.addEventListener("resize", updateSlider);
+
+// Anfangsposition setzen
+updateSlider();
+
 
   // Dropdown mobile
   const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
