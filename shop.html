@@ -271,17 +271,44 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("navmenu").classList.toggle("show");
   }
 
+  // Dropdowns für Mobile
+  const dropdownToggles = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      if(window.innerWidth <= 768){ // nur auf kleinen Bildschirmen
+        e.preventDefault();
+        const parentLi = this.parentElement;
+        const dropdown = parentLi.querySelector('.dropdown-content');
+        if(dropdown.style.display === 'block'){
+          dropdown.style.display = 'none';
+          parentLi.classList.remove('open');
+        } else {
+          dropdown.style.display = 'block';
+          parentLi.classList.add('open');
+        }
+      }
+    });
+  });
+
+  // Fensterresize schließt alle Dropdowns und Menü
+  window.addEventListener('resize', function() {
+    if(window.innerWidth > 768){
+      document.querySelectorAll('.dropdown-content').forEach(d => d.style.display = '');
+      document.querySelectorAll('.navmenu li.dropdown').forEach(li => li.classList.remove('open'));
+      document.getElementById("navmenu").classList.remove("show");
+    }
+  });
+
   // Slider-Funktion
   const sliderWrapper = document.querySelector(".slider-wrapper");
   const slides = document.querySelectorAll(".slider-card");
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
 
-  // gleiche Höhe für alle Karten
   function setEqualHeight() {
     let maxHeight = 0;
     slides.forEach(slide => {
-      slide.style.height = "auto"; // Reset
+      slide.style.height = "auto";
       if(slide.offsetHeight > maxHeight) maxHeight = slide.offsetHeight;
     });
     slides.forEach(slide => slide.style.height = maxHeight + "px");
@@ -289,9 +316,8 @@ document.addEventListener("DOMContentLoaded", function () {
   setEqualHeight();
   window.addEventListener("resize", setEqualHeight);
 
-  // Slider Buttons
   function scrollSlider(direction) {
-    const gap = 20; // CSS gap
+    const gap = 20;
     const cardWidth = slides[0].offsetWidth + gap;
     sliderWrapper.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
   }
