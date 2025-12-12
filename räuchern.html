@@ -24,11 +24,12 @@
       text-align: center;
       overflow-x: hidden;
       position: relative;
+      background-color: #f5f2ef; /* Original-Seitenhintergrund */
     }
 
     img { max-width: 100%; height: auto; }
 
-      /* =======================
+    /* =======================
        Sterne
        ======================= */
     .stars {
@@ -67,18 +68,10 @@
       100% { opacity: 0.3; }
     }
 
-    
-
     /* =======================
-       Magical Animated Gradient
+       Gradient Box
        ======================= */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 200%;
+    .gradient-box {
       background: linear-gradient(
         45deg,
         #a472d6,
@@ -88,8 +81,14 @@
         #b06497
       );
       background-size: 400% 400%;
-      z-index: -1;
       animation: magicGradient 30s ease infinite;
+      padding: 20px 30px;
+      border-radius: 12px;
+      color: #fff; /* Textfarbe auf Farbverlauf */
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     @keyframes magicGradient {
@@ -301,45 +300,40 @@
     </ul>
   </div>
 
- <div class="content" style="max-width: 1000px; margin: auto; padding: 40px 20px; text-align: left;"> 
-   <div style="background-color: white; color: #4B0082; padding: 20px; border-radius: 10px; max-width: 800px; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-  <h2>Räuchermischungen – Düfte für besondere Momente</h2>
-  <p>Lass dich verzaubern von meinen handverlesenen Räuchermischungen aus naturreinen Kräutern, Blüten und Harzen.</p>
-  <p>Jede Mischung ist sorgfältig zusammengestellt, um eine besondere Atmosphäre zu schaffen – für gemütliche Abende, kleine Rituale oder einfach ein wenig Duftgenuss.</p>
-  <p>Meine Mischungen laden ein zu stimmungsvollen Momenten:</p>
-  <ul>
-    <li>Sanfte Klarheit – harmonische Kräuterkompositionen für ruhige Stunden</li>
-    <li>Inspiration & Kreativität – Duftmischungen für besondere Augenblicke</li>
-    <li>Stille & Entspannung – sanfte Aromen für gemütliche Momente</li>
-    <li>Saisonale Highlights – passend zu den Jahreszeiten oder besonderen Anlässen</li>
-  </ul>
-  <p>Anwendung: Die Mischung in einem feuerfesten Gefäß räuchern und den Duft bewusst wahrnehmen.</p>
-  <p>Hinweis: Nur für Räucherzwecke bestimmt. Inhalt ausschließlich natürliche Kräuter, Blüten und Harze. Keine gesundheitlichen oder therapeutischen Wirkungen werden versprochen.</p>
-  <p>Nettogewicht pro Tütchen: ca. 15 g</p>
-  <p>Preis pro Tütchen: 5 €</p>
-</div>
+  <!-- Gradient Box für ersten Textblock -->
+  <div class="gradient-box">
+    <h2>Räuchermischungen – Düfte für besondere Momente</h2>
+    <p>Lass dich verzaubern von meinen handverlesenen Räuchermischungen aus naturreinen Kräutern, Blüten und Harzen.</p>
+    <p>Jede Mischung ist sorgfältig zusammengestellt, um eine besondere Atmosphäre zu schaffen – für gemütliche Abende, kleine Rituale oder einfach ein wenig Duftgenuss.</p>
+    <p>Meine Mischungen laden ein zu stimmungsvollen Momenten:</p>
+    <ul>
+      <li>Sanfte Klarheit – harmonische Kräuterkompositionen für ruhige Stunden</li>
+      <li>Inspiration & Kreativität – Duftmischungen für besondere Augenblicke</li>
+      <li>Stille & Entspannung – sanfte Aromen für gemütliche Momente</li>
+      <li>Saisonale Highlights – passend zu den Jahreszeiten oder besonderen Anlässen</li>
+    </ul>
+    <p>Anwendung: Die Mischung in einem feuerfesten Gefäß räuchern und den Duft bewusst wahrnehmen.</p>
+    <p>Hinweis: Nur für Räucherzwecke bestimmt. Inhalt ausschließlich natürliche Kräuter, Blüten und Harze. Keine gesundheitlichen oder therapeutischen Wirkungen werden versprochen.</p>
+    <p>Nettogewicht pro Tütchen: ca. 15 g</p>
+    <p>Preis pro Tütchen: 5 €</p>
+  </div>
 
- <div class="content" style="max-width: 1000px; margin: auto; padding: 40px 20px; text-align: left;"> 
-   <div style="background-color: white; color: #4B0082; padding: 20px; border-radius: 10px; max-width: 800px; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-<h2>Aktuelles Highlight – Rauhnächte 2+1 Set </h2>
-<p> Begib dich mit unserem speziellen 2+1 Set durch die magische Zeit der Rauhnächte und den Jahreswechsel. Drei Mischungen für symbolische Themen – perfekt zum Räuchern oder als liebevolles Geschenk: </p>
-<p> Rauhnacht 1 – Loslassen (15 g) </p>
-<p> Duftkomposition für die erste Rauhnacht, inspiriert vom Abschied des Alten. </p>
-<p> Rauhnacht 2 – Neues öffnen (15 g) </p>
-<p> Sanfte Mischung für die zweite Rauhnacht, um frische Impulse willkommen zu heißen. </p>
-<p> Neujahr – Klarheit & Neubeginn (15 g) </p>
-<p> Mischung für den Jahreswechsel, passend für einen stimmungsvollen Start ins neue Jahr. </p>
-<p> 2+1 Angebot: Zahle für zwei, erhalte drei – 12 € für das Set. Ein stimmungsvolles Geschenk oder für persönliche Rituale in dieser besonderen Jahreszeit. </p>
-<p><strong><u>Hinweis:</u></strong> Nur für Räucherzwecke bestimmt. Inhalt ausschließlich natürliche Kräuter, Blüten und Harze. Keine gesundheitlichen oder therapeutischen Wirkungen werden versprochen.</p>
-<p><strong><u>Anwendung:</u></strong> Die Mischungen in einem feuerfesten Gefäß räuchern und den Duft genießen.</p>
-</div>
+  <!-- Gradient Box für zweiten Textblock -->
+  <div class="gradient-box">
+    <h2>Aktuelles Highlight – Rauhnächte 2+1 Set </h2>
+    <p>Begib dich mit unserem speziellen 2+1 Set durch die magische Zeit der Rauhnächte und den Jahreswechsel. Drei Mischungen für symbolische Themen – perfekt zum Räuchern oder als liebevolles Geschenk:</p>
+    <p>Rauhnacht 1 – Loslassen (15 g)</p>
+    <p>Duftkomposition für die erste Rauhnacht, inspiriert vom Abschied des Alten.</p>
+    <p>Rauhnacht 2 – Neues öffnen (15 g)</p>
+    <p>Sanfte Mischung für die zweite Rauhnacht, um frische Impulse willkommen zu heißen.</p>
+    <p>Neujahr – Klarheit & Neubeginn (15 g)</p>
+    <p>Mischung für den Jahreswechsel, passend für einen stimmungsvollen Start ins neue Jahr.</p>
+    <p>2+1 Angebot: Zahle für zwei, erhalte drei – 12 € für das Set. Ein stimmungsvolles Geschenk oder für persönliche Rituale in dieser besonderen Jahreszeit.</p>
+    <p><strong><u>Hinweis:</u></strong> Nur für Räucherzwecke bestimmt. Inhalt ausschließlich natürliche Kräuter, Blüten und Harze. Keine gesundheitlichen oder therapeutischen Wirkungen werden versprochen.</p>
+    <p><strong><u>Anwendung:</u></strong> Die Mischungen in einem feuerfesten Gefäß räuchern und den Duft genießen.</p>
+  </div>
 
-
-   
-   <p><strong>Von Herzen, Lilian</strong></p> 
- </div>
-
-
+  <p><strong>Von Herzen, Lilian</strong></p> 
 
   <script>
     function toggleMenu() {
