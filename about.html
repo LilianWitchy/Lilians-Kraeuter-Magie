@@ -80,11 +80,16 @@
     /* =======================
        Navigation
        ======================= */
+
+  /* Inhalt über Hintergrund */
+    .navbar,
+    #language-switcher,
+    .content,
+    footer { position: relative; z-index: 2; }
+
     .navbar {
       background-color: #c3e4d4;
       padding: 10px 20px;
-      position: relative;
-      z-index: 10;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -108,32 +113,17 @@
       border-radius: 2px;
     }
 
-    .navmenu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-    }
-
-    .navmenu li {
-      margin-right: 30px;
-      position: relative;
-    }
-
+    .navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+    .navmenu li { margin-right: 30px; position: relative; }
     .navmenu a {
       text-decoration: none;
       color: #3a3a3a;
-      font-size: 20px; /* größere Menüeinträge */
+      font-size: 20px;
       padding: 10px;
       display: block;
     }
+    .navmenu a:hover { background-color: #d3e9dc; border-radius: 5px; }
 
-    .navmenu a:hover {
-      background-color: #d3e9dc;
-      border-radius: 5px;
-    }
-
-    /* Dropdown-Menü */
     .dropdown-content {
       display: none;
       position: absolute;
@@ -154,51 +144,19 @@
       text-decoration: none;
     }
 
-    .dropdown-content li a:hover {
-      background-color: #f0f0f0;
-      color: #5e4b8b;
-    }
+    .dropdown-content li a:hover { background-color: #f0f0f0; color: #5e4b8b; }
+    .navmenu li:hover .dropdown-content { display: block; }
 
-    .navmenu li:hover .dropdown-content {
-      display: block;
-    }
-
-    /* Media Query für kleinere Bildschirme */
     @media screen and (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      .navbar { flex-direction: column; align-items: flex-start; }
+      .menu-toggle { display: flex; margin-left: auto; }
+      .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+      .navmenu.show { display: flex; }
+      .navmenu li { width: 100%; margin: 0; }
+      .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+      .dropdown-content { background-color: #c3e4d4; }
+    }
 
-      .menu-toggle {
-        display: flex;
-        margin-left: auto;
-      }
-
-      .navmenu {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        margin-top: 10px;
-      }
-
-      .navmenu.show {
-        display: flex;
-      }
-
-      .navmenu li {
-        width: 100%;
-        margin: 0;
-      }
-
-      .navmenu li:hover .dropdown-content {
-        position: static;
-        box-shadow: none;
-      }
-
-      .dropdown-content {
-        background-color: #c3e4d4;
-      }
     }
 
     footer {
@@ -241,14 +199,14 @@
 </div>
 
 
-<div class="navbar">
+  <div class="navbar">
     <div class="menu-toggle" onclick="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </div>
- <ul class="navmenu" id="navmenu">
-      <!-- Menüeinträge bleiben unverändert -->
+
+    <ul class="navmenu" id="navmenu">
       <li class="dropdown">
         <a href="index.html">Startseite</a>
         <ul class="dropdown-content">
@@ -369,7 +327,6 @@
       const menu = document.getElementById("navmenu");
       menu.classList.toggle("show");
     }
-
 
       const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
       dropdowns.forEach(dropdownToggle => {
