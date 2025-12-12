@@ -6,7 +6,6 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 <style>
-/* Globales CSS */
 body {
   margin: 0;
   padding: 0;
@@ -58,30 +57,30 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
 
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
-  .navbar { flex-direction: column; align-items: flex-start; }
-  .menu-toggle { display: flex; margin-left: auto; }
-  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .menu-toggle { display: flex; }
+  .navmenu { 
+    display: none; 
+    flex-direction: column; 
+    width: 100%; 
+    margin-top: 10px; 
+  }
   .navmenu.show { display: flex; }
   .navmenu li { width: 100%; margin: 0; }
-  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
-  .dropdown-content { background-color: #0aa667; display: none; }
+  .navmenu li:hover .dropdown-content { display: none; } /* kein Hover */
   .navmenu li.open .dropdown-content { display: block; }
 }
 </style>
 </head>
 <body>
 
-<!-- Sterne Hintergrund -->
 <div class="stars"></div>
 
-<!-- Hero-Bereich -->
 <div class="hero-section">
   <div class="hero-text">
     <h1>Meine geschriebenen Schätze</h1>
   </div>
 </div>
 
-<!-- Navigation -->
 <div class="navbar">
   <div class="menu-toggle" onclick="toggleMenu()">
     <span></span>
@@ -139,7 +138,6 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
     <li><a href="impressum.html">Impressum</a></li>
   </ul>
 </div>
-
 <div class="content-container">
 
   <ul class="education-list">
