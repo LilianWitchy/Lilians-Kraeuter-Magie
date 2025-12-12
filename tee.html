@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Lilians Kräuter Magie –  Kräuter, Räuchern, Tee, Natur- und Energiearbeit, Klangheilung, Kräuterwissen & Inspiration für ein bewusstes Leben. Entdecke deine eigene Magie." />
+  <meta name="keywords" content="Kräutermagie, Kräuter, Natur, Energiearbeit, Klangheilung, Lilian, Heilkräuter, Workshops, Kräuterwissen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lilians Kräutermagie</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Crimson Pro', serif;
+      font-size: 20px;
+      line-height: 1.8;
+      color: #3a3a3a;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+      background-color: #f5f2ef; /* Pastellfarbener Hintergrund */
+    }
+
+    img { max-width: 100%; height: auto; }
+
+    /* =======================
+       Sterne
+       ======================= */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 0;
+    }
+
+    .stars::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      box-shadow: 
+        50px 100px #FFD700,
+        150px 200px #FFD700,
+        250px 300px #FFD700,
+        350px 400px #FFD700,
+        450px 150px #FFD700,
+        550px 250px #FFD700,
+        650px 350px #FFD700,
+        750px 450px #FFD700,
+        850px 550px #FFD700,
+        950px 650px #FFD700;
+      border-radius: 50%;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+
+    /* =======================
+       Gradient Box für Text
+       ======================= */
+    .gradient-box {
+      background: linear-gradient(
+        45deg,
+        #a472d6,
+        #3ba384,
+        #7b92d4,
+        #d49757,
+        #b06497
+      );
+      background-size: 400% 400%;
+      animation: magicGradient 30s ease infinite;
+      padding: 20px 30px;
+      border-radius: 12px;
+      color: #fff; /* Textfarbe für Farbverlauf */
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    @keyframes magicGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Inhalt über Hintergrund */
+    .navbar,
+    #language-switcher,
+    .content,
+    footer { position: relative; z-index: 2; }
+
+    /* =======================
+       Restliches CSS wie gehabt
+       ======================= */
+
+    h1 {
+      font-size: 3em;
+      margin: 20px 0 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: #5e4b8b;
+    }
+
+    h1 img { max-width: 120px; height: auto; }
+
+    h2 {
+      font-size: 2.5em;
+      margin: 40px 0 20px 0;
+      font-weight: 700;
+      color: #fff; /* Überschriften in Boxen bleiben weiß */
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 20px 40px 20px;
+      text-align: left;
+    }
+
+    p { font-size: 1.2em; color: #fff; } /* Texte in Boxen weiß */
+
+    .navbar {
+      background-color: #c3e4d4;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #3a3a3a;
+      cursor: pointer;
+      flex-direction: column;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #3a3a3a;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    .navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+    .navmenu li { margin-right: 30px; position: relative; }
+    .navmenu a {
+      text-decoration: none;
+      color: #3a3a3a;
+      font-size: 20px;
+      padding: 10px;
+      display: block;
+    }
+    .navmenu a:hover { background-color: #d3e9dc; border-radius: 5px; }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #c3e4d4;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      list-style: none;
+      padding: 0;
+    }
+
+    .dropdown-content li a {
+      color: #3a3a3a;
+      padding: 12px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .dropdown-content li a:hover { background-color: #f0f0f0; color: #5e4b8b; }
+    .navmenu li:hover .dropdown-content { display: block; }
+
+    @media screen and (max-width: 768px) {
+      .navbar { flex-direction: column; align-items: flex-start; }
+      .menu-toggle { display: flex; margin-left: auto; }
+      .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+      .navmenu.show { display: flex; }
+      .navmenu li { width: 100%; margin: 0; }
+      .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+      .dropdown-content { background-color: #c3e4d4; }
+    }
+
+    footer {
+      background-color: #c3e4d4;
+      padding: 20px;
+      text-align: center;
+      color: #3a3a3a;
+      font-size: 18px;
+    }
+
+    .education-item {
+      background-color: #e6e0d9;
+      color: #3a3a3a;
+      padding: 20px;
+      margin: 10px auto;
+      border-radius: 8px;
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      font-size: 1.2em;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="content">
+    <h1>Teemischungen</h1>
+  </div>
+
+  <div id="language-switcher">
+    <a href="index.html"><img src="picture/defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+    <a href="/en/"><img src="picture/enfavicon.png" alt="English" title="English" width="24"></a>
+    <a href="/dk/"><img src="picture/dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+  </div>
+
+  <div class="navbar">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="navmenu" id="navmenu">
+      <li class="dropdown">
+        <a href="index.html">Startseite</a>
+        <ul class="dropdown-content">
+          <li><a href="about.html">Über mich</a></li>
+          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+          <li><a href="mission.html">Meine Mission</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Bücher</a>
+        <ul class="dropdown-content">
+          <li><a href="meinebücher.html">Meine Bücher</a></li>
+          <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+          <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+        </ul>
+      </li>
+       <li class="dropdown">
+        <a href="#">Shop</a>
+        <ul class="dropdown-content">
+          <li><a href="shop.html">Mein Shop</a></li>
+           <li><a href="angebot.html">Mein Angebot für dich</a></li>
+          <li><a href="schätze.html">geschriebene Schätze</a></li>
+           <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="räuchern.html">Räuchermischungen</a></li>
+          <li><a href="#">Naturheilkunde</a></li>
+          <li><a href="#">Salben & Balsam</a></li>
+           <li><a href="#">Körperprodukte</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Mit sich selbst in Verbindung kommen</a>
+        <ul class="dropdown-content">
+          <li><a href="energie.html">Innere Balance</a></li>
+          <li><a href="basics.html">Die Basics</a></li>
+          <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+          <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Rezepte</a>
+        <ul class="dropdown-content">
+          <li><a href="rezepte.html">Warum DIY?</a></li>
+          <li><a href="seife.html">Körper</a></li>
+          <li><a href="haare.html">Haare</a></li>
+        </ul>
+      </li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="agb.html">AGB</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </div>
+
+  <!-- Gradient Box für ersten Textblock -->
+  <div class="gradient-box">
+    <h2> Teemischungen – Wohlfühlmomente in jeder Tasse </h2>
+   <p>Lass dich verzaubern von meinen handverlesenen Teemischungen aus naturreinen Kräutern, Blüten und Früchten. </p>
+ <p> Jede Mischung ist liebevoll zusammengestellt und lädt dazu ein, ruhige Augenblicke zu genießen, innezuhalten und den Alltag für einen Moment hinter sich zu lassen.</p>
+<p>Unsere Tees bieten eine vielfältige Auswahl an Aromen und Kompositionen, passend zu jeder Stimmung und Saison: </p>
+<li>    • Sanfte Genussmomente – harmonische Mischungen für gemütliche Stunden </li>
+ <li>   • Aromatische Vielfalt – besondere Kräuter- und Fruchtkompositionen </li>
+ <li>   • Saisonale Highlights – stimmige Kreationen passend zu Jahreszeiten oder besonderen Anlässen </li>
+<p>Zubereitung: Einen Teelöffel der Mischung in heißem Wasser ziehen lassen und den Duft sowie Geschmack bewusst wahrnehmen.</p>
+<p><strong><u>Anwendung:</u></strong>Hinweis: Nur zum Aufbrühen als Tee bestimmt. Inhalt ausschließlich natürliche Kräuter, Blüten und Früchte. Keine gesundheitlichen oder therapeutischen Wirkungen werden versprochen. </p>
+<p>Nettogewicht pro Tüte: ca. 20 g </p>
+<p>Preis pro Tüte: 5 € </p>
+
+
+      <!-- Gradient Box für ersten Textblock -->
+  <div class="gradient-box">
+<h2>  Teemischungen – Kleine Momente voller Magie </h2>
+<p>Entdecke unsere handverlesenen Teemischungen aus naturreinen Kräutern, Blüten und Früchten. Jede Mischung ist liebevoll komponiert, </p>
+<p>  um stimmungsvolle Genussmomente zu schenken – für gemütliche Stunden, kleine Pausen oder einfach, um den Tag bewusst zu erleben.</p>
+<p>Unsere Tees sind in verschiedenen Themen erhältlich: </p>
+<li>   •Frauenkräuter – sanfte Kräuterkompositionen speziell für alle, die eine geschmackvolle Auszeit suchen </li>
+<li>   •Weihnachtszeit – aromatische Kräuter- und Fruchtmischungen für stimmungsvolle Wintermomente </li>
+<li>   •Entspannung – harmonische Mischungen für gemütliche, ruhige Augenblicke </li>
+<li>   •Gedächtnis & Inspiration – Kräuter- und Fruchtkombinationen für belebende Teepausen </li>
+<li>   •Wachwerden – aromatische Mischungen, die einen frischen Start in den Tag begleiten </li>
+<p>Zubereitung: Einen Teelöffel der Mischung in heißem Wasser ziehen lassen und den Duft sowie Geschmack bewusst genießen.</p>
+<p><strong><u>Anwendung:</u></strong>Hinweis: Nur zum Aufbrühen als Tee bestimmt. Inhalt ausschließlich natürliche Kräuter, Blüten und Früchte. </p>
+ <p><strong><u>Anwendung:</u></strong> Keine gesundheitlichen oder therapeutischen Wirkungen werden versprochen. </p>
+<p>Nettogewicht pro Tüte: ca. 20 g</p>
+<p>Preis pro Tüte: 5 €</p>
+  </div>
+
+ 
+      <!-- Gradient Box für ersten Textblock -->
+  <div class="gradient-box">   
+<p>Teemischungs-Sets – Mehr Genuss in einem Paket</p>
+<p>Meine Sets bieten verschiedene Mischungen zum Entdecken – ideal als Geschenk oder für gemütliche Teemomente zu Hause:</p>
+<li>   •3er Set „Magische Auszeit“ – 13 € </li>
+<p>Enthält: Frauenkräuter, Entspannung, Wachwerden</p>
+<li>   •3er Set „Winterzauber“ – 13 € </li>
+<p>Enthält: Weihnachtszeit, Entspannung, Frauenkräuter</p>
+<li>   •2+1 Set „Tee der Vielfalt“ – 12 €</li>
+<p>Zahle für zwei Tüten, erhalte drei: Beliebige Auswahl aus allen Tees</p>
+<p><strong><u>Anwendung:</u></strong>Hinweis: Nur zum Aufbrühen als Tee bestimmt. Inhalt ausschließlich natürliche Kräuter, Blüten und Früchte. </p>
+<p><strong><u>Anwendung:</u></strong>  Keine gesundheitlichen oder therapeutischen Wirkungen werden versprochen.</p>
+<p>Anwendung: Jeden Tee nach Belieben aufbrühen, Duft und Geschmack bewusst wahrnehmen und die kleinen Genussmomente für sich selbst oder mit anderen teilen.</p>
+  </div>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("navmenu");
+      menu.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
