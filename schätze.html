@@ -325,33 +325,33 @@
     </div>
 
 <script>
-   document.addEventListener("DOMContentLoaded", function () {
-            // Sterne erzeugen
-            let starContainer = document.querySelector(".stars");
-            for (let i = 0; i < 50; i++) {
-                let star = document.createElement("div");
-                star.className = "star";
-                star.style.top = Math.random() * 100 + "vh";
-                star.style.left = Math.random() * 100 + "vw";
-                star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-                starContainer.appendChild(star);
-            }
-    
-    function toggleMenu() {
-      document.getElementById("navmenu").classList.toggle("show");
+  // Sterne erzeugen
+  document.addEventListener("DOMContentLoaded", function () {
+    let starContainer = document.querySelector(".stars");
+    for (let i = 0; i < 50; i++) {
+      let star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+      starContainer.appendChild(star);
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
-      dropdowns.forEach(dropdownToggle => {
-        dropdownToggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          const parentLi = this.parentElement;
-          parentLi.classList.toggle('open');
-        });
-      });
+    // Dropdowns (Mobile)
+    const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+    dropdowns.forEach(dropdownToggle => {
+      dropdownToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        const parentLi = this.parentElement;
+        parentLi.classList.toggle('open');
       });
     });
-  </script>
+  });
+
+  // MUSS global sein
+  function toggleMenu() {
+    document.getElementById("navmenu").classList.toggle("show");
+  }
+</script>
 </body>
 </html>
