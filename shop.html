@@ -328,12 +328,15 @@ body {
     let maxHeight = 0;
     slides.forEach(slide => {
       slide.style.height = "auto";
-      if(slide.offsetHeight > maxHeight) maxHeight = slide.offsetHeight;
+      if (slide.offsetHeight > maxHeight) maxHeight = slide.offsetHeight;
     });
     slides.forEach(slide => slide.style.height = maxHeight + "px");
   }
-  setEqualHeight();
-  window.addEventListener("resize", setEqualHeight);
+
+  if (slides.length) {
+    setEqualHeight();
+    window.addEventListener("resize", setEqualHeight);
+  }
 
   function scrollSlider(direction) {
     const gap = 20;
@@ -341,24 +344,24 @@ body {
     sliderWrapper.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
   }
 
-  prevBtn.addEventListener("click", () => scrollSlider(-1));
-  nextBtn.addEventListener("click", () => scrollSlider(1));
-}
-  
-   function toggleMenu() {
-      document.getElementById("navmenu").classList.toggle("show");
-    }
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => scrollSlider(-1));
+    nextBtn.addEventListener("click", () => scrollSlider(1));
+  }
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
-      dropdowns.forEach(dropdownToggle => {
-        dropdownToggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          const parentLi = this.parentElement;
-          parentLi.classList.toggle('open');
-        });
+  // Menü Toggle
+  function toggleMenu() {
+    document.getElementById("navmenu").classList.toggle("show");
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+    dropdowns.forEach(dropdownToggle => {
+      dropdownToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        const parentLi = this.parentElement;
+        parentLi.classList.toggle('open');
       });
     });
-  </script>
-</body>
-</html>
+  });
+</script>
