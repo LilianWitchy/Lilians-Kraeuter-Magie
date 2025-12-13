@@ -315,16 +315,15 @@
   
   <script>
     function toggleMenu() {
-      const menu = document.getElementById("navmenu");
-      menu.classList.toggle("show");
+      document.getElementById("navmenu").classList.toggle("show");
     }
 
-
+    document.addEventListener("DOMContentLoaded", function () {
       const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
       dropdowns.forEach(dropdownToggle => {
-        dropdownToggle.addEventListener('click', e => {
+        dropdownToggle.addEventListener('click', function(e) {
           e.preventDefault();
-          const parentLi = dropdownToggle.parentElement;
+          const parentLi = this.parentElement;
           parentLi.classList.toggle('open');
         });
       });
