@@ -315,21 +315,22 @@
 
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("navmenu");
-      menu.classList.toggle("show");
-    }
+  document.addEventListener("DOMContentLoaded", function () {
+    // Hamburger Menü
+    window.toggleMenu = function() {
+      document.getElementById("navmenu").classList.toggle("show");
+    };
 
-
-      const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
-      dropdowns.forEach(dropdownToggle => {
-        dropdownToggle.addEventListener('click', e => {
-          e.preventDefault();
-          const parentLi = dropdownToggle.parentElement;
-          parentLi.classList.toggle('open');
-        });
+    // Dropdown-Links mobil
+    const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+    dropdowns.forEach(dropdownToggle => {
+      dropdownToggle.addEventListener('click', e => {
+        e.preventDefault();
+        const parentLi = dropdownToggle.parentElement;
+        parentLi.classList.toggle('open');
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
