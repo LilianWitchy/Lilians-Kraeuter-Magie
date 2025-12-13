@@ -12,9 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* =======================
-       Globales CSS
-       ======================= */
     *, *::before, *::after { box-sizing: border-box; }
 
     body {
@@ -24,39 +21,20 @@
       font-size: 20px;
       line-height: 1.8;
       background-color: #7f469e;
-      color: #ffffff; /* Fließtext weiß */
+      color: #ffffff;
       text-align: center;
       overflow-x: hidden;
     }
 
     img { max-width: 100%; height: auto; }
 
-    h1 {
-      font-size: 2.8em;
-      margin: 20px 0 10px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      color: #FBCBA1; /* Pastellorange */
-    }
-
+    h1 { font-size: 2.8em; margin: 20px 0 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; color: #FBCBA1; }
     h1 img { max-width: 120px; height: auto; }
-
-    h2 {
-      font-size: 2.5em;
-      margin: 40px 0 20px 0;
-      font-weight: 700;
-      color: #FBCBA1; /* Pastellorange */
-    }
-
+    h2 { font-size: 2.5em; margin: 40px 0 20px 0; font-weight: 700; color: #FBCBA1; }
     .content { max-width: 1000px; margin: auto; padding: 0 20px 40px 20px; text-align: left; }
-
     p { font-size: 1.2em; color: #ffffff; }
 
-    /* =======================
-       Mission Container Anpassung
-       ======================= */
+    /* Mission Container */
     .mission-container {
       max-width: 800px;
       margin: 50px auto;
@@ -65,15 +43,12 @@
     }
 
     .mission-container h2 { font-size: 2em; margin: 30px 0 20px 0; color: #FBCBA1; }
-
     .mission-container p,
     .mission-container .mission-text { font-size: 1em; font-weight: 500; line-height: 1.6; margin-bottom: 15px; text-align: center; color: #ffffff; }
 
-    /* =======================
-       Navigation
-       ======================= */
+    /* Navigation */
     .navbar {
-      background-color: #A3C89A; /* helles Grün */
+      background-color: #A3C89A;
       padding: 10px 20px;
       position: relative;
       z-index: 10;
@@ -92,13 +67,7 @@
       flex-direction: column;
     }
 
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background-color: #3a3a3a;
-      margin: 5px 0;
-      border-radius: 2px;
-    }
+    .menu-toggle span { height: 3px; width: 25px; background-color: #3a3a3a; margin: 5px 0; border-radius: 2px; }
 
     .navmenu {
       list-style: none;
@@ -107,30 +76,16 @@
       display: flex;
     }
 
-    .navmenu li {
-      margin-right: 30px;
-      position: relative;
-    }
-
-    .navmenu a {
-      text-decoration: none;
-      color: #3a3a3a;
-      font-size: 20px;
-      padding: 10px;
-      display: block;
-    }
-
-    .navmenu a:hover {
-      background-color: #d3e9dc;
-      border-radius: 5px;
-    }
+    .navmenu li { margin-right: 30px; position: relative; }
+    .navmenu a { text-decoration: none; color: #3a3a3a; font-size: 20px; padding: 10px; display: block; }
+    .navmenu a:hover { background-color: #d3e9dc; border-radius: 5px; }
 
     .dropdown-content {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: #A3C89A; /* Dropdown passend zum Menü */
+      background-color: #A3C89A;
       min-width: 180px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       z-index: 1000;
@@ -138,17 +93,8 @@
       padding: 0;
     }
 
-    .dropdown-content li a {
-      color: #3a3a3a;
-      padding: 12px;
-      font-size: 18px;
-      text-decoration: none;
-    }
-
-    .dropdown-content li a:hover {
-      background-color: #f0f0f0;
-      color: #5e4b8b;
-    }
+    .dropdown-content li a { color: #3a3a3a; padding: 12px; font-size: 18px; text-decoration: none; }
+    .dropdown-content li a:hover { background-color: #f0f0f0; color: #5e4b8b; }
 
     .navmenu li:hover .dropdown-content { display: block; }
 
@@ -159,23 +105,13 @@
       .navmenu.show { display: flex; }
       .navmenu li { width: 100%; margin: 0; }
       .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+      .navmenu li.open .dropdown-content { display: block; }
       .dropdown-content { background-color: #A3C89A; }
     }
 
     footer { background-color: #c3e4d4; padding: 20px; text-align: center; color: #3a3a3a; font-size: 18px; }
 
-    .education-item {
-      background-color: #8B6A4B; /* kräftiges Pastellbraun */
-      color: #ffffff;
-      padding: 20px;
-      margin: 10px auto;
-      border-radius: 8px;
-      display: block;
-      width: fit-content;
-      max-width: 100%;
-      font-size: 1.2em;
-      line-height: 1.8;
-    }
+    .education-item { background-color: #8B6A4B; color: #ffffff; padding: 20px; margin: 10px auto; border-radius: 8px; display: block; width: fit-content; max-width: 100%; font-size: 1.2em; line-height: 1.8; }
   </style>
 </head>
 
@@ -199,7 +135,6 @@
       <span></span>
     </div>
     <ul class="navmenu" id="navmenu">
-      <!-- Menüeinträge unverändert -->
       <li class="dropdown">
         <a href="index.html">Startseite</a>
         <ul class="dropdown-content">
@@ -216,17 +151,16 @@
           <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
         </ul>
       </li>
-     <li class="dropdown">
+      <li class="dropdown">
         <a href="#">Shop</a>
         <ul class="dropdown-content">
           <li><a href="shop.html">Mein Shop</a></li>
-           <li><a href="angebot.html">Mein Angebot für dich</a></li>
+          <li><a href="angebot.html">Mein Angebot für dich</a></li>
           <li><a href="schätze.html">geschriebene Schätze</a></li>
-            <li><a href="tee.html">gemütliche Teemomente</a></li>
+          <li><a href="tee.html">gemütliche Teemomente</a></li>
           <li><a href="räuchern.html">Räuchermischungen</a></li>
-          <li><a href="#">Naturheilkunde</a></li>
-          <li><a href="#">Salben & Balsam</a></li>
-           <li><a href="#">Körperprodukte</a></li>
+        <li><a href="#">Kerzenlicht&Zauber</a></li>
+         <li><a href="#">Online Kurse</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -252,70 +186,61 @@
     </ul>
   </div>
 
-     <h1>Innere Balance und Veränderung: Energie verstehen – sich selbst neu begegnen</h1>
-        <p>Energie ist das, was uns alle verbindet. Sie ist ständig in Bewegung – in der Natur, zwischen Menschen und auch in uns selbst. </p>
-         <p> Ob wir es bewusst wahrnehmen oder nicht: Unsere Gedanken, Emotionen und Handlungen sind eng mit unserer inneren Energie verknüpft. </p>
-        <p>Und oft spüren wir intuitiv, wenn etwas „nicht mehr rund läuft“ – wir fühlen uns blockiert, ausgelaugt oder fremdgesteuert. </p>
-
-       
-        <p>Doch was wäre, wenn wir lernen könnten, unsere Energie bewusst wahrzunehmen und damit zu arbeiten?</p>
-
-        <p>Der erste Schritt in der Arbeit mit Energie ist, sich bewusst mit seinen Gefühlen auseinanderzusetzen. </p>
-         <p> Das bedeutet nicht, in ihnen zu verharren, sondern ihnen Raum zu geben, um gefühlt und wahrgenommen zu werden.  </p>
-         <p>  Wenn wir uns erlauben, unsere Gefühle ohne Urteil zu fühlen, </p>
-        <p>  können wir ihre Energie transformieren. Denn jedes Gefühl hat eine Botschaft, die uns dabei hilft, uns weiterzuentwickeln und zu heilen.</p>
-        <p> Der Weg beginnt bei uns selbst. Es geht darum, sich Raum zu nehmen, innezuhalten und zu spüren, was gerade wirklich da ist.   </p>
-        <p> Gefühle, Gedanken, Erinnerungen – sie alle tragen Informationen, die uns helfen können, besser zu verstehen,  </p>
-         <p> was wir brauchen, was uns zurückhält und was uns stärken kann.  </p>
-
-        <h2>Gefühle als Wegweiser</h2>
-        <p>  Statt unangenehme Gefühle wegzuschieben, können wir lernen, sie als wichtige Hinweise zu sehen. Wut, Traurigkeit, </p>
-         <p> Angst oder Unsicherheit wollen uns etwas sagen – über Erfahrungen, Grenzen, Verletzungen oder Wünsche.  </p>
-        <p> Sie wegzudrücken bringt oft nur kurzfristige Ruhe. Wer sich jedoch traut hinzuschauen, schafft langfristig Raum für Veränderung. </p>
-        <p> Das bedeutet nicht, in schwierigen Emotionen stecken zu bleiben. Es bedeutet,  </p>
-          ihnen zuzuhören, sie zu verstehen – und dann loszulassen, was nicht mehr gebraucht wird.  </p>
-
-         <h2>Blockaden lösen – innerlich frei werden</h2>
-        <p> Oft tragen wir Themen mit uns, die uns seit Jahren begleiten. Sie zeigen sich als wiederkehrende Muster,  </p>
-         <p> lähmende Zweifel oder ein latentes Gefühl, nicht ganz bei sich zu sein.   </p>
-        <p> Solche inneren Blockaden können den Energiefluss behindern – auch wenn wir sie nicht immer sofort erkennen. </p>
-        <p> Hier setzt der Prozess der inneren Arbeit an. Durch gezielte Achtsamkeit,  </p>
-         <p> durch Reflexion und manchmal auch durch unterstützende Methoden wie Visualisierung, </p>
-        <p>  Schreiben oder bewusstes Atmen, kann etwas in Bewegung kommen.  </p>
-        <p> Es geht darum, alte Geschichten loszulassen, neue Perspektiven zu gewinnen – und nach und nach mehr Klarheit und Leichtigkeit zu finden.  </p>
-
-         <h2>Veränderung beginnt im Kleinen</h2>
-         <p> Transformation klingt groß – und manchmal einschüchternd. Doch sie beginnt oft ganz unspektakulär:  </p>
-         <p>  mit einem ehrlichen Gedanken, einem bewussten Moment, einer neuen Entscheidung.  </p>
-         <p> Es geht nicht darum, alles auf einmal zu verändern. Es geht darum, Stück für Stück wieder mehr in Verbindung mit sich selbst zu kommen.  </p>
-          <p> Mit Mut, mit Geduld – und mit Selbstmitgefühl.  </p>
-
-         <h2> Sich selbst ernst nehmen – sich selbst stärken</h2>
-         <p>Selbstfürsorge ist kein Luxus. Sie ist eine Haltung. Wer gut für sich sorgt, übernimmt Verantwortung für das eigene Erleben und dafür, wie sich das Leben anfühlt.    </p>
-         <p> Es braucht dafür keine Rituale oder äußere Perfektion – sondern die Bereitschaft, immer wieder hinzuhören: Was brauche ich wirklich? Was tut mir gut? Was darf gehen?  </p>
-
-           <h2> Ein Weg in die innere Freiheit</h2>
-         <p> Der bewusste Umgang mit der eigenen Energie ist ein Weg zu mehr Freiheit – innerlich wie äußerlich. Wenn wir lernen, unsere Muster zu erkennen, </p>
-         <p>  unsere Gefühle zu verstehen und unser Denken zu verändern, beginnt sich auch unser Alltag zu wandeln.   </p>
-         <p>  Wir reagieren nicht mehr nur – wir gestalten. Mit Klarheit. Mit Kraft. Und mit einem Gefühl von Verbundenheit mit uns selbst. </p>
-
-
-
-
-       
-        <p>Genau deshalb schreibe ich meine Bücher. </p>
-        <p>Sie sollen dir Werkzeuge an die Hand geben, mit denen du deine Themen selbst angehen kannst – auf deine Art, in deinem Tempo.</p>
-        <p> Sie sind eine Einladung, dich nicht mehr kleinzuhalten, sondern dir zu erlauben, zu fühlen, zu erkennen – und zu wachsen. </p>
-  
-    </div>
+  <div class="content">
+    <h1>Innere Balance und Veränderung: Energie verstehen – sich selbst neu begegnen</h1>
+    <p>Energie ist das, was uns alle verbindet. Sie ist ständig in Bewegung – in der Natur, zwischen Menschen und auch in uns selbst. </p>
+  <p> Ob wir es bewusst wahrnehmen oder nicht: Unsere Gedanken, Emotionen und Handlungen sind eng mit unserer inneren Energie verknüpft. </p> 
+    <p>Und oft spüren wir intuitiv, wenn etwas „nicht mehr rund läuft“ – wir fühlen uns blockiert, ausgelaugt oder fremdgesteuert. </p> 
+    <p>Doch was wäre, wenn wir lernen könnten, unsere Energie bewusst wahrzunehmen und damit zu arbeiten?</p> 
+    <p>Der erste Schritt in der Arbeit mit Energie ist, sich bewusst mit seinen Gefühlen auseinanderzusetzen. </p>
+    <p> Das bedeutet nicht, in ihnen zu verharren, sondern ihnen Raum zu geben, um gefühlt und wahrgenommen zu werden. </p> 
+    <p> Wenn wir uns erlauben, unsere Gefühle ohne Urteil zu fühlen, </p> 
+    <p> können wir ihre Energie transformieren. Denn jedes Gefühl hat eine Botschaft, die uns dabei hilft, uns weiterzuentwickeln und zu heilen.</p> 
+    <p> Der Weg beginnt bei uns selbst. Es geht darum, sich Raum zu nehmen, innezuhalten und zu spüren, was gerade wirklich da ist. </p> 
+    <p> Gefühle, Gedanken, Erinnerungen – sie alle tragen Informationen, die uns helfen können, besser zu verstehen, </p>
+    <p> was wir brauchen, was uns zurückhält und was uns stärken kann. </p> 
+    
+    <h2>Gefühle als Wegweiser</h2> 
+    <p> Statt unangenehme Gefühle wegzuschieben, können wir lernen, sie als wichtige Hinweise zu sehen. Wut, Traurigkeit, </p> 
+    <p> Angst oder Unsicherheit wollen uns etwas sagen – über Erfahrungen, Grenzen, Verletzungen oder Wünsche. </p> 
+    <p> Sie wegzudrücken bringt oft nur kurzfristige Ruhe. Wer sich jedoch traut hinzuschauen, schafft langfristig Raum für Veränderung. </p>
+    <p> Das bedeutet nicht, in schwierigen Emotionen stecken zu bleiben. Es bedeutet, </p> 
+   <p> ihnen zuzuhören, sie zu verstehen – und dann loszulassen, was nicht mehr gebraucht wird. </p> 
+    
+    <h2>Blockaden lösen – innerlich frei werden</h2>
+    <p> Oft tragen wir Themen mit uns, die uns seit Jahren begleiten. Sie zeigen sich als wiederkehrende Muster, </p>
+    <p> lähmende Zweifel oder ein latentes Gefühl, nicht ganz bei sich zu sein. </p>
+    <p> Solche inneren Blockaden können den Energiefluss behindern – auch wenn wir sie nicht immer sofort erkennen. </p> 
+    <p> Hier setzt der Prozess der inneren Arbeit an. Durch gezielte Achtsamkeit, </p>
+    <p> durch Reflexion und manchmal auch durch unterstützende Methoden wie Visualisierung, </p>
+    <p> Schreiben oder bewusstes Atmen, kann etwas in Bewegung kommen. </p>
+    <p> Es geht darum, alte Geschichten loszulassen, neue Perspektiven zu gewinnen – und nach und nach mehr Klarheit und Leichtigkeit zu finden. </p> 
+    <h2>Veränderung beginnt im Kleinen</h2> 
+    <p> Transformation klingt groß – und manchmal einschüchternd. Doch sie beginnt oft ganz unspektakulär: </p>
+    <p> mit einem ehrlichen Gedanken, einem bewussten Moment, einer neuen Entscheidung. </p> 
+    <p> Es geht nicht darum, alles auf einmal zu verändern. Es geht darum, Stück für Stück wieder mehr in Verbindung mit sich selbst zu kommen. </p>
+    <p> Mit Mut, mit Geduld – und mit Selbstmitgefühl. </p>
+   
+    <h2> Sich selbst ernst nehmen – sich selbst stärken</h2>
+    <p>Selbstfürsorge ist kein Luxus. Sie ist eine Haltung. Wer gut für sich sorgt, übernimmt Verantwortung für das eigene Erleben und dafür, wie sich das Leben anfühlt. </p>
+    <p> Es braucht dafür keine Rituale oder äußere Perfektion – sondern die Bereitschaft, immer wieder hinzuhören: Was brauche ich wirklich? Was tut mir gut? Was darf gehen? </p> 
+    
+    <h2> Ein Weg in die innere Freiheit</h2> 
+    <p> Der bewusste Umgang mit der eigenen Energie ist ein Weg zu mehr Freiheit – innerlich wie äußerlich. Wenn wir lernen, unsere Muster zu erkennen, </p> 
+    <p> unsere Gefühle zu verstehen und unser Denken zu verändern, beginnt sich auch unser Alltag zu wandeln. </p> 
+    <p> Wir reagieren nicht mehr nur – wir gestalten. Mit Klarheit. Mit Kraft. Und mit einem Gefühl von Verbundenheit mit uns selbst. </p>
+    <p>Genau deshalb schreibe ich meine Bücher. </p> <p>Sie sollen dir Werkzeuge an die Hand geben, mit denen du deine Themen selbst angehen kannst – auf deine Art, in deinem Tempo.</p> 
+    <p> Sie sind eine Einladung, dich nicht mehr kleinzuhalten, sondern dir zu erlauben, zu fühlen, zu erkennen – und zu wachsen. </p>
+  </div>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("navmenu");
-      menu.classList.toggle("show");
-    }
+    document.addEventListener("DOMContentLoaded", function () {
+      // Hamburger Menü
+      window.toggleMenu = function() {
+        document.getElementById("navmenu").classList.toggle("show");
+      };
 
-
+      // Dropdown-Links mobil
       const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
       dropdowns.forEach(dropdownToggle => {
         dropdownToggle.addEventListener('click', e => {
@@ -328,3 +253,4 @@
   </script>
 </body>
 </html>
+
