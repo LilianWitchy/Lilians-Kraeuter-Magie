@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Startseite</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        /* Globales CSS */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Crimson Pro', serif;
+            font-size: 22px;
+            line-height: 1.8;
+            background-color: #855c9c;
+            color: #3a3a3a;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Sterne Hintergrund */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        /* Hero-Bereich */
+        .hero-section {
+            background-image: url('picture/test.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            position: relative;
+        }
+
+        .hero-text {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 90%;
+            padding: 10px 20px;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 10px;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin: 20px 0 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1 img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        h2 {
+            font-size: 3em;
+            margin: 40px 0 20px 0;
+            font-weight: normal;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 20px 40px 20px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #0aa667;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .education-item {
+            background-color: #c99d63;
+            color: black;
+            padding: 20px;
+            margin: 10px auto;
+            border-radius: 8px;
+            display: block;
+            width: fit-content;
+            max-width: 100%;
+        }
+
+  /* =======================
+       Gradient Box für Text
+       ======================= */
+    .gradient-box {
+      background: linear-gradient(
+        45deg,
+        #a472d6,
+        #3ba384,
+        #7b92d4,
+        #d49757,
+        #b06497
+      );
+      background-size: 400% 400%;
+      animation: magicGradient 30s ease infinite;
+      padding: 20px 30px;
+      border-radius: 12px;
+      color: #fff; /* Textfarbe für Farbverlauf */
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    @keyframes magicGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+        footer {
+
+      background-color: #0aa667;
+
+      padding: 20px;
+
+      text-align: center;
+
+      color: white;
+
+      /* Fußzeile */
+
+    }
+        
+        /* Navigation */
+        .navbar {
+            background-color: #0aa667;
+            padding: 10px 20px;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            flex-direction: column;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background-color: white;
+            margin: 5px 0;
+            border-radius: 2px;
+        }
+
+        .navmenu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .navmenu li {
+            margin-right: 30px;
+            position: relative;
+        }
+
+        .navmenu a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            display: block;
+        }
+
+        .navmenu a:hover {
+            background-color: #b0d5ac;
+            border-radius: 5px;
+        }
+
+        /* Dropdown-Menü */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0aa667;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1000;
+            list-style: none;
+            padding: 0;
+        }
+
+        .dropdown-content li a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+            color: #660082;
+        }
+
+        .navmenu li:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Media Query für kleinere Bildschirme */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-toggle {
+                display: flex;
+                margin-left: auto;
+            }
+
+            .navmenu {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+                margin-top: 10px;
+            }
+
+            .navmenu.show {
+                display: flex;
+            }
+
+            .navmenu li {
+                width: 100%;
+                margin: 0;
+            }
+
+            .navmenu li:hover .dropdown-content {
+                position: static;
+                box-shadow: none;
+            }
+
+            .dropdown-content {
+                background-color: #0aa667;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sterne Hintergrund -->
+    <div class="stars"></div>
+
+    <!-- Hero-Bereich -->
+    <div class="hero-section">
+        <div class="hero-text">
+            <h1> Lilians Kräuter Magie </h1>
+        </div>
+    </div>
+
+    <!-- Navigationsleiste mit Dropdown-Menüs -->
+    <div class="navbar">
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="navmenu" id="navmenu">
+            <li class="dropdown">
+                <a href="index.html">Startseite</a>
+                <ul class="dropdown-content">
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                    <li><a href="mission.html">Meine Mission</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Bücher</a>
+                <ul class="dropdown-content">
+                    <li><a href="meinebücher.html">Meine Bücher</a></li>
+                    <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+                    <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+                </ul>
+            </li>
+               <li class="dropdown">
+                <a href="#">begleitende Angebote</a>
+                <ul class="dropdown-content">
+                    <li><a href="angebot.html">Mein Angebot für dich</a></li>
+                    <li><a href="pendel.html">Kartenlegen & Pendeln</a></li>
+                   <li><a href="online.html">Online Kurse</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Shop</a>
+                <ul class="dropdown-content">
+                    <li><a href="shop.html">Mein Shop</a></li>
+         <li><a href="online.html">pendel.html</a></li>
+                    <li><a href="schätze.html">geschriebene Schätze</a></li>
+                    <li><a href="tee.html">gemütliche Teemomente</a></li>
+                    <li><a href="räuchern.html">Räuchermischungen</a></li>
+                   <li><a href="kerzen.html">Kerzenlicht&Zauber</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Mit sich selbst in Verbindung kommen</a>
+                <ul class="dropdown-content">
+                    <li><a href="energie.html">Innere Balance</a></li>
+                    <li><a href="basics.html">Die Basics</a></li>
+                    <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Rezepte</a>
+                <ul class="dropdown-content">
+                    <li><a href="rezepte.html">Warum DIY?</a></li>
+                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                    <li><a href="haare.html">Haarprodukte</a></li>
+                </ul>
+            </li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="agb.html">AGB</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+    </div>
+
+    <!-- Content-Bereich -->
+     <!-- Gradient Box für ersten Textblock -->
+  <div class="gradient-box">
+ <h2>Unsere Welt steckt voller Möglichkeiten, oft verborgen im Alltäglichen.</h2>
+<p><strong>Kartenlegen & Pendeln </strong>
+<p> Klarheit finden – Orientierung spüren – den eigenen Weg erkennen</p>
+<p>Manchmal steht man an einem Punkt im Leben, an dem sich alles im Kreis zu drehen scheint. </p>
+<p>Fragen tauchen auf, Entscheidungen fühlen sich schwer an oder das eigene Bauchgefühl ist kaum noch zu hören. </p>
+<p><strong>Vielleicht beschäftigt dich:</strong>
+  <li>  • eine Beziehung oder ein Herzensmensch </li>
+ <li>   • eine Entscheidung, die sich nicht klar anfühlt </li>
+  <li>  • ein inneres Gefühl von Stillstand oder Unsicherheit </li>
+  <li>  • der Wunsch nach Orientierung oder Bestätigung </li>
+<p>Nicht immer braucht es sofort eine Antwort – oft reicht ein neuer Blickwinkel, um wieder ins Vertrauen zu kommen. </p>
+<p>Was Kartenlegen & Pendeln bewirken können </p>
+<p><strong>Kartenlegen und Pendeln sind alte Werkzeuge der intuitiven Wegweisung. </strong>
+  </p> Sie helfen dabei, innere Prozesse sichtbar zu machen, verborgene Zusammenhänge zu erkennen und das eigene Gefühl wieder wahrzunehmen. </p>
+<li> - Kartenlegen</li>
+</p> Die Karten spiegeln Themen, Energien und Tendenzen. Sie zeigen, was gerade wirkt, worauf dein Fokus gelenkt werden darf und welche Möglichkeiten sich öffnen können. </p>
+<li>- Pendeln </li>
+<p>Das Pendel unterstützt besonders bei klaren Fragen und Entscheidungsprozessen.  </p>
+ </p> Es hilft, innere Ja-/Nein-Tendenzen wahrzunehmen und sich wieder mit dem eigenen Bauchgefühl zu verbinden. </p>
+<p>Beide Methoden geben keine festen Zukunftsversprechen, sondern Impulse zur Selbstreflexion und Orientierung. </p>
+<p>Warum eine Legung bei mir? </p>
+<p>Ich arbeite nicht nach festen Deutungsschemata und nicht mit beliebigen Kartendecks. </p>
+<p>Meine Legungen sind intuitiv, achtsam und individuell – so einzigartig wie dein Thema. </p>
+<p><strong>Ich verbinde: </strong>
+    <li>• feines Gespür und Intuition </li>
+  <li>  • Kartenarbeit und Pendelarbeit </li>
+   <li> • ruhige Klarheit statt dramatischer Aussagen </li>
+   <li> • Tiefe statt schneller Antworten </li>
+<p>Mir ist wichtig, dass du dich gesehen fühlst und mit einem klareren Gefühl aus der Legung gehst – nicht mit Abhängigkeit, sondern mit Vertrauen in dich selbst. </p>
+<p>Über mich & meine Arbeit </p>
+<p>Meine Intuition und meine Visionen begleiten mich, so lange ich denken kann. </p>
+</p>  Schon als Kind hatte ich immer wieder innere Bilder und Wahrnehmungen, die für mich selbstverständlich waren. </p>
+ </p> Dieses Spüren hat mich nie verlassen. </p>
+<p>Ich höre auf meinen Bauch, arbeite mit Eingebungen und lasse Informationen einfließen, die sich während einer Legung zeigen dürfen – behutsam und respektvoll. </p>
+<p><strong>Für meine Arbeit nutze ich bewusst besonders ausgewählte Kartendecks: </strong>
+  <li>  • Tarotkarten von Verena Klinderr – fein, tiefgehend und intuitiv, jenseits klassischer Tarot-Deutungen </li>
+  <li>  • Tarot der Hexenweisheiten von Phyllis Curott – kraftvoll, erdend und verbunden mit altem Wissen und moderner Spiritualität </li>
+<p>Diese Karten unterstützen meine Art zu arbeiten und öffnen Räume für ehrliche, klare Impulse. </li>
+<p><strong> Einladung </strong>
+<p>Wenn du spürst, dass es Zeit ist, hinzuschauen, Klarheit zu finden oder deinem inneren Gefühl wieder mehr Raum zu geben, begleite ich dich gern ein Stück auf deinem Weg. </p>
+ </li>
+ </ul>
+</div>
+
+ <div class="content" style="text-align:center; padding-bottom: 40px;">
+  <img src="picture/Baum des Lebens.jpeg" alt="Relaxbild" />
+ </div>
+
+       <!-- Gradient Box für ersten Textblock -->
+  <div class="gradient-box">
+<h2>Preise und Angebote </h2>
+<p><strong> Pendelarbeit – kurze, klare Impulse </strong>
+
+<p>15–20 Minuten | 30 € </p>
+<p>Für konkrete Fragen, Entscheidungsfindung und kurze Klärung. </p>
+<p>Ideal, wenn du ein klares Anliegen hast und eine fokussierte Rückmeldung wünschst. </p>
+
+<p>📞 Telefon oder 💻 Zoom </p>
+    
+      <a href="https://buy.stripe.com/cNi6oH3TG1nS9Oe8o28og0f" target="_blank" rel="noopener noreferrer">Hier Buchbar</a>
+
+<p><strong> Karten & Pendel – intuitive Begleitung </strong>
+
+<p> 30 Minuten | 65 € </p>
+<p> Eine ganzheitliche Sitzung mit Kartenlegung und ergänzender Pendelarbeit. </p>
+<p> Wir schauen konzentriert auf dein Thema und lassen stimmige Impulse entstehen. </p>
+
+<p>📞 Telefon oder 💻 Zoom</p> 
+   
+    <a href="https://buy.stripe.com/6oU28rgGs9UoaSidIm8og0g" target="_blank" rel="noopener noreferrer">Hier Buchbar</a>
+
+
+<p><strong> Kartenlegung – intuitiv & klar </strong>
+
+<p> 30 Minuten | 55 €</p> 
+<p> Eine ruhige, tiefgehende Kartenlegung ohne Pendel.</p>
+<p> Geeignet für Lebensfragen, Beziehungen und innere Prozesse.</p> 
+
+<p> 📞 Telefon oder 💻 Zoom</p>
+
+    <a href="https://buy.stripe.com/bJe5kD75Sd6Ad0q8o28og0h" target="_blank" rel="noopener noreferrer">Hier Buchbar</a>
+
+
+<p><strong> Hinweise </strong>
+
+<p>Alle Sitzungen finden telefonisch oder per Zoom statt. </p>
+<p>Die Legungen dienen der spirituellen Orientierung und ersetzen keine medizinische oder therapeutische Beratung. </p>
+                
+                   
+
+
+ </li>
+ </ul>
+       </div>
+
+
+                
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Sterne erzeugen
+            let starContainer = document.querySelector(".stars");
+            for (let i = 0; i < 50; i++) {
+                let star = document.createElement("div");
+                star.className = "star";
+                star.style.top = Math.random() * 100 + "vh";
+                star.style.left = Math.random() * 100 + "vw";
+                star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+                starContainer.appendChild(star);
+            }
+
+            // Menü Toggle
+            window.toggleMenu = function() {
+                const menu = document.getElementById("navmenu");
+                menu.classList.toggle("show");
+            };
+        });
+    </script>
+</body>
+</html>
