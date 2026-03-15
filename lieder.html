@@ -53,6 +53,15 @@ border-radius:10px;
 text-align:left;
 }
 
+    .song-grid{
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
     .song {
   background-color: #872f83;
   padding: 20px;
@@ -216,8 +225,10 @@ text-align:left;
 <p>Wenn du neugierig geworden bist, klicke einfach auf das Bild eines Liedes. Du wirst direkt zu meinem YouTube-Kanal weitergeleitet und kannst dir das jeweilige Lied anhören. </p>
 <p>Vielleicht berührt dich eines meiner Lieder, vielleicht bringt es dich zum Lächeln oder begleitet dich ein kleines Stück auf deinem Weg. </p>
   </div>
+  
 
-  <div class="song">
+<div class="song-grid">
+    <div class="song">
   <a href="https://www.youtube.com/shorts/nPEipR1v2Ss"target="_blank">
     <img src="">
   <p> Lied 1: Titelsong - Traumreisen mit Baldur </p>
@@ -265,6 +276,7 @@ text-align:left;
    <img src="">
   <p> Lied 7: Das Autorenpärchen </p>
     </a>
+  </div>
   </div>
 
 <p>Die Inhalte wurden von mir selbst erstellt und unterliegen dem Urheberrecht. </p>
