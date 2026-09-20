@@ -125,6 +125,82 @@ padding:20px;
     .book { display: inline-block; width: 250px; margin: 10px; padding: 10px; background-color: #8B6A4B; border-radius: 10px; text-align: center; position: relative; z-index: 1; }
     .book img { width: 100%; height: auto; border-radius: 10px; }
     .book p { margin-top: 10px; font-size: 1em; }
+
+    /* Veröffentlichungsübersicht */
+    .releases {
+      max-width: 1200px;
+      width: 95%;
+      margin: 40px auto;
+      padding: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .releases-intro {
+      color: #FBCBA1;
+      font-size: 1.5em;
+      margin-bottom: 25px;
+    }
+
+    .album-table {
+      width: 100%;
+      margin: 0 auto 30px auto;
+      border-collapse: collapse;
+      background-color: #872f83;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .album-table caption {
+      caption-side: top;
+      background-color: #A3C89A;
+      color: #3a3a3a;
+      padding: 14px 18px;
+      font-size: 1.35em;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .album-table th,
+    .album-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+      vertical-align: top;
+    }
+
+    .album-table th {
+      color: #FBCBA1;
+      font-weight: 700;
+    }
+
+    .album-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .album-table td:last-child,
+    .album-table th:last-child {
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    @media screen and (max-width: 600px) {
+      .album-table caption {
+        font-size: 1.15em;
+      }
+
+      .album-table th,
+      .album-table td {
+        padding: 8px;
+        font-size: 0.9em;
+      }
+
+      .album-table th:last-child,
+      .album-table td:last-child {
+        white-space: normal;
+      }
+    }
+
   </style>
 </head>
 
@@ -212,6 +288,173 @@ padding:20px;
     </div>
 
 
+
+  
+  <!-- Veröffentlichungen: Alben und enthaltene Lieder -->
+  <section class="releases" aria-labelledby="veroeffentlichungen-titel">
+    <h2 id="veroeffentlichungen-titel">Meine Veröffentlichungen</h2>
+    <p class="releases-intro">Eine Übersicht meiner bisher veröffentlichten Alben mit den jeweiligen Liedern.</p>
+
+    <table class="album-table">
+      <caption>Spürst du das auch – 18.3.2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>Spürst du das auch?</td><td>3:49</td></tr>
+        <tr><td>Wie ein Murmeltier</td><td>3:24</td></tr>
+        <tr><td>Die Sonne lacht.</td><td>3:38</td></tr>
+        <tr><td>Wenn die Erde wieder atmet</td><td>3:22</td></tr>
+        <tr><td>Frühling auf allen Plätzen</td><td>2:12</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Fülle und Glück – 18.3.2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>Alles wird Gold</td><td>2:44</td></tr><tr><td>Alles da</td><td>4:00</td></tr>
+        <tr><td>Glückstag</td><td>3:07</td></tr><tr><td>Ich tanze Weiter</td><td>2:28</td></tr>
+        <tr><td>Weil wir wissen</td><td>2:46</td></tr><tr><td>Wie Wellen</td><td>2:58</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Mutig und Stark – 19.3.2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>Mutig und Stark</td><td>2:35</td></tr><tr><td>Ich hab alles, was ich brauch.</td><td>4:00</td></tr>
+        <tr><td>Titelsong – Traumreisen mit Baldur</td><td>1:37</td></tr><tr><td>Pfützenhüpfer Superheld</td><td>3:19</td></tr>
+        <tr><td>Ich bin richtig, wie ich bin!</td><td>2:59</td></tr><tr><td>Durch die Pfützen, über Bäume.</td><td>2:57</td></tr>
+        <tr><td>Heut ist unser Glückstag.</td><td>2:55</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Erinnern.Wandeln.Sein – 26.3.2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>Im Takt des Mondes</td><td>–</td></tr><tr><td>Frei, weil ich Frau bin</td><td>–</td></tr>
+        <tr><td>Die Kraft des Weibes</td><td>–</td></tr><tr><td>Aus der Glut geboren</td><td>–</td></tr>
+        <tr><td>Endlich FREI sein</td><td>–</td></tr><tr><td>Zurück zur Erde</td><td>–</td></tr>
+        <tr><td>Ergreife dein Feuer</td><td>–</td></tr><tr><td>Ich bin Licht</td><td>–</td></tr>
+        <tr><td>Mein Herz schlägt weit.</td><td>–</td></tr><tr><td>Königin im Licht</td><td>–</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Gefühle von Innen nach Außen – 28.3.2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>LUFT FREI MACHEN</td><td>–</td></tr><tr><td>ES IST ZU VIEL</td><td>–</td></tr>
+        <tr><td>Es überrollt mich</td><td>–</td></tr><tr><td>Alles darf jetzt gehn</td><td>–</td></tr>
+        <tr><td>Einer, dieser Tage</td><td>–</td></tr><tr><td>Wenn es überläuft</td><td>–</td></tr>
+        <tr><td>Zu lang gehalten</td><td>–</td></tr><tr><td>Angekommen in Mir</td><td>–</td></tr>
+        <tr><td>In meiner Mitte</td><td>–</td></tr><tr><td>Leicht und Frei</td><td>–</td></tr>
+        <tr><td>Alles fügt sich – zu Glück</td><td>–</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Risse im Gehorsam – 9.4.2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>Im Namen des Kindes</td><td>–</td></tr><tr><td>Zwischen Pflicht und Herz</td><td>–</td></tr>
+        <tr><td>Im eigenem Tempo</td><td>–</td></tr><tr><td>Risse im Kindesrecht</td><td>–</td></tr>
+        <tr><td>Wacht EDNLICH auf!</td><td>–</td></tr><tr><td>24 Stunden</td><td>–</td></tr><tr><td>Lichterloh</td><td>–</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Seit der Wiege an – Ins System gepresst – 9.4.2027</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>Zu früh im System</td><td>–</td></tr><tr><td>Funktionieren Müssen</td><td>–</td></tr>
+        <tr><td>Verloren im Lärm</td><td>–</td></tr><tr><td>Nicht laut genug</td><td>–</td></tr>
+        <tr><td>In Reihen gestellt</td><td>–</td></tr><tr><td>Du passt hier nicht rein</td><td>–</td></tr><tr><td>Das Haus der Reihen</td><td>–</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Rythm of Earth – 17. Mai 2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>Distant Heartbeat</td><td>–</td></tr><tr><td>Earth Pulse</td><td>–</td></tr>
+        <tr><td>Earthbound Stillness</td><td>–</td></tr><tr><td>Inner Water</td><td>–</td></tr>
+        <tr><td>Inner Weight</td><td>–</td></tr><tr><td>Temple Gong Drift</td><td>–</td></tr>
+        <tr><td>Temple Gong Drift 2</td><td>–</td></tr><tr><td>Womb Drift</td><td>–</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Geboren werden – 17. Mai 2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>Mutterpass</td><td>–</td></tr><tr><td>Gehalten – vergangene Hände</td><td>–</td></tr>
+        <tr><td>Hebamme</td><td>–</td></tr><tr><td>Vielleicht bin ich falsch</td><td>–</td></tr>
+        <tr><td>Ich höre mich nicht mehr</td><td>–</td></tr><tr><td>Zwischen uns</td><td>–</td></tr>
+        <tr><td>Die Ärztin</td><td>–</td></tr><tr><td>Der Korridor</td><td>–</td></tr>
+        <tr><td>Ich wollte feiern</td><td>–</td></tr><tr><td>Nach dem Schrei</td><td>–</td></tr>
+        <tr><td>Die Rückkehr der Stimme</td><td>–</td></tr><tr><td>Wir halten wieder</td><td>–</td></tr>
+        <tr><td>In UNSEREN Händen</td><td>–</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Breath Ocean – 21. Mai 2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody><tr><td>Keine Liedtitel angegeben</td><td>–</td></tr></tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Würde: unantastbar in mir – 20. Mai 2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>Es war zu eng</td><td>–</td></tr><tr><td>Ich gang einfach an</td><td>–</td></tr>
+        <tr><td>Zwischen ihren Blicken</td><td>–</td></tr><tr><td>Im Alltag leuchten, im Ganzen sehen</td><td>–</td></tr>
+        <tr><td>Würde, schon immer da</td><td>–</td></tr><tr><td>Würde kennt keinen Preis</td><td>–</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Weil es dich gibt – 6. Juni 2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>Ein Tag voller Wunder</td><td>–</td></tr><tr><td>Du bringst etwas in die Welt</td><td>–</td></tr>
+        <tr><td>Heute geht es um Dich</td><td>–</td></tr><tr><td>Alles, was DU bist</td><td>–</td></tr><tr><td>Jeden Tag wertvoll</td><td>–</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Der Weg nach Hause – Vägen Hem – 16. Juli 2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>Im Herzen des Waldes</td><td>–</td></tr><tr><td>Der Pfad des Tomte</td><td>–</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Zeit voller Wunder – 22. Juli 2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>Sonne</td><td>–</td></tr><tr><td>Wochenrucksack</td><td>–</td></tr><tr><td>Jahresrad</td><td>–</td></tr><tr><td>Jahreskarussell</td><td>–</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Von Kopf bis Fuß – 6. August 2026</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody>
+        <tr><td>Voller Gefühl</td><td>–</td></tr><tr><td>Wasser in den Augen</td><td>–</td></tr>
+        <tr><td>Wut im Bauch</td><td>–</td></tr><tr><td>Mein Herz klopft ganz laut</td><td>–</td></tr>
+        <tr><td>Freude in den Füßen</td><td>–</td></tr><tr><td>Alles darf einfach sein</td><td>–</td></tr>
+      </tbody>
+    </table>
+
+    <table class="album-table">
+      <caption>Zu Hause – 11. September 2025</caption>
+      <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+      <tbody><tr><td>Du bist mein zu Hause</td><td>–</td></tr><tr><td>Zu Hause</td><td>–</td></tr></tbody>
+    </table>
+  </section>
 
   <!-- Lieder -->
   <div class="intro">
