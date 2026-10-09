@@ -1,443 +1,462 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Lilians Kräuter Magie –  Kräuter, Räuchern, Tee, Natur- und Energiearbeit, Klangheilung, Kräuterwissen & Inspiration für ein bewusstes Leben. Entdecke deine eigene Magie." />
-  <meta name="keywords" content="Kräutermagie, Kräuter, Natur, Energiearbeit, Klangheilung, Lilian, Heilkräuter, Workshops, Kräuterwissen" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lilians Kräuter Magie</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101c3a">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <title>Lilians Kräutermagie – Wo Kräuter flüstern und Geschichten leuchten</title>
 
-  <style>
-    /* =======================
-       Globales CSS
-       ======================= */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    <meta name="description" content="Entdecke meine Kräutermagie: Kräuterwissen, Musik, Bücher und eine bunte Welt voller Natur, Geschichten und Magie.">
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Crimson Pro', serif;
-      font-size: 20px;
-      line-height: 1.8;
-      background-color: #a3b8e0;
-      color: #3a3a3a;
-      text-align: center;
-      overflow-x: hidden;
-    }
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    h1 {
-      font-size: 3em;
-      margin: 20px 0 10px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      color: #5e4b8b;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    h1 img {
-      max-width: 120px;
-      height: auto;
-    }
-
-    h2 {
-      font-size: 2.5em;
-      margin: 40px 0 20px 0;
-      font-weight: 700;
-      color: #5e4b8b;
-    }
-
-    .content {
-      max-width: 1000px;
-      margin: auto;
-      padding: 0 20px 40px 20px;
-      text-align: left;
-    }
-
-    p {
-      font-size: 1.2em;
-    }
-
-    /* =======================
-       Navigation
-       ======================= */
-
-    /* Inhalt über Hintergrund */
-    .navbar,
-    #language-switcher,
-    .content,
-    footer { position: relative; z-index: 2; }
-
-    .navbar {
-      background-color: #c3e4d4;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 28px;
-      color: #3a3a3a;
-      cursor: pointer;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background-color: #3a3a3a;
-      border-radius: 2px;
-    }
-
-    .navmenu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      align-items: center;
-    }
-
-    .navmenu li {
-      margin-right: 30px;
-      position: relative;
-    }
-
-    .navmenu a {
-      text-decoration: none;
-      color: #3a3a3a;
-      font-size: 20px;
-      padding: 10px;
-      display: block;
-    }
-
-    .navmenu a:hover {
-      background-color: #d3e9dc;
-      border-radius: 5px;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #c3e4d4;
-      min-width: 180px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      list-style: none;
-      padding: 0;
-    }
-
-    .dropdown-content li a {
-      color: #3a3a3a;
-      padding: 12px;
-      font-size: 18px;
-      text-decoration: none;
-    }
-
-    .dropdown-content li a:hover {
-      background-color: #f0f0f0;
-      color: #5e4b8b;
-    }
-
-    /* Desktop: Hover zeigt Dropdown */
-    @media (min-width: 769px) {
-      .navmenu li:hover .dropdown-content {
-        display: block;
-      }
-    }
-
-    /* Mobile styles */
-    @media screen and (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .menu-toggle {
-        display: flex;
-        margin-left: auto;
-      }
-
-      .navmenu {
-        flex-direction: column;
-        width: 100%;
-        display: none; /* Hidden by default, shown with .show */
-        margin-top: 10px;
-      }
-
-      .navmenu.show {
-        display: flex;
-      }
-
-      .navmenu li {
-        width: 100%;
-        margin: 0;
-      }
-
-      /* Dropdowns on mobile become static block items */
-      .navmenu li .dropdown-content {
-        position: static;
-        box-shadow: none;
-        padding-left: 0;
-      }
-
-      /* When a list item has .open, show its dropdown */
-      .navmenu li.open .dropdown-content {
-        display: block;
-      }
-
-      /* Make dropdown links visually nested */
-      .dropdown-content li a {
-        padding-left: 24px;
-      }
-    }
-
-    footer {
-      background-color: #c3e4d4;
-      padding: 20px;
-      text-align: center;
-      color: #3a3a3a;
-      font-size: 18px;
-    }
-
-    .education-item {
-      background-color: #e6e0d9;
-      color: #3a3a3a;
-      padding: 20px;
-      margin: 10px auto;
-      border-radius: 8px;
-      display: block;
-      width: fit-content;
-      max-width: 100%;
-      font-size: 1.2em;
-      line-height: 1.8;
-    }
-  </style>
+    <!-- Gemeinsames Design für die gesamte Website -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <div class="stars"></div>
 
-  <div class="content">
-    <h1>
-      Lilians Kräuter Magie
-    </h1>
-  </div>
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
-  <div id="language-switcher">
-    <a href="index.html"><img src="picture/defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
-    <a href="/en/"><img src="picture/enfavicon.png" alt="English" title="English" width="24"></a>
-    <a href="/dk/"><img src="picture/dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
-  </div>
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
 
-  <!-- Navigationsleiste mit Dropdown-Menüs -->
-    <div class="navbar">
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+    <header class="site-header">
+        <div class="nav-wrap">
+
+            <a class="brand" href="index.html" aria-label="Lilians Kräutermagie – Startseite">
+                <span class="brand-mark" aria-hidden="true">✦</span>
+                <span>Lilians Kräutermagie</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="main-nav"
+            >
+                <span aria-hidden="true">☰</span>
+                Menü
+            </button>
+
+            <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+                <a href="steckbriefe.html">Kräuterwelt</a>
+                <a href="lieder.html">Musik</a>
+                <a href="meinebücher.html">Bücher</a>
+                <a href="about.html">Über Mich</a>
+                <a class="nav-highlight" href="#neues-buch">Neues Buch ✦</a>
+                <a href="angebot.html">Angebote</a>
+            </nav>
+
         </div>
-        <ul class="navmenu" id="navmenu">
-            <li class="dropdown">
-                <a href="index.html">Startseite</a>
-                <ul class="dropdown-content">
-                    <li><a href="about.html">Über mich</a></li>
-                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                    <li><a href="mission.html">Meine Mission</a></li>
-                    <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-                </ul>
-            </li>
-                 <li class="dropdown">
-                <a href="#">Wort&Klang</a>
-                <ul class="dropdown-content">
-                     <li><a href="schätze.html">geschriebene Schätze</a></li>
-                    <li><a href="meinebücher.html">Meine Bücher</a></li>
-                    <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-                   <li><a href="lieder.html">Meine Lieder</a></li>  
-                </ul>
-            </li>
-       <li class="dropdown">
-                <a href="#">begleitende Angebote</a>
-                <ul class="dropdown-content">
-                    <li><a href="angebot.html">Mein Angebot für dich</a></li>
-                  <li><a href="pädagogik.html"> pädagogische Angebote </a></li>
-                  <li><a href="ep.html">erlebnispädagog. Angebote</a></li>
-                    <li><a href="pendel.html">Karten legen und Pendeln</a></li>
-                   <li><a href="online.html">Online Kurse</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#">Shop</a>
-                <ul class="dropdown-content">
-                    <li><a href="shop.html">Mein Shop</a></li>
-                     <li><a href="steckbriefe.html">Meine Kräutersteckbriefe</a></li>
-                
-              </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#">Mit sich selbst in Verbindung kommen</a>
-                <ul class="dropdown-content">
-                    <li><a href="energie.html">Innere Balance</a></li>
-                    <li><a href="basics.html">Die Basics</a></li>
-                    <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
-                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#">Rezepte</a>
-                <ul class="dropdown-content">
-                    <li><a href="rezepte.html">Warum DIY?</a></li>
-                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                    <li><a href="haare.html">Haarprodukte</a></li>
-                </ul>
-            </li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="agb.html">AGB</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-        </ul>
-    </div>
+    </header>
 
+    <!-- ========================================
+         TITELBEREICH
+    ======================================== -->
 
-  <p>Willkommen in meiner Welt. Hier findest du Kräuter, Bücher, Zauberhaftes und vieles mehr.</p>
+    <section class="hero" aria-labelledby="hero-title">
 
-    <!-- About Section -->
- <div class="about-container">
-  <img src="picture/me.jpg" alt="Foto von Lilian" width="250">
-</div>
+        <div class="language-switcher" aria-label="Sprache wählen">
+            <a href="index.html" aria-label="Deutsch">
+                <img src="picture/defavicon.png" alt="">
+            </a>
 
+            <a href="/en/" aria-label="English">
+                <img src="picture/enfavicon.png" alt="">
+            </a>
 
+            <a href="/dk/" aria-label="Dansk">
+                <img src="picture/dkfavicon.png" alt="">
+            </a>
+        </div>
 
-         <div class="about-section">
-    <h2>Über mich</h2>
-    <p>Willkommen auf meiner Seite! </p>
-    <p> Mein Künstlername ist Elisabeth-Ann Wolf.</p>
-    <p>Hier teile ich meine Gedanken, Projekte und vor allem meine Leidenschaft für die Kraft der Natur und die heilende Wirkung von Kräutern.</p>
-    <p>Kräuter, ihre Vielfalt und ihre energetische Wirkung sind meine Passion – sie begleiten mich in meiner Arbeit, beim Schreiben und in meiner täglichen Praxis für Gesundheit und Wohlbefinden.</p>
-    <p>Ich bin staatlich anerkannte Erzieherin mit Bachelor-Abschluss und ausgebildete Erlebnispädagogin. Viele Jahre habe ich mit Herzblut in Kindergärten gearbeitet und wertvolle Erfahrungen gesammelt.</p>
-    <p>Besonders inspiriert hat mich eine Einrichtung, in der alles harmonierte. Dort begann ich, Geschichten für Kinder zu schreiben – kleine Traumreisen, die Fantasie anregen und Freude schenken. Es war unbeschreiblich schön zu sehen, wie Kinderaugen leuchteten, wenn ich vorlas. Diese Momente zeigten mir, wie Worte Heilung, Freude und Energie schenken können.</p>
-    <p>Schon früher habe ich leidenschaftlich geschrieben, doch erst jetzt habe ich den Mut gefunden, meine Geschichten zu teilen. So entstanden die ersten Bände meiner "Traumreisen mit Baldur" für Kinder sowie ein Buch für Erwachsene. Band 1 und Band 2 sind erhältlich, dazu plane ich weitere Projekte in Schrift und Audio.</p>
-    <p>Doch meine Leidenschaft endet nicht beim Schreiben: Ich beschäftige mich intensiv mit Kräutern, energetischer Heilung und DIY-Heilmitteln. Ich stelle Kosmetik, Teemischungen, Salben und natürliche Heilmittel selbst her, um die Kraft der Natur bewusst zu nutzen und weiterzugeben.</p>
-    <h3>Was mir wichtig ist:</h3>
-    <ul>
-        <li>Musik</li>
-        <li>Yoga</li>
-        <li>Ein achtsamer Umgang mit der Natur</li>
-        <li>Selbstgemachte, chemiefreie Kosmetik und Heilmittel</li>
-        <li>Entspannung, Energie und innere Balance</li>
-        <li>Freie Entfaltung und Wandlung durch Worte und Kreativität</li>
-    </ul>
+        <div class="hero-inner">
 
-    <p>Meine DIY-Leidenschaften im Überblick:</p>
-    <ul>
-        <li>Marmeladen mit Kräutern und Blüten</li>
-        <li>Limonaden aus Kräutern, Obst und Blüten</li>
-        <li>Einkochen und Einwecken von Kompotten, Suppen und Soßen</li>
-        <li>Seifen für unterschiedliche Hauttypen und energetische Reinigung</li>
-        <li>Salben und Cremes (z. B. Rotöl mit Johanniskraut, Fichte mit Minze/Eukalyptus, Ringelblume, Rose)</li>
-        <li>Traumreisen für Kinder und Erwachsene</li>
-        <li>Teemischungen nach Beschwerden und Anliegen</li>
-        <li>Räuchermischungen für Energie und Ausgleich</li>
-        <li>Pflanzliche Medizin (von Sirup bis pflanzliches Antibiotikum – sanft zum Körper)</li>
-        <li>Zuckerfreie Naschereien und Gummibärchen für Kinder</li>
-        <li>Selbstgemachte Säfte</li>
-        <li>Körperpflegeprodukte für Haar und Haut</li>
-        <li>Stricken und Häkeln von Kinderkleidung</li>
-        <li>Historische Kleidung komplett handgefertigt</li>
-        <li>Programmieren von Webseiten für eigene Projekte</li>
-    </ul>
-<p> Lilians-Kräuter-Magie ist ein Herzensprojekt rund um Pflanzenwissen, Räucherwerk, naturverbundene Rituale und Klang- und Frequenzheilung. </p>
+            <span class="eyebrow">
+                ✧ Natur · Worte · Klang · Magie ✧
+            </span>
 
+            <h1 id="hero-title">
+                Wo Kräuter flüstern und
+                <span>Geschichten leuchten.</span>
+            </h1>
 
-           
-    <p>Ich liebe es, Neues zu lernen und mich von Kräutern, Energiearbeit und kreativen Projekten inspirieren zu lassen. Aktuell arbeite ich an weiteren Büchern, Audioaufnahmen und DIY-Projekten. Ich freue mich, wenn du mich auf dieser Reise begleitest!</p>
+            <p>
+                Willkommen in meiner bunten Welt zwischen Pflanzenwissen,
+                Musik, Büchern und den kleinen Wundern des Alltags.
+                Schön, dass du hier bist.
+            </p>
 
-    <p>Schön, dass du hier bist! Meine Inhalte sollen inspirieren, heilen und praktische Tipps geben. Für individuelle Rezepte, individuelle Tee- und/ oder Räuchermischungen oder Fragen nutze gern das Kontaktformular.</p>
+            <div class="hero-actions">
+                <a class="button button-primary" href="#welten">
+                    Entdecke meine Welten →
+                </a>
 
-    
-</div>
+                <a class="button button-secondary" href="about.html">
+                    Lerne Mich kennen
+                </a>
+            </div>
 
+        </div>
+    </section>
 
-<!-- Bannerbild -->
- <div class="banner">
-  <img src="picture/strand....jpg" alt="Banner" width="800" height="200">
-</div>
-</div>
+    <!-- ========================================
+         HAUPTINHALT
+    ======================================== -->
 
+    <main id="inhalt">
 
-  <script>
-    // Wartet auf Laden des DOM
-    document.addEventListener("DOMContentLoaded", function() {
-      const menuToggle = document.getElementById('menuToggle');
-      const navmenu = document.getElementById('navmenu');
+        <!-- VIER THEMENWELTEN -->
 
-      // toggleMenu-Funktion
-      function toggleMenu() {
-        navmenu.classList.toggle('show');
-        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', String(!expanded));
-      }
+        <section class="section" id="welten">
 
-      menuToggle.addEventListener('click', function(e) {
-        e.stopPropagation(); // verhindern, dass der document-Click sofort schließt
-        toggleMenu();
-      });
+            <div class="section-heading">
 
-      // Dropdowns per Klick (nur mobil: <= 768px)
-      const dropdownToggles = document.querySelectorAll('.navmenu > li.dropdown > a');
-      dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-          // Wenn Mobil-Ansicht, verhindern wir das direkte Springen und öffnen das Untermenü
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            const parentLi = this.parentElement;
-            parentLi.classList.toggle('open');
-          }
-          // Im Desktop-Modus bleibt das Standardverhalten (Hover/Link) erhalten
-        });
-      });
+                <span class="eyebrow">Finde deinen Weg</span>
 
-      // Klick außerhalb schließt Menü/Dropdowns (nützlich auf Mobil)
-      document.addEventListener('click', function(e) {
-        const target = e.target;
-        // Wenn Klick außerhalb der Navigation, schließe alles
-        if (!navmenu.contains(target) && !menuToggle.contains(target)) {
-          // navmenu schließen
-          if (navmenu.classList.contains('show')) {
-            navmenu.classList.remove('show');
-            menuToggle.setAttribute('aria-expanded', 'false');
-          }
-          // alle offenen dropdowns schließen
-          document.querySelectorAll('.navmenu li.open').forEach(li => li.classList.remove('open'));
+                <h2>Vier Türen in eine bunte Welt</h2>
+
+                <p>
+                    Stöbere, lass dich inspirieren und entdecke,
+                    was dich gerade ruft. Jede Welt hat ihren eigenen Klang –
+                    und doch gehören alle zusammen.
+                </p>
+
+            </div>
+
+            <div class="world-grid">
+
+                <a class="world-card herbs-card" href="steckbriefe.html">
+                    <span class="symbol" aria-hidden="true">❧</span>
+
+                    <h3>Kräuter &amp; Pflanzen</h3>
+
+                    <p>
+                        Pflanzenporträts, Kräuterwissen,
+                        Rezepte und kreative Ideen aus der Natur.
+                    </p>
+
+                    <span class="card-link">In die Kräuterwelt →</span>
+                </a>
+
+                <a class="world-card music-card" href="lieder.html">
+                    <span class="symbol" aria-hidden="true">♫</span>
+
+                    <h3>Musik &amp; Klang</h3>
+
+                    <p>
+                        Lieder, Texte und Klänge für unterschiedliche
+                        Stimmungen und Lebensmomente.
+                    </p>
+
+                    <span class="card-link">Musik entdecken →</span>
+                </a>
+
+                <a class="world-card books-card" href="meinebücher.html">
+                    <span class="symbol" aria-hidden="true">✧</span>
+
+                    <h3>Bücher &amp; Geschichten</h3>
+
+                    <p>
+                        Geschriebene Schätze, Bücher und Hörgeschichten
+                        zum Eintauchen.
+                    </p>
+
+                    <span class="card-link">Zu den Büchern →</span>
+                </a>
+
+                <a class="world-card newbook-card" href="#neues-buch">
+                    <span class="symbol" aria-hidden="true">☾</span>
+
+                    <h3>Ein neues Kapitel</h3>
+
+                    <p>
+                        Ein neues Buch wächst heran.
+                        Hier entsteht nach und nach ein Blick hinter die Kulissen.
+                    </p>
+
+                    <span class="card-link">Mehr erfahren →</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- KRÄUTERWELT -->
+
+        <section class="section" id="kraeuter">
+
+            <div class="feature-band">
+
+                <div>
+
+                    <span class="eyebrow">Mit den Händen in der Erde</span>
+
+                    <h2>
+                        Die Magie wächst direkt vor unserer Tür.
+                    </h2>
+
+                    <p>
+                        Manchmal beginnt eine Entdeckung mit einem Blatt,
+                        einem Duft oder einer einfachen Frage.
+                        Tauche ein in die Welt der Kräuter – mit
+                        Pflanzensteckbriefen, Rezeptideen und Inspiration
+                        für deinen Alltag.
+                    </p>
+
+                    <a class="button button-primary" href="steckbriefe.html">
+                        Kräuterwissen entdecken →
+                    </a>
+
+                </div>
+
+                <div
+                    class="feature-art"
+                    role="img"
+                    aria-label="Baum und Natur als Symbol für Wachstum und Verbundenheit"
+                ></div>
+
+            </div>
+
+        </section>
+
+        <!-- BÜCHER UND MUSIK -->
+
+        <section class="section">
+
+            <div class="section-heading center">
+
+                <span class="eyebrow">Von Herzen geschaffen</span>
+
+                <h2>Worte, die bleiben. Klänge, die begleiten.</h2>
+
+                <p>
+                    Meine kreativen Arbeiten gehören genauso zu dieser Welt
+                    wie die Kräuter. Hier findest du eigene Wege in Bücher,
+                    Hörbücher und Musik.
+                </p>
+
+            </div>
+
+            <div class="split">
+
+                <article class="panel">
+
+                    <span class="eyebrow">Geschriebene Schätze</span>
+
+                    <h3>Bücher zum Entdecken und Weiterträumen</h3>
+
+                    <p>
+                        Stöbere durch meine Bücher und Hörbücher.
+                        Zu jedem Werk können nach und nach mehr Einblicke,
+                        Hintergründe und Hörproben dazukommen.
+                    </p>
+
+                    <p>
+                        <a class="panel-link" href="meinebücher.html">
+                            Meine Bücher ansehen →
+                        </a>
+                    </p>
+
+                    <p>
+                        <a class="panel-link" href="hörbuch.html">
+                            Zu den Hörbüchern →
+                        </a>
+                    </p>
+
+                </article>
+
+                <article class="panel">
+
+                    <span class="eyebrow">Musik &amp; Klang</span>
+
+                    <h3>Ein Lied für einen bestimmten Moment</h3>
+
+                    <p>
+                        Musik kann Erinnerungen wecken, trösten,
+                        begleiten oder einfach Freude machen.
+                        Entdecke meine Lieder und die Geschichten dahinter.
+                    </p>
+
+                    <p>
+                        <a class="panel-link" href="lieder.html">
+                            Meine Musik entdecken →
+                        </a>
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- DAS NEUE BUCH -->
+
+        <section class="section" id="neues-buch">
+
+            <div class="feature-band">
+
+                <div>
+
+                    <span class="eyebrow">Ein neues Kapitel entsteht</span>
+
+                    <h2>
+                        Manche Geschichten wachsen im Verborgenen.
+                    </h2>
+
+                    <p>
+                        Seit Monaten entsteht ein neues Buch.
+                        Etwas ganz Besonderes.
+                        Auf dieser Seite kann nach und nach ein kleines
+                        Fenster in den Schreibprozess geöffnet werden –
+                        mit Gedanken, Inspirationen und ausgewählten
+                        Einblicken, sobald sie bereit sind.
+                    </p>
+
+                    <a class="button button-secondary" href="kontakt.html">
+                        Bleib mit mir in Verbindung →
+                    </a>
+
+                </div>
+
+                <div
+                    class="feature-art"
+                    style="background-image:
+                        linear-gradient(
+                            135deg,
+                            rgba(33, 21, 47, 0.1),
+                            rgba(113, 62, 120, 0.15)
+                        ),
+                        url('picture/test.jpg');"
+                    role="img"
+                    aria-label="Atmosphärisches Bild als Platzhalter für das neue Buchprojekt"
+                ></div>
+
+            </div>
+
+        </section>
+
+        <!-- NEWSLETTER -->
+
+        <section class="section" id="newsletter">
+
+            <div class="newsletter">
+
+                <span class="eyebrow" style="color: #713e78;">
+                    Post aus meiner Welt
+                </span>
+
+                <h2>Ein bisschen Magie im Postfach?</h2>
+
+                <p>
+                    Erfahre mehr über meine Arbeit, neue Bücher,
+                    Kräuterideen und kommende Projekte.
+                </p>
+
+                <form action="https://formspree.io/f/mkgjyywk" method="POST">
+
+                    <label for="email" class="skip-link">
+                        Deine E-Mail-Adresse
+                    </label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        required
+                        autocomplete="email"
+                        placeholder="deine@email.de"
+                    >
+
+                    <button type="submit">
+                        Ich bin dabei ✦
+                    </button>
+
+                </form>
+
+                <small>
+                    Mit dem Absenden erklärst du dich mit der Speicherung
+                    deiner E-Mail-Adresse zum Zweck des Newsletter-Versands
+                    einverstanden.
+                    <a href="agb.html">Mehr erfahren</a>.
+                    Bitte prüfe, ob deine Datenschutzhinweise und die
+                    Newsletter-Anmeldung zu deinem tatsächlichen Ablauf passen.
+                </small>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ========================================
+         FUSSZEILE
+    ======================================== -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div>
+                © Lilians Kräutermagie ·
+                Mit Liebe, Neugier und einer Prise Magie gestaltet.
+            </div>
+
+            <div class="footer-links">
+                <a href="kontakt.html">Kontakt</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="agb.html">AGB</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT: MOBILES MENÜ
+    ======================================== -->
+
+    <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const mainNav = document.querySelector("#main-nav");
+
+        if (menuButton && mainNav) {
+            menuButton.addEventListener("click", () => {
+                const isOpen = mainNav.classList.toggle("open");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+                menuButton.querySelector("span").textContent =
+                    isOpen ? "✕" : "☰";
+            });
+
+            // Menü nach Auswahl eines Links schließen.
+            mainNav.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    mainNav.classList.remove("open");
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuButton.querySelector("span").textContent = "☰";
+                });
+            });
         }
-      });
+    </script>
 
-      // Auf Fenstergröße ändern: entferne mobile-states, wenn auf Desktop gewechselt wird
-      window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-          // mobile-Klassen entfernen, damit Hover wieder normal funktioniert
-          if (navmenu.classList.contains('show')) navmenu.classList.remove('show');
-          menuToggle.setAttribute('aria-expanded', 'false');
-          document.querySelectorAll('.navmenu li.open').forEach(li => li.classList.remove('open'));
-        }
-      });
-    });
-  </script>
 </body>
 </html>
