@@ -1,0 +1,744 @@
+```html
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Generelle forretningsbetingelser og juridiske oplysninger om Lilian Lübkes hjemmeside.">
+  <title>Handelsbetingelser | Lilians Kräuter Magie</title>
+
+  <link rel="icon" type="image/png" href="defavicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --midnight: #251b29;
+      --midnight-light: #392737;
+      --accent: #c77b91;
+      --accent-light: #e8a8b7;
+      --gold: #e4c5a2;
+      --gold-light: #f5e3d1;
+      --cream: #fff6f2;
+      --muted: #e0cdd4;
+      --panel: #352632;
+      --panel-light: #44303e;
+      --border: rgba(232, 168, 183, 0.23);
+      --shadow: 0 16px 45px rgba(12, 7, 15, 0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Nunito Sans", sans-serif;
+      color: var(--cream);
+      background:
+        radial-gradient(ellipse at 15% 12%, rgba(199, 123, 145, 0.12), transparent 34%),
+        radial-gradient(ellipse at 88% 45%, rgba(228, 197, 162, 0.07), transparent 32%),
+        var(--midnight);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.38;
+      background-image:
+        radial-gradient(1px 1px at 10% 18%, rgba(255, 246, 242, 0.75) 50%, transparent 100%),
+        radial-gradient(1px 1px at 32% 72%, rgba(255, 246, 242, 0.55) 50%, transparent 100%),
+        radial-gradient(2px 2px at 68% 22%, rgba(232, 168, 183, 0.65) 50%, transparent 100%),
+        radial-gradient(1px 1px at 84% 66%, rgba(255, 246, 242, 0.65) 50%, transparent 100%),
+        radial-gradient(1px 1px at 51% 43%, rgba(228, 197, 162, 0.6) 50%, transparent 100%),
+        radial-gradient(1px 1px at 91% 90%, rgba(255, 246, 242, 0.55) 50%, transparent 100%);
+      background-size: 320px 320px;
+    }
+
+    a {
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: color 0.25s ease, opacity 0.25s ease;
+    }
+
+    a:hover {
+      color: var(--gold-light);
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(37, 27, 41, 0.92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      width: min(1200px, calc(100% - 44px));
+      min-height: 82px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      color: var(--cream);
+      line-height: 1.15;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: 0.035em;
+    }
+
+    .brand-subtitle {
+      margin-top: 5px;
+      color: var(--accent-light);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(12px, 2vw, 27px);
+    }
+
+    .main-nav a {
+      position: relative;
+      padding: 9px 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover,
+    .main-nav a[aria-current="page"] {
+      color: var(--gold-light);
+    }
+
+    .main-nav a[aria-current="page"]::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 1px;
+      left: 0;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    .main-nav .new-book-link {
+      color: var(--gold-light);
+    }
+
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 5px;
+      padding-left: 16px;
+      border-left: 1px solid var(--border);
+    }
+
+    .language-switcher a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 27px;
+      height: 27px;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      opacity: 0.75;
+    }
+
+    .language-switcher a:hover,
+    .language-switcher a[aria-current="page"] {
+      border-color: var(--accent-light);
+      opacity: 1;
+    }
+
+    .language-switcher img {
+      display: block;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      color: var(--cream);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.4rem;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 340px;
+      padding: 80px 24px 76px;
+      text-align: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: min(750px, 90vw);
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(199, 123, 145, 0.22), rgba(199, 123, 145, 0.04) 48%, transparent 72%);
+      filter: blur(12px);
+    }
+
+    .hero-content {
+      width: min(850px, 100%);
+      animation: fade-up 0.9s ease both;
+    }
+
+    .eyebrow {
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      line-height: 1.18;
+    }
+
+    h1 {
+      color: var(--cream);
+      font-size: clamp(3.1rem, 7vw, 5.5rem);
+      letter-spacing: -0.025em;
+    }
+
+    .hero-description {
+      max-width: 630px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 27px;
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    .hero-ornament::before,
+    .hero-ornament::after {
+      content: "";
+      width: 55px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent-light));
+    }
+
+    .hero-ornament::after {
+      transform: rotate(180deg);
+    }
+
+    main {
+      width: min(1000px, calc(100% - 44px));
+      margin: 0 auto;
+      padding: 0 0 100px;
+    }
+
+    .legal-card {
+      position: relative;
+      padding: clamp(28px, 5vw, 60px);
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(68, 48, 62, 0.95), rgba(42, 31, 45, 0.97));
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      animation: fade-up 0.8s ease both;
+    }
+
+    .legal-card::before {
+      content: "";
+      position: absolute;
+      top: -110px;
+      right: -90px;
+      width: 270px;
+      height: 270px;
+      border: 1px solid rgba(232, 168, 183, 0.12);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 24px rgba(232, 168, 183, 0.025),
+        0 0 0 48px rgba(232, 168, 183, 0.02);
+      pointer-events: none;
+    }
+
+    .legal-intro {
+      max-width: 720px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .legal-section {
+      position: relative;
+      padding: 27px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .legal-section:first-of-type {
+      border-top: 0;
+    }
+
+    .legal-section h2 {
+      margin-bottom: 14px;
+      color: var(--accent-light);
+      font-size: clamp(1.7rem, 3.5vw, 2.15rem);
+    }
+
+    .legal-section p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .legal-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-section strong {
+      color: var(--cream);
+      font-weight: 700;
+    }
+
+    .contact-box {
+      margin-top: 15px;
+      padding: 18px 22px;
+      background: rgba(199, 123, 145, 0.09);
+      border: 1px solid rgba(232, 168, 183, 0.2);
+      border-radius: 14px;
+    }
+
+    .contact-box a {
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .site-footer {
+      padding: 35px 22px 28px;
+      background: rgba(20, 14, 24, 0.55);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-brand {
+      margin-bottom: 10px;
+      color: var(--cream);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.7rem;
+    }
+
+    .footer-note {
+      max-width: 600px;
+      margin: 0 auto 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 24px;
+      margin-bottom: 18px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .footer-links a:hover,
+    .footer-links a[aria-current="page"] {
+      color: var(--gold-light);
+    }
+
+    .copyright {
+      color: rgba(224, 205, 212, 0.62);
+      font-size: 0.78rem;
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1050px) {
+      .header-inner {
+        width: min(100% - 32px, 900px);
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .main-nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 24px 24px;
+        background: rgba(37, 27, 41, 0.98);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.22);
+      }
+
+      .main-nav.is-open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main-nav > a {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(232, 168, 183, 0.1);
+      }
+
+      .main-nav a[aria-current="page"]::after {
+        right: auto;
+        width: 42px;
+      }
+
+      .language-switcher {
+        margin: 14px 0 0;
+        padding: 12px 0 0;
+        border-top: 1px solid var(--border);
+        border-left: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        min-height: 72px;
+      }
+
+      .brand-name {
+        font-size: 1.55rem;
+      }
+
+      .brand-subtitle {
+        font-size: 0.58rem;
+      }
+
+      .hero {
+        min-height: 290px;
+        padding: 60px 20px;
+      }
+
+      .hero-description {
+        font-size: 0.97rem;
+      }
+
+      main {
+        width: calc(100% - 28px);
+        padding-bottom: 65px;
+      }
+
+      .legal-card {
+        padding: 27px 22px;
+        border-radius: 20px;
+      }
+
+      .legal-section {
+        padding: 23px 0;
+      }
+
+      .contact-box {
+        padding: 16px;
+      }
+
+      .footer-links {
+        gap: 8px 17px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Gå til forsiden">
+        <span class="brand-name">Lilian Lübke</span>
+        <span class="brand-subtitle">Kreativitet · Natur · Klang</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Åbn menuen"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >☰</button>
+
+      <nav class="main-nav" id="main-navigation" aria-label="Hovednavigation">
+        <a href="/dänisch/index.html">Forside</a>
+        <a href="/dänisch/kraeuter.html">Urteverden</a>
+        <a href="/dänisch/musik.html">Musik</a>
+        <a href="/dänisch/buecher.html">Bøger</a>
+        <a href="/dänisch/angebote.html">Tilbud</a>
+        <a href="/dänisch/about.html">Om mig</a>
+        <a class="new-book-link" href="index.html#neues-buch">Ny bog ✦</a>
+
+        <div class="language-switcher" aria-label="Vælg sprog">
+          <a href="index.html" aria-label="Tysk">
+            <img src="defavicon.png" alt="Tysk">
+          </a>
+          <a href="/englisch/index.html" aria-label="Engelsk">
+            <img src="enfavicon.png" alt="Engelsk">
+          </a>
+          <a href="/dänisch/index.html" aria-label="Dansk" aria-current="page">
+            <img src="dkfavicon.png" alt="Dansk">
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">HANDELSBETINGELSER</p>
+      <h1>Generelle handelsbetingelser</h1>
+      <p class="hero-description">
+        Her finder du alle retningslinjer og handelsbetingelser.
+      </p>
+      <div class="hero-ornament" aria-hidden="true">✦</div>
+    </div>
+  </section>
+
+  <main>
+    <section class="legal-section">
+
+      <h2>1. Anvendelsesområde</h2>
+      <p>Disse generelle handelsbetingelser gælder for alle aftaler om salg af fysiske varer, digitalt indhold (PDF-downloads) samt tjenesteydelser, der indgås via hjemmesiden „Lilian’s Witchy World“, herunder <strong>energetiske ydelser såsom lydhealing på afstand via Zoom</strong>.</p>
+
+      <h2>2. Udbyder</h2>
+      <p>Udbyderen i henhold til § 5 i den tyske telemedielov (TMG) er den person, der er angivet i hjemmesidens kolofon.</p>
+      <p>Udbyderen driver virksomhed under den tyske småvirksomhedsordning i henhold til § 19 UStG. Der opkræves ikke moms.</p>
+
+      <h2>3. Indgåelse af aftale</h2>
+      <p>Præsentationen af produkter og tjenesteydelser udgør ikke et juridisk bindende tilbud. Når kunden gennemfører en bestilling eller booker en tid, afgiver kunden et bindende købstilbud. Aftalen indgås, når bestillingen bekræftes, eller betalingen er modtaget.</p>
+      <p><strong>Ved lydhealing via Zoom:</strong> Når en lydhealing bookes via hjemmesiden eller en betalingsplatform (f.eks. Stripe), indgås en bindende aftale om den aftalte ydelse. Tiden reserveres bindende, når betalingen er modtaget.</p>
+
+      <h2>4. Priser og betalingsbetingelser</h2>
+      <p>Alle priser er slutpriser i henhold til den tyske småvirksomhedsordning (§ 19 UStG). Betaling sker via de betalingsmetoder, der tilbydes i webshoppen. Betalingerne behandles via Stripe.com. De betalingsmetoder, som Stripe stiller til rådighed, kan benyttes. Betalingen forfalder straks og er bindende.</p>
+      <p><strong>Ved lydhealing via Zoom:</strong> Betalingen foretages på forhånd via Stripe. Når betalingen er modtaget, er tiden bindende reserveret.</p>
+
+      <h2>5. Levering og forsendelse</h2>
+      <p>Fysiske produkter leveres til den leveringsadresse, som kunden har angivet. Leveringstiden er normalt 1–2 uger.</p>
+      <p>Hvis der opstår længere leveringstider på grund af omstændigheder såsom forsinkelser hos fragtfirmaet, helligdage eller uforudsete hændelser, informerer vi kunden hurtigst muligt.</p>
+      <p>Forsendelsesomkostningerne er allerede inkluderet i produktprisen. Risikoen ved forsendelsen overgår til kunden, når varen overdrages til fragtfirmaet.</p>
+      <p>Digitalt indhold (f.eks. PDF-downloads) stilles til rådighed for download umiddelbart efter modtagelse af betalingen.</p>
+
+      <h2>6. Digitalt indhold (PDF-downloads)</h2>
+      <p>Digitalt indhold stilles til rådighed via download, når betalingen er modtaget. Når download er gennemført, er der ikke krav på tilbagebetaling.</p>
+      <p>Bemærk: Der påtages intet ansvar for tekniske problemer.</p>
+
+      <h2>7. Fortrydelsesret og returvilkår</h2>
+      <p>For fysiske produkter gælder den lovbestemte fortrydelsesret på 14 dage. Fristen begynder, når varen er modtaget. For at gøre brug af fortrydelsesretten skal kunden tydeligt meddele sin beslutning om at fortryde købet (f.eks. via e-mail eller brev) og returnere varen.</p>
+      <p>Kunden afholder omkostningerne ved returnering, medmindre den leverede vare ikke svarer til bestillingen eller er mangelfuld.</p>
+      <p>Varen skal returneres ubrugt og så vidt muligt i originalemballagen. Der er ingen fortrydelsesret for personaliserede eller specialfremstillede produkter.</p>
+      <p>For digitalt indhold (f.eks. PDF-downloads) bortfalder fortrydelsesretten, når download er påbegyndt, og kunden udtrykkeligt har givet sit samtykke.</p>
+      <p><strong>Ved lydhealing via Zoom:</strong> For tjenesteydelser, der leveres på et aftalt tidspunkt, er der ingen fortrydelsesret, når tidspunktet er fastlagt. Ved aflysning med kort varsel kan der efter aftale tilbydes en erstatningstid.</p>
+
+      <h2>8. Ejendomsforbehold</h2>
+      <p>Varen forbliver udbyderens ejendom, indtil den er fuldt betalt.</p>
+
+      <h2>9. Reklamationsret</h2>
+      <p>De lovbestemte rettigheder ved mangler gælder.</p>
+
+      <h2>10. Ansvar</h2>
+      <p>Udbyderen hæfter kun i tilfælde af forsæt og grov uagtsomhed.</p>
+      <p><strong>Ved lydhealing via Zoom:</strong> Lydhealing er en energetisk støtte med henblik på at fremme velvære. Den erstatter ikke lægelig, terapeutisk eller alternativ behandling udført af en behandler. Der gives ingen løfter om helbredelse, resultater eller mirakler.</p>
+
+      <h2>11. Indhold og brug på eget ansvar</h2>
+      <p>Alt indhold er udelukkende beregnet til generel information og udgør ikke medicinsk eller terapeutisk rådgivning.</p>
+      <p><strong>Ved lydhealing via Zoom:</strong> Deltagelse sker på eget ansvar. Kunden bør være sundhedsmæssigt i stand til at deltage i sessionen.</p>
+
+      <h2>12. Ophavsret</h2>
+      <p>Alt indhold på denne hjemmeside er beskyttet af ophavsret. Brug er kun tilladt med skriftlig tilladelse.</p>
+
+      <h2>13. Nyhedsbrev og databeskyttelse</h2>
+      <p>Ved tilmelding til nyhedsbrevet accepterer du, at dine personoplysninger behandles. Den separate privatlivspolitik gælder.</p>
+      <p>Nyhedsbrevet sendes kun, hvis du udtrykkeligt har givet dit samtykke ved at markere det relevante felt ved checkout eller via tilmeldingsformularen til nyhedsbrevet (aktivt samtykke).</p>
+      <p><strong>Ved lydhealing via Zoom:</strong> Det er valgfrit at sende billeder af de berørte kropsområder via e-mail. Disse oplysninger bruges udelukkende til forberedelse af sessionen og videregives ikke til tredjeparter. Privatlivspolitikken gælder.</p>
+
+      <h2>14. Deltagelse i kurser og arrangementer</h2>
+
+      <h3>14.1 Tilmelding og aftale</h3>
+      <p>Tilmeldingen er bindende og medfører betalingspligt.</p>
+
+      <h3>14.2 Priser og betaling</h3>
+      <p>Betaling sker på forhånd.</p>
+
+      <h2>14.3 Aftaleperioder og automatisk forlængelse</h2>
+      <p>Månedlige tilbud på kurser, workshops eller andre tilbagevendende ydelser har en minimumsperiode på én måned. Hvis aftalen ikke opsiges rettidigt, senest to uger før udgangen af den pågældende måned, forlænges den automatisk med yderligere en måned. Opsigelsen skal ske skriftligt (f.eks. via e-mail).</p>
+
+      <h3>14.4 Prøvetimer</h3>
+      <p>Kan bookes én gang til en pris på 7 €.</p>
+
+      <h3>14.5 Aflysning af kursus</h3>
+      <p>Hvis et kursus aflyses, tilbydes en erstatningsdato.</p>
+
+      <h3>14.6 Ansvar</h3>
+      <p>Deltagelse sker på eget ansvar.</p>
+
+      <h3>14.7 Helbred</h3>
+      <p>Deltagelse forudsætter, at deltageren er sundhedsmæssigt egnet.</p>
+
+      <h3>14.8 Manglende deltagelse</h3>
+      <p>Der ydes ingen tilbagebetaling ved manglende deltagelse.</p>
+
+      <h3>14.9 Længerevarende sygdom</h3>
+      <p>En individuel og imødekommende løsning kan aftales.</p>
+
+      <h3>14.10 Skriftlig aflysning</h3>
+      <p>Aflysning skal ske mindst 24 timer i forvejen.</p>
+
+      <h3>14.11 Beklædning og materialer</h3>
+      <p>Deltagerne er selv ansvarlige for at medbringe passende udstyr.</p>
+
+      <h3>14.12 Smitsomme sygdomme</h3>
+      <p>Ved kendte infektioner kan kurset aflyses.</p>
+
+      <h2>15. Ændringer af handelsbetingelserne</h2>
+      <p>Udbyderen forbeholder sig retten til at foretage ændringer. Den til enhver tid gældende version er den aktuelle version.</p>
+
+      <h2>16. Afsluttende bestemmelser</h2>
+      <p>Tysk ret finder anvendelse. Hvis en bestemmelse er ugyldig, forbliver de øvrige bestemmelser gyldige.</p>
+
+      <h2>17. Oplysning om småvirksomhedsordningen på fakturaer</h2>
+      <p>Som småvirksomhed i henhold til § 19 UStG angiver jeg ikke moms på mine fakturaer.</p>
+      <p>De angivne priser er derfor <strong>slutpriser uden moms</strong>. Der opkræves ingen moms.</p>
+
+      <h2>18. Produktansvar for egne produkter</h2>
+      <p>For alle fysiske produkter, som jeg tilbyder, f.eks. salver, sæber, cremer, smykker eller lignende varer, samt digitale produkter, såsom opskrifter på de nævnte produkter, der også findes på min hjemmeside og kan købes som PDF-filer,</p>
+      <p>påtager jeg mig intet ansvar for allergiske reaktioner, intolerancer eller helbredsmæssige gener.</p>
+      <p>Brugen sker på kundens eget ansvar. Kontrollér venligst inden brug, om der foreligger individuelle intolerancer. Hvis du er i tvivl, anbefales det at rådføre dig med en sundhedsfaglig person.</p>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">Lilians Kräuter Magie</div>
+    <p class="footer-note">
+      Et rum for nærhed til naturen, kreativitet, musik og nye impulser.
+    </p>
+
+    <nav class="footer-links" aria-label="Navigation i sidefoden">
+      <a href="/dänisch/kontakt.html">Kontakt</a>
+      <a href="/dänisch/impressum.html">Juridiske oplysninger</a>
+      <a href="/dänisch/datenschutz.html">Databeskyttelse</a>
+      <a href="/dänisch/agb.html" aria-current="page">Handelsbetingelser</a>
+    </nav>
+
+    <p class="copyright">
+      © <span id="current-year"></span> Lilians Kräuter Magie · Alle rettigheder forbeholdes
+    </p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNavigation = document.querySelector(".main-nav");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNavigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Luk menuen" : "Åbn menuen"
+      );
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    mainNavigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNavigation.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Åbn menuen");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
