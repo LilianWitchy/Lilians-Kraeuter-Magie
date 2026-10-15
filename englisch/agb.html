@@ -1,0 +1,732 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terms and conditions for Lilian Lübke's website.">
+  <title>Terms and Conditions | Lilian's Herbal Magic</title>
+
+  <link rel="icon" type="image/png" href="defavicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --midnight: #251b29;
+      --midnight-light: #392737;
+      --accent: #c77b91;
+      --accent-light: #e8a8b7;
+      --gold: #e4c5a2;
+      --gold-light: #f5e3d1;
+      --cream: #fff6f2;
+      --muted: #e0cdd4;
+      --panel: #352632;
+      --panel-light: #44303e;
+      --border: rgba(232, 168, 183, 0.23);
+      --shadow: 0 16px 45px rgba(12, 7, 15, 0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Nunito Sans", sans-serif;
+      color: var(--cream);
+      background:
+        radial-gradient(ellipse at 15% 12%, rgba(199, 123, 145, 0.12), transparent 34%),
+        radial-gradient(ellipse at 88% 45%, rgba(228, 197, 162, 0.07), transparent 32%),
+        var(--midnight);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.38;
+      background-image:
+        radial-gradient(1px 1px at 10% 18%, rgba(255, 246, 242, 0.75) 50%, transparent 100%),
+        radial-gradient(1px 1px at 32% 72%, rgba(255, 246, 242, 0.55) 50%, transparent 100%),
+        radial-gradient(2px 2px at 68% 22%, rgba(232, 168, 183, 0.65) 50%, transparent 100%),
+        radial-gradient(1px 1px at 84% 66%, rgba(255, 246, 242, 0.65) 50%, transparent 100%),
+        radial-gradient(1px 1px at 51% 43%, rgba(228, 197, 162, 0.6) 50%, transparent 100%),
+        radial-gradient(1px 1px at 91% 90%, rgba(255, 246, 242, 0.55) 50%, transparent 100%);
+      background-size: 320px 320px;
+    }
+
+    a {
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: color 0.25s ease, opacity 0.25s ease;
+    }
+
+    a:hover {
+      color: var(--gold-light);
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(37, 27, 41, 0.92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      width: min(1200px, calc(100% - 44px));
+      min-height: 82px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      color: var(--cream);
+      line-height: 1.15;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: 0.035em;
+    }
+
+    .brand-subtitle {
+      margin-top: 5px;
+      color: var(--accent-light);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(12px, 2vw, 27px);
+    }
+
+    .main-nav a {
+      position: relative;
+      padding: 9px 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover,
+    .main-nav a[aria-current="page"] {
+      color: var(--gold-light);
+    }
+
+    .main-nav a[aria-current="page"]::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 1px;
+      left: 0;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    .main-nav .new-book-link {
+      color: var(--gold-light);
+    }
+
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 5px;
+      padding-left: 16px;
+      border-left: 1px solid var(--border);
+    }
+
+    .language-switcher a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 27px;
+      height: 27px;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      opacity: 0.75;
+    }
+
+    .language-switcher a:hover,
+    .language-switcher a[aria-current="page"] {
+      border-color: var(--accent-light);
+      opacity: 1;
+    }
+
+    .language-switcher img {
+      display: block;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      color: var(--cream);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.4rem;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 340px;
+      padding: 80px 24px 76px;
+      text-align: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: min(750px, 90vw);
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(199, 123, 145, 0.22), rgba(199, 123, 145, 0.04) 48%, transparent 72%);
+      filter: blur(12px);
+    }
+
+    .hero-content {
+      width: min(850px, 100%);
+      animation: fade-up 0.9s ease both;
+    }
+
+    .eyebrow {
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      line-height: 1.18;
+    }
+
+    h1 {
+      color: var(--cream);
+      font-size: clamp(3.1rem, 7vw, 5.5rem);
+      letter-spacing: -0.025em;
+    }
+
+    .hero-description {
+      max-width: 630px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 27px;
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    .hero-ornament::before,
+    .hero-ornament::after {
+      content: "";
+      width: 55px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent-light));
+    }
+
+    .hero-ornament::after {
+      transform: rotate(180deg);
+    }
+
+    main {
+      width: min(1000px, calc(100% - 44px));
+      margin: 0 auto;
+      padding: 0 0 100px;
+    }
+
+    .legal-card {
+      position: relative;
+      padding: clamp(28px, 5vw, 60px);
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(68, 48, 62, 0.95), rgba(42, 31, 45, 0.97));
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      animation: fade-up 0.8s ease both;
+    }
+
+    .legal-card::before {
+      content: "";
+      position: absolute;
+      top: -110px;
+      right: -90px;
+      width: 270px;
+      height: 270px;
+      border: 1px solid rgba(232, 168, 183, 0.12);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 24px rgba(232, 168, 183, 0.025),
+        0 0 0 48px rgba(232, 168, 183, 0.02);
+      pointer-events: none;
+    }
+
+    .legal-intro {
+      max-width: 720px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .legal-section {
+      position: relative;
+      padding: 27px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .legal-section:first-of-type {
+      border-top: 0;
+    }
+
+    .legal-section h2 {
+      margin-bottom: 14px;
+      color: var(--accent-light);
+      font-size: clamp(1.7rem, 3.5vw, 2.15rem);
+    }
+
+    .legal-section p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .legal-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-section strong {
+      color: var(--cream);
+      font-weight: 700;
+    }
+
+    .contact-box {
+      margin-top: 15px;
+      padding: 18px 22px;
+      background: rgba(199, 123, 145, 0.09);
+      border: 1px solid rgba(232, 168, 183, 0.2);
+      border-radius: 14px;
+    }
+
+    .contact-box a {
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .site-footer {
+      padding: 35px 22px 28px;
+      background: rgba(20, 14, 24, 0.55);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-brand {
+      margin-bottom: 10px;
+      color: var(--cream);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.7rem;
+    }
+
+    .footer-note {
+      max-width: 600px;
+      margin: 0 auto 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 24px;
+      margin-bottom: 18px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .footer-links a:hover,
+    .footer-links a[aria-current="page"] {
+      color: var(--gold-light);
+    }
+
+    .copyright {
+      color: rgba(224, 205, 212, 0.62);
+      font-size: 0.78rem;
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1050px) {
+      .header-inner {
+        width: min(100% - 32px, 900px);
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .main-nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 24px 24px;
+        background: rgba(37, 27, 41, 0.98);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.22);
+      }
+
+      .main-nav.is-open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main-nav > a {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(232, 168, 183, 0.1);
+      }
+
+      .main-nav a[aria-current="page"]::after {
+        right: auto;
+        width: 42px;
+      }
+
+      .language-switcher {
+        margin: 14px 0 0;
+        padding: 12px 0 0;
+        border-top: 1px solid var(--border);
+        border-left: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        min-height: 72px;
+      }
+
+      .brand-name {
+        font-size: 1.55rem;
+      }
+
+      .brand-subtitle {
+        font-size: 0.58rem;
+      }
+
+      .hero {
+        min-height: 290px;
+        padding: 60px 20px;
+      }
+
+      .hero-description {
+        font-size: 0.97rem;
+      }
+
+      main {
+        width: calc(100% - 28px);
+        padding-bottom: 65px;
+      }
+
+      .legal-card {
+        padding: 27px 22px;
+        border-radius: 20px;
+      }
+
+      .legal-section {
+        padding: 23px 0;
+      }
+
+      .contact-box {
+        padding: 16px;
+      }
+
+      .footer-links {
+        gap: 8px 17px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Go to homepage">
+        <span class="brand-name">Lilian Lübke</span>
+        <span class="brand-subtitle">Creativity · Nature · Sound</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >☰</button>
+
+      <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+        <a href="/englisch/index.html">Home</a>
+        <a href="/englisch/kraeuter.html">Herbal World</a>
+        <a href="/englisch/musik.html">Music</a>
+        <a href="/englisch/buecher.html">Books</a>
+        <a href="/englisch/angebote.html">Offerings</a>
+        <a href="/englisch/about.html">About Me</a>
+        <a class="new-book-link" href="index.html#neues-buch">New Book ✦</a>
+
+        <div class="language-switcher" aria-label="Select language">
+          <a href="index.html" aria-label="German">
+            <img src="defavicon.png" alt="German">
+          </a>
+          <a href="/englisch/index.html" aria-label="English" aria-current="page">
+            <img src="enfavicon.png" alt="English">
+          </a>
+          <a href="/dänisch/index.html" aria-label="Danish">
+            <img src="dkfavicon.png" alt="Danish">
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Terms and Conditions</p>
+      <h1>General Terms and Conditions</h1>
+      <p class="hero-description">
+        Here you will find all policies and terms and conditions.
+      </p>
+      <div class="hero-ornament" aria-hidden="true">✦</div>
+    </div>
+  </section>
+
+  <main>
+ 
+        <section class="legal-section">
+      
+        <h2>1. Scope of Application</h2>
+<p>These General Terms and Conditions apply to all contracts for the sale of physical goods, digital content (PDF downloads), and services concluded through the website “Lilian’s Witchy World”, including <strong>energetic services such as remote sound healing sessions conducted via Zoom</strong>.</p>
+
+<h2>2. Service Provider</h2>
+<p>The service provider within the meaning of Section 5 of the German Telemedia Act (TMG) is the person named in the legal notice on this website.</p>
+<p>The service provider operates as a small business under Section 19 of the German VAT Act (UStG). No VAT is charged or shown separately.</p>
+
+<h2>3. Conclusion of Contract</h2>
+<p>The presentation of products and services does not constitute a legally binding offer. By completing the ordering process or booking an appointment, the customer submits a binding offer to purchase. The contract is concluded upon confirmation of the order or receipt of payment.</p>
+<p><strong>For sound healing via Zoom:</strong> Booking a sound healing session through the website or a payment platform (e.g. Stripe) creates a binding contract for the agreed service. The appointment is firmly reserved once payment has been received.</p>
+
+<h2>4. Prices and Payment Terms</h2>
+<p>All prices are final prices under the small business VAT scheme (Section 19 of the German VAT Act). Payment is made using the payment methods offered in the shop. (Payments are processed through Stripe.com. The payment methods provided by Stripe are available for this purpose. Payment is due immediately and is binding.)</p>
+<p><strong>For sound healing via Zoom:</strong> Payment must be made in advance through Stripe. The appointment is firmly reserved once payment has been received.</p>
+
+<h2>5. Delivery and Shipping</h2>
+<p>Physical products are delivered to the shipping address provided by the customer. Delivery usually takes 1–2 weeks.</p>
+<p>If delivery takes longer due to circumstances such as delays caused by the shipping provider, public holidays, or unforeseen events, we will inform the customer promptly.</p>
+<p>Shipping costs are already included in the product price. The risk associated with shipping passes to the customer when the goods are handed over to the shipping company.</p>
+<p>Digital content (e.g. PDF downloads) is made available for download immediately after payment has been received.</p>
+
+<h2>6. Digital Content (PDF Downloads)</h2>
+<p>Digital content is made available for download after payment has been received. Once the download has been completed, no refund can be claimed.</p>
+<p>Please note: No liability is accepted for technical problems.</p>
+
+<h2>7. Right of Withdrawal / Returns Policy</h2>
+<p>Physical products are subject to the statutory 14-day right of withdrawal. The withdrawal period begins when the goods are received. To exercise this right, the customer must clearly declare their withdrawal (e.g. by email or letter) and return the goods.</p>
+<p>The customer bears the cost of returning the goods unless the delivered goods do not match the order or are defective.</p>
+<p>Goods should be returned unused and, where possible, in their original packaging. There is no right of withdrawal for personalised or custom-made products.</p>
+<p>Digital content (e.g. PDF downloads) is excluded from the right of withdrawal once the download has begun, provided the customer has expressly consented to this.</p>
+<p><strong>For sound healing via Zoom:</strong> Services provided at an agreed appointment time are not subject to a right of withdrawal once the appointment has been scheduled. In the event of a cancellation at short notice, a replacement appointment may be offered by mutual agreement.</p>
+
+<h2>8. Retention of Title</h2>
+<p>The goods remain the property of the service provider until payment has been made in full.</p>
+
+<h2>9. Warranty</h2>
+<p>Statutory warranty rights apply.</p>
+
+<h2>10. Liability</h2>
+<p>The service provider is liable only in cases of intent or gross negligence.</p>
+<p><strong>For sound healing via Zoom:</strong> Sound healing is an energetic practice intended to support well-being. It does not replace medical, therapeutic, or alternative practitioner treatment. No promises of healing, success, or miraculous results are made.</p>
+
+<h2>11. Content and Use at Your Own Risk</h2>
+<p>All content is provided for general information purposes only and does not constitute medical or therapeutic advice.</p>
+<p><strong>For sound healing via Zoom:</strong> Participation is at the customer's own responsibility. Customers should be in suitable health to participate in the session.</p>
+
+<h2>12. Copyright</h2>
+<p>All content on this website is protected by copyright. Use is permitted only with written authorisation.</p>
+
+<h2>13. Newsletter and Data Protection</h2>
+<p>By subscribing to the newsletter, you consent to the processing of your data. The separate Privacy Policy applies.</p>
+<p>The newsletter will only be sent if you have given your explicit consent by ticking the relevant box during checkout or through the newsletter subscription form (active opt-in).</p>
+<p><strong>For sound healing via Zoom:</strong> If desired, photos of the relevant areas of the body may be sent by email. These data are used exclusively to prepare for the session and are not shared with third parties. The Privacy Policy applies.</p>
+
+<h2>14. Participation in Courses and Events</h2>
+<h3>14.1 Registration and Contract</h3>
+<p>Registration is binding and subject to payment.</p>
+<h3>14.2 Prices and Payment</h3>
+<p>Payment must be made in advance.</p>
+<h2>14.3 Contract Terms and Automatic Renewal</h2>
+<p>Monthly subscriptions for courses, workshops, or other recurring services have a minimum term of one month. Unless the contract is cancelled in due time, at least two weeks before the end of the respective month, it will automatically renew for another month. Cancellations must be submitted in writing (e.g. by email).</p>
+<h3>14.4 Trial Sessions</h3>
+<p>Available to book once per person for €7.</p>
+<h3>14.5 Course Cancellations</h3>
+<p>If a course session is cancelled, a replacement date will be offered.</p>
+<h3>14.6 Liability</h3>
+<p>Participation is at the participant's own responsibility.</p>
+<h3>14.7 Health</h3>
+<p>Participants must be in suitable health to take part.</p>
+<h3>14.8 Non-Attendance</h3>
+<p>No refunds are given for non-attendance.</p>
+<h3>14.9 Extended Illness</h3>
+<p>Individual arrangements may be made at the provider's discretion.</p>
+<h3>14.10 Written Cancellation</h3>
+<p>Cancellation must be submitted at least 24 hours in advance.</p>
+<h3>14.11 Clothing and Materials</h3>
+<p>Participants are responsible for bringing suitable clothing, equipment, and materials.</p>
+<h3>14.12 Contagious Illnesses</h3>
+<p>A course may be cancelled if a known contagious infection is present.</p>
+
+<h2>15. Amendments to the Terms and Conditions</h2>
+<p>The service provider reserves the right to make changes. The version currently published shall apply.</p>
+
+<h2>16. Final Provisions</h2>
+<p>German law applies. If any provision is found to be invalid, the remaining provisions shall remain in effect.</p>
+
+<h2>17. Small Business VAT Notice on Invoices</h2>
+<p>As a small business within the meaning of Section 19 of the German VAT Act (UStG), I do not show VAT separately on my invoices.</p>
+<p>The prices stated are therefore <strong>final prices with no VAT charged</strong>. No VAT is levied.</p>
+
+<h2>18. Product Liability for Own Products</h2>
+<p>For all physical products I offer, such as ointments, soaps, creams, jewellery, or similar items, as well as digital products, such as recipes for the aforementioned items that are also available on my website and for purchase as PDF files,</p>
+<p>I accept no liability for allergic reactions, intolerances, or adverse health effects.</p>
+<p>Use is at the customer's own responsibility. Before use, please check whether you have any individual intolerances or sensitivities. If in doubt, you are advised to consult a qualified medical professional.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">Lilian's Herbal Magic</div>
+    <p class="footer-note">
+      A space for connecting with nature, creativity, music, and new inspiration.
+    </p>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/englisch/kontakt.html">Contact</a>
+      <a href="/englisch/impressum.html" aria-current="page">Legal Notice</a>
+      <a href="/englisch/agb.html">Terms and Conditions</a>
+    </nav>
+
+    <p class="copyright">
+      © <span id="current-year"></span> Lilian's Herbal Magic · All rights reserved
+    </p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNavigation = document.querySelector(".main-nav");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNavigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close menu" : "Open menu"
+      );
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    mainNavigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNavigation.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
