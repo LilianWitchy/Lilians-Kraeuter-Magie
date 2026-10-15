@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Me – Lilian's Herbal Magic</title>
+    <meta name="description" content="Further training, educational qualifications, and personal learning projects by Elisabeth-Ann Wolf.">
+
+    <link rel="icon" href="picture/defavicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           LILIAN'S KRÄUTER-MAGIE
+           HELL, CREMEFARBEN UND LICHTVOLL
+           Nur für die About-Seite
+           ========================================= */
+
+        html:has(body.theme-about) {
+            background: #fffdf8 !important;
+            color-scheme: light;
+        }
+
+        body.theme-about {
+            --about-green: #83a978;
+            --about-green-light: #edf5e8;
+            --about-green-dark: #52734b;
+            --about-rose: #d58aaa;
+            --about-rose-light: #fff0f5;
+            --about-purple: #ad96d0;
+            --about-purple-light: #f5f0fb;
+            --about-brown: #795d4d;
+            --about-brown-light: #c6a58c;
+            --about-gold: #d4ad51;
+            --about-cream: #fffdf8;
+            --about-text: #51463f;
+            --about-muted: #75675f;
+
+            margin: 0;
+            min-height: 100vh;
+            background-color: #fffdf8 !important;
+            background-image:
+                radial-gradient(ellipse at 8% 8%, rgba(255,224,165,.18), transparent 32%),
+                radial-gradient(ellipse at 92% 20%, rgba(221,204,248,.15), transparent 32%),
+                radial-gradient(ellipse at 5% 52%, rgba(207,235,193,.14), transparent 30%),
+                radial-gradient(ellipse at 95% 80%, rgba(248,208,224,.16), transparent 32%) !important;
+            color: #51463f !important;
+            font-family: "Nunito Sans", sans-serif;
+            line-height: 1.7;
+        }
+
+        body.theme-about *,
+        body.theme-about *::before,
+        body.theme-about *::after {
+            box-sizing: border-box;
+        }
+
+        body.theme-about .about-page {
+            position: relative;
+            z-index: 1;
+            background: transparent !important;
+            color: #51463f !important;
+        }
+
+        body.theme-about main,
+        body.theme-about .about-shell,
+        body.theme-about .about-section,
+        body.theme-about .about-portrait-section {
+            background-color: transparent !important;
+            color: #51463f !important;
+        }
+
+        body.theme-about h1,
+        body.theme-about h2,
+        body.theme-about h3,
+        body.theme-about h4,
+        body.theme-about h5,
+        body.theme-about h6 {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            line-height: 1.15;
+            color: #665044 !important;
+        }
+
+        body.theme-about p,
+        body.theme-about li {
+            color: #62564f !important;
+        }
+
+        body.theme-about a {
+            color: #a85f80;
+        }
+
+        body.theme-about a:hover {
+            color: #68875c;
+        }
+
+        body.theme-about .about-shell {
+            width: min(1120px, calc(100% - 36px));
+            margin-inline: auto;
+        }
+
+        /* Lichtpunkte */
+
+        body.theme-about .about-sparkles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        body.theme-about .about-sparkles span {
+            position: absolute;
+            display: block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #d4ad51;
+            box-shadow: 0 0 12px rgba(212,173,81,.45);
+            opacity: .55;
+            animation: aboutTwinkle 4s ease-in-out infinite alternate;
+        }
+
+        body.theme-about .about-sparkles span:nth-child(1) {
+            top: 13%;
+            left: 9%;
+        }
+
+        body.theme-about .about-sparkles span:nth-child(2) {
+            top: 28%;
+            left: 88%;
+            animation-delay: 1s;
+        }
+
+        body.theme-about .about-sparkles span:nth-child(3) {
+            top: 55%;
+            left: 6%;
+            animation-delay: 2s;
+        }
+
+        body.theme-about .about-sparkles span:nth-child(4) {
+            top: 73%;
+            left: 93%;
+            animation-delay: .5s;
+        }
+
+        body.theme-about .about-sparkles span:nth-child(5) {
+            top: 88%;
+            left: 27%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes aboutTwinkle {
+            from {
+                opacity: .25;
+                transform: scale(.8);
+            }
+            to {
+                opacity: .85;
+                transform: scale(1.5);
+            }
+        }
+
+        /* Navigation */
+
+        body.theme-about .about-nav {
+            position: relative;
+            z-index: 10;
+            background: rgba(255,253,248,.97) !important;
+            background-image: none !important;
+            border-bottom: 1px solid #eee1d8 !important;
+            box-shadow: 0 4px 20px rgba(105,79,87,.045) !important;
+            backdrop-filter: blur(14px);
+        }
+
+        body.theme-about .about-nav-inner {
+            width: min(1200px, calc(100% - 36px));
+            min-height: 78px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        body.theme-about .about-brand {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(1.35rem, 3vw, 1.85rem);
+            font-weight: 700;
+            text-decoration: none;
+            color: #80658c !important;
+            white-space: nowrap;
+        }
+
+        body.theme-about .about-brand span {
+            color: #c77599 !important;
+        }
+
+        body.theme-about .about-menu {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: .35rem;
+        }
+
+        body.theme-about .about-menu a {
+            display: inline-block;
+            padding: .65rem .8rem;
+            border-radius: 999px;
+            color: #62564f !important;
+            text-decoration: none;
+            font-size: .92rem;
+            font-weight: 700;
+            transition: background .25s ease, color .25s ease;
+        }
+
+        body.theme-about .about-menu a:hover,
+        body.theme-about .about-menu a[aria-current="page"] {
+            color: #a6547b !important;
+            background: #fff0f5 !important;
+        }
+
+        body.theme-about .about-menu-toggle {
+            display: none;
+            border: 1px solid #e7c4d2;
+            border-radius: 12px;
+            background: #fffdf8 !important;
+            color: #98627d !important;
+            padding: .6rem .85rem;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* Begrüßungsbereich */
+
+        body.theme-about .about-hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: clamp(4rem, 9vw, 7.5rem) 0 4rem;
+            text-align: center;
+            background: rgba(255,255,255,.35) !important;
+        }
+
+        body.theme-about .about-hero::before,
+        body.theme-about .about-hero::after {
+            content: "";
+            position: absolute;
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            filter: blur(75px);
+            pointer-events: none;
+            z-index: -1;
+            opacity: .42;
+        }
+
+        body.theme-about .about-hero::before {
+            top: -150px;
+            left: -120px;
+            background: #dcefd2;
+        }
+
+        body.theme-about .about-hero::after {
+            right: -120px;
+            bottom: -150px;
+            background: #f3d8ed;
+        }
+
+        body.theme-about .about-eyebrow {
+            position: relative;
+            display: inline-block;
+            margin: 0 0 1.2rem;
+            padding: .6rem 1.1rem;
+            border: 1px solid #ead7a6;
+            border-radius: 999px;
+            background: #fff !important;
+            color: #96752f !important;
+            font-size: .82rem;
+            font-weight: 800;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            box-shadow: 0 5px 18px rgba(140,112,53,.06);
+        }
+
+        body.theme-about .about-hero h1 {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto 1.25rem;
+            color: #665044 !important;
+            font-size: clamp(3rem, 8vw, 5.8rem);
+            text-wrap: balance;
+        }
+
+        body.theme-about .about-hero h1 span {
+            color: #c77599 !important;
+            font-style: italic;
+        }
+
+        body.theme-about .about-hero-intro {
+            position: relative;
+            max-width: 720px;
+            margin: 0 auto;
+            color: #75675f !important;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+        }
+
+        body.theme-about .about-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem auto 0;
+            color: #d2ad55;
+            font-size: 1.5rem;
+        }
+
+        body.theme-about .about-divider::before,
+        body.theme-about .about-divider::after {
+            content: "";
+            width: 70px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d2ad55);
+        }
+
+        body.theme-about .about-divider::after {
+            transform: rotate(180deg);
+        }
+
+        /* Porträt und antiker Goldrahmen */
+
+        body.theme-about .about-portrait-section {
+            padding: 0 0 4rem;
+        }
+
+        body.theme-about .about-portrait-layout {
+            display: grid;
+            grid-template-columns: minmax(260px, .85fr) minmax(0, 1.35fr);
+            align-items: center;
+            gap: clamp(2rem, 6vw, 5rem);
+        }
+
+        body.theme-about .about-portrait-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 1.2rem 0;
+        }
+
+        body.theme-about .portrait-frame {
+            position: relative;
+            width: min(100%, 340px);
+            padding: 13px;
+            border: 3px ridge #d8b35f;
+            border-radius: 7px;
+            background: linear-gradient(
+                135deg,
+                #fff4c7 0%,
+                #c69c4c 15%,
+                #fff0ae 29%,
+                #b58a40 47%,
+                #f7df91 64%,
+                #bd9147 82%,
+                #fff3bf 100%
+            ) !important;
+            box-shadow:
+                0 0 0 3px #fff5d8,
+                0 0 0 6px #d5ad5d,
+                0 15px 38px rgba(121,86,63,.15),
+                inset 0 0 12px rgba(255,255,255,.75);
+        }
+
+        body.theme-about .portrait-frame::before {
+            content: "";
+            position: absolute;
+            inset: 5px;
+            border: 1px solid rgba(135,94,39,.65);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        body.theme-about .portrait-frame img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            object-position: center;
+            border: 2px solid #b58a48;
+            border-radius: 2px;
+        }
+
+        body.theme-about .frame-ornament {
+            position: absolute;
+            left: 50%;
+            z-index: 3;
+            color: #fff5cb !important;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.5rem;
+            line-height: 1;
+            text-shadow: 1px 1px 2px #8b6934, 0 0 8px #fff1ad;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        body.theme-about .ornament-top {
+            top: -24px;
+        }
+
+        body.theme-about .ornament-bottom {
+            bottom: -24px;
+            transform: translateX(-50%) rotate(180deg);
+        }
+
+        body.theme-about .portrait-caption {
+            margin: 1.5rem 0 0;
+            color: #b76d91 !important;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* Persönliche Vorstellung */
+
+        body.theme-about .about-intro-card {
+            position: relative;
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            border: 1px solid #eee1d8 !important;
+            border-radius: 24px;
+            background: #fff !important;
+            color: #51463f !important;
+            box-shadow: 0 15px 42px rgba(124,92,107,.075);
+        }
+
+        body.theme-about .about-intro-card h2 {
+            margin-top: 0;
+            color: #b76d91 !important;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        body.theme-about .about-intro-card p {
+            margin: 0 0 1rem;
+            color: #62564f !important;
+        }
+
+        body.theme-about .about-intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        body.theme-about .about-highlight {
+            color: #a85f80 !important;
+            font-weight: 800;
+        }
+
+        /* Mein Weg */
+
+        body.theme-about .about-section {
+            padding: 2rem 0 4rem;
+        }
+
+        body.theme-about .about-section-heading {
+            max-width: 760px;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+
+        body.theme-about .about-section-heading h2 {
+            color: #b76d91 !important;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 0 0 1rem;
+        }
+
+        body.theme-about .about-section-heading p {
+            color: #75675f !important;
+            margin: 0;
+        }
+
+        body.theme-about .about-story-card {
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            border: 1px solid #eee1d8 !important;
+            border-radius: 24px;
+            background: #fff !important;
+            color: #51463f !important;
+            box-shadow: 0 12px 36px rgba(105,79,87,.065);
+        }
+
+        body.theme-about .about-story-card p {
+            color: #62564f !important;
+            margin-top: 0;
+        }
+
+        body.theme-about .about-story-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        body.theme-about .about-story-card strong {
+            color: #a85f80 !important;
+        }
+
+        /* Vier Interessenkarten */
+
+        body.theme-about .about-interest-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.2rem;
+        }
+
+        body.theme-about .about-interest-card {
+            position: relative;
+            overflow: hidden;
+            padding: 1.6rem;
+            border: 1px solid #eee1d8 !important;
+            border-radius: 22px;
+            background-color: #fff !important;
+            color: #51463f !important;
+            box-shadow: 0 10px 28px rgba(105,79,87,.055);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        body.theme-about .about-interest-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 34px rgba(105,79,87,.10);
+        }
+
+        body.theme-about .about-interest-card::before {
+            content: "";
+            position: absolute;
+            width: 145px;
+            height: 145px;
+            right: -75px;
+            top: -75px;
+            border-radius: 50%;
+            background: var(--card-glow, #f5e7ee);
+            opacity: .65;
+            filter: blur(22px);
+            pointer-events: none;
+        }
+
+        body.theme-about .about-interest-card h3 {
+            position: relative;
+            margin: 0 0 .7rem;
+            color: #80658c !important;
+            font-size: 1.7rem;
+        }
+
+        body.theme-about .about-interest-card p {
+            position: relative;
+            margin: 0;
+            color: #62564f !important;
+            font-size: .98rem;
+        }
+
+        /* Salbeigrün */
+
+        body.theme-about .interest-herbs {
+            --card-glow: #e3f0d9;
+            border-top: 4px solid #a3c58e !important;
+            background: linear-gradient(145deg, #fff 0%, #fff 78%, #f5faf1 100%) !important;
+        }
+
+        body.theme-about .interest-herbs h3 {
+            color: #68875c !important;
+        }
+
+        /* Rosé */
+
+        body.theme-about .interest-care {
+            --card-glow: #f9e0e9;
+            border-top: 4px solid #e2a1ba !important;
+            background: linear-gradient(145deg, #fff 0%, #fff 78%, #fff5f8 100%) !important;
+        }
+
+        body.theme-about .interest-care h3 {
+            color: #b66c8c !important;
+        }
+
+        /* Flieder */
+
+        body.theme-about .interest-stories {
+            --card-glow: #eee4fa;
+            border-top: 4px solid #c0a8e0 !important;
+            background: linear-gradient(145deg, #fff 0%, #fff 78%, #f8f4fd 100%) !important;
+        }
+
+        body.theme-about .interest-stories h3 {
+            color: #8970aa !important;
+        }
+
+        /* Gold */
+
+        body.theme-about .interest-creative {
+            --card-glow: #fff0c7;
+            border-top: 4px solid #e3c36d !important;
+            background: linear-gradient(145deg, #fff 0%, #fff 78%, #fffdf4 100%) !important;
+        }
+
+        body.theme-about .interest-creative h3 {
+            color: #9d7b37 !important;
+        }
+
+        /* Persönlicher Abschluss */
+
+        body.theme-about .about-quote {
+            position: relative;
+            margin: 1rem auto 5rem;
+            padding: clamp(2rem, 5vw, 3.5rem);
+            border: 1px solid #f0e1df !important;
+            border-radius: 28px;
+            background: linear-gradient(
+                120deg,
+                #fff 0%,
+                #fff7fa 42%,
+                #faf7ff 72%,
+                #fffdf5 100%
+            ) !important;
+            color: #51463f !important;
+            box-shadow: 0 14px 38px rgba(124,92,107,.065);
+            text-align: center;
+        }
+
+        body.theme-about .about-quote .quote-symbol {
+            color: #c5a04d !important;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        body.theme-about .about-quote p {
+            max-width: 780px;
+            margin: .5rem auto 1rem;
+            color: #80658c !important;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(1.7rem, 4vw, 2.5rem);
+            font-style: italic;
+            line-height: 1.35;
+        }
+
+        body.theme-about .about-quote span {
+            color: #b76d91 !important;
+            font-size: .9rem;
+            font-weight: 700;
+        }
+
+        /* Fußzeile */
+
+        body.theme-about .about-footer {
+            position: relative;
+            padding: 2.5rem 1rem;
+            border-top: 1px solid #eadfd1 !important;
+            background: #f8f3eb !important;
+            background-image: none !important;
+            color: #59483e !important;
+            box-shadow: 0 -4px 20px rgba(105,79,87,.035);
+            text-align: center;
+        }
+
+        body.theme-about .about-footer p {
+            margin: .35rem 0;
+            color: #71635d !important;
+            font-size: .92rem;
+        }
+
+        body.theme-about .about-footer a {
+            color: #a85f80 !important;
+            text-decoration: none;
+        }
+
+        body.theme-about .about-footer a:hover {
+            color: #68875c !important;
+            text-decoration: underline;
+        }
+
+        body.theme-about .about-footer .footer-brand {
+            color: #80658c !important;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        /* Responsive Darstellung */
+
+        @media (max-width: 850px) {
+            body.theme-about .about-portrait-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            body.theme-about .about-portrait-wrap {
+                padding-top: 1rem;
+            }
+
+            body.theme-about .about-intro-card {
+                max-width: 720px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 720px) {
+            body.theme-about .about-nav-inner {
+                min-height: 70px;
+                flex-wrap: wrap;
+                padding: .8rem 0;
+            }
+
+            body.theme-about .about-menu-toggle {
+                display: inline-block;
+            }
+
+            body.theme-about .about-menu {
+                display: none;
+                width: 100%;
+                align-items: stretch;
+                flex-direction: column;
+                padding: .5rem 0 .8rem;
+            }
+
+            body.theme-about .about-menu.is-open {
+                display: flex;
+                background: #fffdf8 !important;
+            }
+
+            body.theme-about .about-menu a {
+                padding: .8rem 1rem;
+                border-radius: 12px;
+            }
+
+            body.theme-about .about-interest-grid {
+                grid-template-columns: 1fr;
+            }
+
+            body.theme-about .about-hero {
+                padding-top: 4rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            body.theme-about .about-shell {
+                width: calc(100% - 28px);
+            }
+
+            body.theme-about .portrait-frame {
+                width: min(100%, 290px);
+                padding: 10px;
+            }
+
+            body.theme-about .about-intro-card,
+            body.theme-about .about-story-card,
+            body.theme-about .about-interest-card {
+                border-radius: 18px;
+            }
+
+            body.theme-about .about-brand {
+                white-space: normal;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body.theme-about .about-sparkles span {
+                animation: none !important;
+            }
+
+            body.theme-about *,
+            body.theme-about *::before,
+            body.theme-about *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+        /* Aus- und Weiterbildungen */
+        body.theme-about .education-card {
+            padding: clamp(1.25rem, 3vw, 2.5rem);
+            border: 1px solid #eee1d8;
+            border-radius: 24px;
+            background: #fff;
+            box-shadow: 0 12px 36px rgba(105,79,87,.065);
+        }
+
+        body.theme-about .education-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        body.theme-about .education-item {
+            padding: 1.35rem 1.5rem;
+            border: 1px solid #eee5dc;
+            border-left: 4px solid #a3c58e;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #fff 0%, #fffdf9 100%);
+        }
+
+        body.theme-about .education-item h3 {
+            margin: 0 0 .8rem;
+            color: #80658c !important;
+            font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+        }
+
+        body.theme-about .education-item p {
+            margin: .35rem 0;
+            overflow-wrap: anywhere;
+        }
+    </style>
+</head>
+
+<body class="theme-about">
+
+    <div class="about-sparkles" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="about-page">
+
+        <!-- Navigation -->
+        <header class="about-nav">
+            <div class="about-nav-inner">
+                <a class="about-brand" href="index.html">
+                    Lilian's <span>Kräuter-Magie</span>
+                </a>
+
+                <button
+                    class="about-menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="mainMenu">
+                    Menu ☰
+                </button>
+
+                <nav class="about-menu" id="mainMenu" aria-label="Main navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html" aria-current="page">About Me</a>
+                    <a href="kräuter.html">Herbs</a>
+                    <a href="musik.html">Music</a>
+                    <a href="buecher.html">Books</a>
+                    <a href="angebote.html">What I Offer You</a>
+                    <a href="kontakt.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+        <section class="about-hero">
+            <div class="about-shell">
+                <p class="about-eyebrow">Learning · Nature · Growth</p>
+                <h1>My <span>Further Training</span></h1>
+                <p class="about-hero-intro">
+                    Here you will find an overview of my further training, qualifications
+                    and independent learning projects.
+                </p>
+                <div class="about-divider" aria-hidden="true">✧</div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-shell">
+                <div class="education-card">
+<ul class="education-list">
+            <li class="education-item">
+                <h3> 03/2012 - Introduction to Experiential Education</h3>
+                <p>Training content:</p>
+                <p> - Self-experience as a participant in a series of initiative exercises, cooperative adventure games, and complex learning projects </p>
+                <p> - Purposeful educational use of cooperative adventure games </p>
+                <p> - History and background of experiential education </p>
+                <p> - Goals of experiential education </p>
+                <p> - Models of impact and methodological principles </p>
+                <p> - Introduction to various reflection methods </p>
+                <p> Training instructors Hardy Lux and Jens Thomas</p>
+            </li>
+
+            <li class="education-item">
+                <h3> 10/2012 - Cooperative Adventure Games – Practical Experiential Education</h3>
+                <p> - Purposeful use of cooperative adventure games and initiative exercises</p>
+                <p> - Opportunities for reflection and transfer to everyday life </p>
+                <p> - Phases and methods of game facilitation </p>
+                <p> - Safety in experiential education and cooperative adventure games </p>
+                <p> - Practical experience leading cooperative adventure games and facilitating reflection sessions </p>
+                <p> Training instructors Hardy Lux and Jens Thomas</p>
+            </li>
+            
+           <li class="education-item">
+                <h3> 08/2013 - Exploring and Learning Outdoors </h3>
+                <p> - “Expedition” as a core component of experiential education programmes </p>
+                <p> - Practical experience: a two-day trekking tour managed by the group, including a bivouac in basic conditions and intensive experiences in nature</p>
+                <p> - Considerations on the educational use of “expeditions”</p>
+                <p> - Acquisition of basic outdoor skills</p>
+                <p> - Nature-experience activities </p>
+                <p> - Ensuring physical and psychological safety during a tour </p>
+                <p> Training instructors Hardy Lux and Jens Thomas</p>
+            </li>
+
+           <li class="education-item">
+                <h3> 07/2014 - Comprehensive Qualification in Experiential Education Methods</h3>
+                <p> - Specialist instruction, plus 99 additional hours of completed training</p>
+                <p> - This training (2011–2014) qualifies participants to develop and implement experiential education activities and projects for different target groups in their own professional field. </p>
+                <p> - Module 1: Introduction to Experiential Education, 3 days</p>
+                <p> - Module 2: Cooperative Adventure Games – Practical Experiential Education, 4 days</p>
+                <p> - Module 3: Exploring and Learning Outdoors, 3 days </p>
+                <p> Training instructors Hardy Lux and Jens Thomas, and department head at the vocational school for social pedagogy, Axel Lüttich</p>
+            </li>
+
+           <li class="education-item">
+                <h3> 01/2017 - Experiential Education Special: Pushing Boundaries, Safety, and Risk Management</h3>
+                <p> Training objectives: </p>
+                <p> - Exploring personal limits </p>
+                <p> - Experiencing challenging situations within a group</p>
+                <p> - Gaining knowledge and experience of challenges and boundary-pushing experiences in an educational context</p>
+                <p> - Developing a deeper understanding of the balance between safety and perceived risk in experiential education programmes</p>
+                <p> - Memorable experiences in nature </p>
+		<p> Training content: </p>
+                <p> - Three-day hiking and canoe expedition in the winter landscape of the Uckermark region </p>
+                <p> - Tent bivouac and cooking over an open fire, managed by the group </p>
+                <p> - Canoeing on the Küstrinchen stream in winter conditions </p>
+                <p> - Reflection and input on the topics of challenge, pushing boundaries, and safety </p>
+                <p> - Opportunities and limitations of using challenging activities in an educational context </p>
+                <p> Training instructor Jens Thomas</p>
+            </li>
+
+            <li class="education-item">
+                <h3> 05/2019 to 11/2019 - Training to Become a Practical Placement Supervisor</h3>
+                <p> Training for educational professionals in the professional guidance and supervision of interns in child and youth welfare institutions, as well as in disability support facilities and services</p>
+                <p> Module 1: Understanding the fundamentals of educator training and relevant legal frameworks, and reflecting on the requirements for placement supervisors in different fields. </p>
+                <p> Module 2: Planning the training process together with the team and the intern. </p>
+                <p> Module 3: Building relationships and encouraging and supporting learning processes. </p>
+                <p> Module 4: Conducting reflective discussions, giving feedback, and evaluating performance.</p>
+                <p> Module 5: Developing cooperation between learning locations  </p>
+		<p> Training provider: BildungsBeratung, Monika Hütt</p>
+            </li>
+
+<li class="education-item">
+                <h3> 03/2018 - Relaxation Education for Practical Use with Children </h3>
+                <p> - Effects of calm and relaxation </p>
+                <p> - What is stress, and what causes stress in children? </p>
+                <p> - Autogenic training </p>
+                <p> - Yoga suitable for children</p>
+                <p> - Special awareness exercises (How am I feeling? What do I need?) </p>
+                <p> - Progressive muscle relaxation </p>
+		<p> - Playful movement </p>
+                <p> - Self-experience and group dynamics </p>
+                <p> - Coping strategies through activities </p>
+                <p> Training provider: Ländliche Erwachsenenbildung im Freistaat Sachsen e.V. (LEB), with Nancy Seidel </p>
+            </li>
+
+
+           <li class="education-item">
+                <h3> 07/2018 - Exploring the Human Body </h3>
+                <p> Training content: </p>
+                <p> - Specialist knowledge of the organs and organ systems of the human body, alongside independent research into anatomical and physiological aspects. </p>
+                <p> - Sharing experiences about body awareness and children’s knowledge of the body between the ages of 3 and 10 </p>
+                <p> - Ideas for providing differentiated learning support to children exploring and investigating the human body. </p>
+                <p> - Collaborative development of simple structural and functional models, and educational discussion that critically examines the models. </p>
+                <p> - Highlight: Making foods such as butter and quark from scratch.</p>
+                <p> The training was delivered by the Leipzig Chamber of Skilled Crafts, a local network partner of the “House of Little Scientists” Foundation. </p>
+            </li>
+
+
+            <li class="education-item">
+                <h3> 11/2018 - Children Challenge Us: Recognising, Guiding, and Supporting Children with Behavioural Difficulties </h3>
+                <p> Training provider: Soziale Initiative Camburg e.V.; seminar leader Brigitte Holz-Schöttler </p>
+            </li>
+
+           <li class="education-item">
+                <h3> 11/2018 - Exploring Light, Colours, and Vision: Supporting Children’s Learning Through Projects </h3>
+                <p> Training content: </p>
+                <p> - Reflecting on previous highlights of scientific exploration with children </p>
+                <p> - Exploring different light and colour phenomena (e.g. natural colours, colour mixing, colour vision in the dark, etc.) through independent experimentation and investigation. </p>
+                <p> - Learning about the criteria for evaluating good project work </p>
+                <p> - Jointly developing project components from different educational areas for “Light, Colours, Vision” projects. </p>
+                <p> The training was delivered by the Leipzig Chamber of Skilled Crafts, a local network partner of the “House of Little Scientists” Foundation. </p>
+            </li>
+
+	       <li class="education-item">
+ <h3> 11/2023 - ongoing - Holistic Knowledge of Herbs (Self-Study)</h3>
+<p>- Identifying and distinguishing herbs, including lookalikes that are poisonous</p>
+<p>- Appearance and gathering of herbs in forests and around the home</p>
+<p>- Identifying potentially beneficial parts of otherwise poisonous plants (e.g. edible fruits)</p>
+<p>- Medicinal effects and interactions with medication</p>
+<p>- Making and using soaps, ointments, bath additives, and oils</p>
+<p>- Developing and combining herbal formulations for various complaints</p>
+<p>- Preparation and effects of herbal teas, incense blends, and herbal remedies</p>
+<p>- Learning that one herb may help with many complaints and that several different herbs may help with the same complaint</p>
+<p>- Making plant-based remedies (cough syrup, pain relief remedies, natural antibiotics, etc.)</p>
+<p>- Exploring the detoxifying effects of various herbs in the body, including the use of herbs for detoxification in cases of acute food poisoning!</p>
+<p>- Promoting health with plant-based remedies that may have a gentler effect than synthetic medicines</p>
+<p>- Preservation methods for homemade care products and/or herbal remedies (canning, drying, fermentation)</p>
+<p>- Exploring traditional healing methods and historical uses</p>
+<p>- Studying herbs used for contraception and why many herbs and foods can induce labour or cause a miscarriage, and therefore should preferably be avoided.</p>
+<p>- Exploring Ayurveda and its potential benefits for physical and mental well-being</p>
+
+            </li>
+            <li class="education-item">
+                <h3> 10/2023 to 06/2024 - Learning Danish - Level A1 </h3>
+                <p> With the help of Sprachenlernen 24 </p>
+			<p> To help the material really stick, I repeatedly started again from the beginning. </p>
+	        <p> Content: </p>
+	        <p> - Vocabulary </p>
+	        <p> - Sentence structure </p>
+	        <p> - Grammar </p>
+	        <p> Gelernte Vocabulary: 734 </p>
+	        <p> Level achieved: A1 – Beginner knowledge </p>
+            </li>
+		   
+
+<li class="education-item">
+                <h3> 05/2025 - 05/2026, Training to Become a Certified Herbal Educator </h3>
+                <p> Wild Herb Basics </p>
+	        <p> Herbal Cooking</p>
+	        <p> Natural Apothecary </p>
+	        <p> Plant-Based Cosmetics </p>
+	        <p> Wild Fruits </p>
+	        <p> Green & Clean </p>
+	        <p> Phenological Seasons </p>
+	        <p>Plants Through the Annual Cycle</p>
+	        <p> Forest Medicine: Tree Resin </p>
+	        <p> Herb Cultivation & Products </p>
+	        <p> Tree and Bud Medicine </p>
+	        <p> Taking Root (The Power of Roots)</p>
+ 	        <p> Family Ties (Plant Families) </p>
+	        <p> Herbs for Women </p>
+	        <p> Healing Wraps & Compresses </p>
+	        <p> Underrated Rituals – The Art of Incense </p>
+	        <p> Herbal Education – Nature as a Workplace </p>
+	        <p> Narcotic, Poisonous, and Umbelliferous Plants </p>
+            </li>
+
+		   
+<li class="education-item">
+                <h3> 06/2025 - Workshop: Working with Tuning Forks </h3>
+                <p> Stephanie Schwipps - Sound Therapist / Examiner </p>
+	        <p> Workshop content: </p>
+	        <p> The world of tuning forks </p>
+	        <p> Applications </p>
+	        <p> Suitable frequencies </p>
+	        <p> Energy points in adults and children </p>
+	        <p> Treating scar tissue interference </p>
+            </li>
+
+<li class="education-item">
+                <h3> 07/2024 to 08/2025 - Learning Danish - Level A2 </h3>
+                <p> With the help of Sprachenlernen 24 </p>
+			<p> To help the material really stick, I repeatedly restarted the course from the beginning. </p>
+	        <p> Content: </p>
+	        <p> - Vocabulary </p>
+	        <p> - Sentence structure </p>
+	        <p> - Grammar </p>
+	        <p> - Verb tenses </p>
+	        <p> - Vocabulary for a wide range of everyday situations</p>
+	        <p> - Gelernte Vocabulary: 1474 </p>
+	        <p> Level achieved: A2 – Basic knowledge </p>
+	</li>
+	
+	<li class="education-item">
+                <h3> 10/2025 - ongoing - Learning Danish - Level B1 </h3>
+                <p> With the help of Sprachenlernen 24 </p>
+		<p>Content: </p>
+<p>Expanded vocabulary </p>
+<p>More complex sentence structures and subordinate clauses </p>
+<p>Vertiefte Grammarkenntnisse </p>
+<p>Confident use of verb tenses </p>
+<p>Expressing and explaining opinions </p>
+<p>Speaking and writing coherently </p>
+<p>Improving listening and reading comprehension </p>
+<p>Communicating in a wide range of everyday situations </p>
+<p>Target level: B1 – Independent use of the language </p>
+	 </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- Fußzeile -->
+        <footer class="about-footer">
+            <div class="about-shell">
+                <p class="footer-brand">Lilian's Kräuter-Magie</p>
+
+                <p>
+                    A love of nature, creativity, and a touch of magic.
+                </p>
+
+                <p>
+                    <a href="index.html">Home</a>
+                    &nbsp;·&nbsp;
+                    <a href="kontakt.html">Contact</a>
+                    &nbsp;·&nbsp;
+                    <a href="impressum.html">Legal Notice</a>
+                    &nbsp;·&nbsp;
+                    <a href="datenschutz.html">Privacy Policy</a>
+                </p>
+
+                <p>
+                    © <span id="currentYear"></span> Lilian's Kräuter-Magie
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Mobiles Menü
+        const menuToggle = document.getElementById("menuToggle");
+        const mainMenu = document.getElementById("mainMenu");
+
+        if (menuToggle && mainMenu) {
+            menuToggle.addEventListener("click", () => {
+                const isOpen = mainMenu.classList.toggle("is-open");
+                menuToggle.setAttribute("aria-expanded", String(isOpen));
+                menuToggle.textContent = isOpen ? "Close ✕" : "Menu ☰";
+            });
+
+            // Menü nach Auswahl eines Navigationspunkts schließen
+            mainMenu.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    mainMenu.classList.remove("is-open");
+                    menuToggle.setAttribute("aria-expanded", "false");
+                    menuToggle.textContent = "Menu ☰";
+                });
+            });
+        }
+
+        // Aktuelles Jahr in der Fußzeile
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
