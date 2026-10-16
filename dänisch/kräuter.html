@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173b22">
+
+    <title>Krydderurter & Natur – Lilians urtemagi</title>
+
+    <meta name="description" content="Oplev Lilians urteverden: urteformidling, planteviden, naturlige opskrifter, TCM, svampe og inspiration til en tættere forbindelse med naturen.">
+    <meta name="keywords" content="Lilians urtemagi, urteformidling, krydderurter, planteviden, urteopskrifter, TCM, svampe, naturlig pleje, urtete, røgelsesritualer">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           FARVER OG GRUNDLAG
+           BLADGRØN SOM DEN CENTRALE FARVEVERDEN
+        ======================================== */
+
+        :root {
+            --midnight: #101f2a;
+            --midnight-light: #1a3540;
+
+            --forest: #173b22;
+            --forest-light: #286b35;
+            --leaf: #63c653;
+            --leaf-bright: #83e16b;
+            --leaf-light: #b8f59c;
+            --leaf-pale: #e1f8d4;
+            --sage: #a9cba0;
+
+            --gold: #e7ce79;
+            --gold-light: #f8e9ad;
+
+            --cream: #f4f8ed;
+            --muted: #c7ddc1;
+
+            --shadow: 0 18px 45px rgba(4, 18, 8, 0.32);
+            --radius: 24px;
+            --content-width: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 2rem;
+            background: var(--forest);
+        }
+
+        body {
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+
+            font-family: "Nunito Sans", sans-serif;
+            font-size: 17px;
+            line-height: 1.65;
+            color: var(--cream);
+
+            background:
+                radial-gradient(
+                    ellipse at 8% 10%,
+                    rgba(99, 198, 83, 0.23),
+                    transparent 34rem
+                ),
+                radial-gradient(
+                    ellipse at 90% 38%,
+                    rgba(40, 107, 53, 0.35),
+                    transparent 38rem
+                ),
+                radial-gradient(
+                    ellipse at 45% 90%,
+                    rgba(131, 225, 107, 0.09),
+                    transparent 35rem
+                ),
+                var(--midnight);
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 4px;
+        }
+
+        ::selection {
+            color: var(--forest);
+            background: var(--leaf-light);
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 1rem;
+            z-index: 1000;
+
+            padding: 0.75rem 1rem;
+            color: var(--forest);
+            background: var(--cream);
+            border-radius: 10px;
+        }
+
+        .skip-link:focus {
+            left: 1rem;
+        }
+
+
+        /* ========================================
+           STJERNEHIMMEL
+        ======================================== */
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,.78) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(184,245,156,.95) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(231,206,121,.8) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(131,225,107,.72) 1px, transparent 1.7px);
+
+            background-size:
+                97px 91px,
+                151px 137px,
+                211px 183px,
+                263px 227px;
+
+            background-position:
+                12px 17px,
+                48px 62px,
+                91px 24px,
+                19px 105px;
+
+            opacity: 0.32;
+            animation: stars-twinkle 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes stars-twinkle {
+            from { opacity: 0.22; }
+            to { opacity: 0.46; }
+        }
+
+
+        /* ========================================
+           SIDEHOVED OG NAVIGATION
+        ======================================== */
+
+        .site-header {
+            position: relative;
+            z-index: 20;
+
+            background: rgba(14, 39, 24, 0.94);
+            border-bottom: 1px solid rgba(131, 225, 107, 0.32);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .nav-wrap {
+            width: min(var(--content-width), calc(100% - 2rem));
+            min-height: 82px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+
+            min-width: max-content;
+            color: var(--cream);
+            text-decoration: none;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+        }
+
+        .brand-mark {
+            color: var(--leaf-bright);
+            font-size: 1.8rem;
+            text-shadow: 0 0 16px rgba(131, 225, 107, 0.3);
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .main-nav a {
+            padding: 0.65rem 0.8rem;
+            border-radius: 999px;
+
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.94rem;
+            font-weight: 800;
+
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .main-nav a:hover {
+            background: rgba(99, 198, 83, 0.17);
+            color: var(--leaf-light);
+        }
+
+        .main-nav a[aria-current="page"] {
+            background: rgba(99, 198, 83, 0.2);
+            color: var(--leaf-light);
+        }
+
+        .main-nav .nav-highlight {
+            background: linear-gradient(120deg, var(--leaf-light), var(--leaf));
+            color: var(--forest);
+        }
+
+        .main-nav .nav-highlight:hover {
+            color: var(--forest);
+            filter: brightness(1.07);
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+
+            padding: 0.55rem 0.8rem;
+            color: var(--cream);
+            background: transparent;
+            border: 1px solid rgba(184, 245, 156, 0.35);
+            border-radius: 12px;
+
+            cursor: pointer;
+        }
+
+        .menu-toggle:hover {
+            color: var(--leaf-light);
+            border-color: var(--leaf-bright);
+        }
+
+
+        /* ========================================
+           SPROGVALG
+        ======================================== */
+
+        .language-switcher {
+            position: absolute;
+            z-index: 5;
+            top: 1rem;
+            right: max(1rem, calc((100vw - var(--content-width)) / 2));
+
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .language-switcher a {
+            width: 35px;
+            height: 35px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+            background: rgba(14, 39, 24, 0.88);
+            border: 1px solid rgba(184, 245, 156, 0.28);
+
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .language-switcher a:hover {
+            transform: translateY(-2px);
+            border-color: var(--leaf-bright);
+        }
+
+        .language-switcher img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+
+        /* ========================================
+           HERO / TITELOMRÅDE
+        ======================================== */
+
+        .hero {
+            min-height: 410px;
+            display: grid;
+            place-items: center;
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: 5rem 1.25rem 4.5rem;
+
+            background:
+                radial-gradient(ellipse at 12% 38%, rgba(99, 198, 83, 0.46), transparent 39%),
+                radial-gradient(ellipse at 43% 15%, rgba(184, 245, 156, 0.2), transparent 35%),
+                radial-gradient(ellipse at 75% 55%, rgba(40, 107, 53, 0.52), transparent 38%),
+                radial-gradient(ellipse at 90% 15%, rgba(231, 206, 121, 0.1), transparent 32%),
+                linear-gradient(110deg, rgba(23, 59, 34, 0.72), rgba(16, 31, 42, 0.65), rgba(30, 83, 39, 0.65));
+
+            border-bottom: 1px solid rgba(131, 225, 107, 0.48);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: -18% -10%;
+            pointer-events: none;
+
+            background:
+                radial-gradient(ellipse at 18% 42%, rgba(99, 198, 83, 0.42), transparent 27%),
+                radial-gradient(ellipse at 40% 18%, rgba(184, 245, 156, 0.25), transparent 28%),
+                radial-gradient(ellipse at 70% 35%, rgba(40, 107, 53, 0.4), transparent 30%),
+                radial-gradient(ellipse at 85% 62%, rgba(231, 206, 121, 0.1), transparent 25%);
+
+            filter: blur(28px);
+            opacity: 0.95;
+            animation: aurora-drift 16s ease-in-out infinite alternate;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            pointer-events: none;
+
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(184,245,156,.95) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(231,206,121,.75) 1px, transparent 1.8px);
+
+            background-size: 97px 91px, 151px 137px, 211px 183px;
+            background-position: 12px 17px, 48px 62px, 91px 24px;
+            opacity: 0.42;
+        }
+
+        @keyframes aurora-drift {
+            from {
+                transform: translate3d(-1.5%, -1%, 0) rotate(-8deg) scale(1.05);
+            }
+            to {
+                transform: translate3d(2%, 1.5%, 0) rotate(-3deg) scale(1.12);
+            }
+        }
+
+        .hero-inner {
+            width: min(var(--content-width), 100%);
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+
+            color: var(--leaf-light);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin: 1rem 0;
+
+            color: var(--cream);
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-size: clamp(3.3rem, 8vw, 6rem);
+            line-height: 0.96;
+            letter-spacing: -0.035em;
+            text-shadow: 0 4px 28px rgba(5, 23, 8, 0.25);
+        }
+
+        .hero h1 span {
+            display: block;
+            margin-top: 0.25em;
+
+            color: var(--leaf-light);
+            font-style: italic;
+            text-shadow: 0 0 30px rgba(131, 225, 107, 0.32);
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 1.25rem auto 0;
+
+            color: #e6f5df;
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+        }
+
+        .hero-divider {
+            width: min(220px, 55%);
+            height: 2px;
+            margin: 2rem auto 0;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--leaf),
+                var(--gold),
+                var(--leaf-light),
+                transparent
+            );
+        }
+
+
+        /* ========================================
+           GENERELLE AFSNIT
+        ======================================== */
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            width: min(var(--content-width), calc(100% - 2rem));
+            margin: auto;
+            padding: 4.5rem 0;
+        }
+
+        .section-heading {
+            max-width: 780px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            margin: 0.5rem 0 0.8rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-size: clamp(2.3rem, 5vw, 3.8rem);
+            line-height: 1.05;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+
+        /* ========================================
+           INTRODUKTIONSKORT
+        ======================================== */
+
+        .intro {
+            position: relative;
+            overflow: hidden;
+
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: clamp(1.5rem, 4vw, 3.2rem);
+
+            background:
+                radial-gradient(ellipse at 100% 0%, rgba(99, 198, 83, 0.22), transparent 48%),
+                radial-gradient(ellipse at 0% 100%, rgba(40, 107, 53, 0.2), transparent 48%),
+                linear-gradient(135deg, rgba(28, 70, 39, 0.97), rgba(16, 31, 42, 0.97));
+
+            border: 1px solid rgba(131, 225, 107, 0.5);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .intro::before {
+            content: "✧";
+            position: absolute;
+            top: 0.6rem;
+            right: 1.4rem;
+
+            color: rgba(184, 245, 156, 0.6);
+            font-size: 3.2rem;
+            pointer-events: none;
+        }
+
+        .intro h2 {
+            margin: 0 0 1.6rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .intro p {
+            margin: 0 0 1rem;
+            color: #e7f4e2;
+            line-height: 1.85;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro strong {
+            color: var(--leaf-light);
+        }
+
+
+        /* ========================================
+           MIN PLANTEFAGLIGE VIDEN
+        ======================================== */
+
+        .knowledge-strip {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 1.5rem auto 0;
+        }
+
+        .knowledge-item {
+            padding: 1.4rem 1.25rem;
+            text-align: center;
+
+            background: linear-gradient(
+                145deg,
+                rgba(37, 91, 45, 0.78),
+                rgba(16, 31, 42, 0.94)
+            );
+
+            border: 1px solid rgba(131, 225, 107, 0.3);
+            border-radius: 18px;
+        }
+
+        .knowledge-item .knowledge-symbol {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--leaf-bright);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .knowledge-item h3 {
+            margin: 0 0 0.5rem;
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.55rem;
+            line-height: 1.15;
+        }
+
+        .knowledge-item p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+
+        /* ========================================
+           KATEGORIER / GENVEJSMENU
+        ======================================== */
+
+        .category-section {
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .category-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            min-height: 190px;
+            padding: 1.5rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            text-decoration: none;
+
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(99, 198, 83, 0.22), transparent 60%),
+                linear-gradient(155deg, rgba(37, 91, 45, 0.92), rgba(16, 31, 42, 0.98));
+
+            border: 1px solid rgba(131, 225, 107, 0.38);
+            border-radius: 22px;
+            box-shadow: 0 8px 28px rgba(4, 18, 8, 0.25);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .category-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 3px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--leaf),
+                var(--leaf-light),
+                transparent
+            );
+
+            opacity: 0.85;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--leaf-bright);
+            box-shadow: 0 15px 35px rgba(4, 18, 8, 0.32);
+        }
+
+        .category-symbol {
+            margin-bottom: 0.55rem;
+            color: var(--leaf-bright);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.4rem;
+            line-height: 1;
+        }
+
+        .category-card h3 {
+            margin: 0 0 0.5rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .category-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .category-card .category-link {
+            display: inline-block;
+            margin-top: 0.8rem;
+
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+
+        /* ========================================
+           OPSKRIFTSGRUNDLAG
+        ======================================== */
+
+        .story-section {
+            padding-top: 2rem;
+        }
+
+        .story-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: clamp(1.5rem, 4vw, 3rem);
+
+            background:
+                radial-gradient(ellipse at 0% 100%, rgba(40, 107, 53, 0.28), transparent 48%),
+                radial-gradient(ellipse at 100% 0%, rgba(99, 198, 83, 0.13), transparent 40%),
+                linear-gradient(135deg, rgba(27, 62, 37, 0.94), rgba(16, 31, 42, 0.98));
+
+            border: 1px solid rgba(131, 225, 107, 0.36);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .story-card h2 {
+            margin: 0 0 1.2rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.1rem, 4vw, 3.2rem);
+            font-weight: 600;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .story-card h3 {
+            margin: 2rem 0 0.8rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(1.7rem, 3vw, 2.2rem);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .story-card p {
+            margin: 0 0 1rem;
+            color: #e7f4e2;
+            line-height: 1.85;
+        }
+
+        .story-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-card strong {
+            color: var(--leaf-light);
+        }
+
+        .story-card a {
+            color: var(--leaf-light);
+            text-underline-offset: 4px;
+        }
+
+        .story-card a:hover {
+            color: var(--gold-light);
+        }
+
+
+        /* ========================================
+           BEMÆRKNING OM ALLERGI OG ANVENDELSE
+        ======================================== */
+
+        .notice {
+            max-width: 1000px;
+            margin: 2rem auto 0;
+            padding: clamp(1.3rem, 3vw, 2rem);
+
+            background:
+                radial-gradient(ellipse at 100% 0%, rgba(99, 198, 83, 0.12), transparent 55%),
+                linear-gradient(135deg, rgba(47, 68, 34, 0.72), rgba(16, 31, 42, 0.97));
+
+            border: 1px solid rgba(231, 206, 121, 0.52);
+            border-left: 4px solid var(--gold);
+            border-radius: 20px;
+        }
+
+        .notice h3 {
+            margin: 0 0 0.8rem;
+
+            color: var(--gold-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .notice p {
+            margin: 0 0 0.9rem;
+            color: #e8efdf;
+            line-height: 1.8;
+        }
+
+        .notice p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* ========================================
+           FIRE TEMAOMRÅDER
+        ======================================== */
+
+        .discover-section {
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        .discover-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.2rem;
+        }
+
+        .discover-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            min-height: 190px;
+            padding: 1.5rem 1.2rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            text-decoration: none;
+
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(99, 198, 83, 0.22), transparent 60%),
+                linear-gradient(150deg, rgba(37, 91, 45, 0.92), rgba(16, 31, 42, 0.98));
+
+            border: 1px solid rgba(131, 225, 107, 0.38);
+            border-radius: 22px;
+            box-shadow: 0 8px 28px rgba(4, 18, 8, 0.25);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .discover-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 3px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--leaf),
+                var(--leaf-light),
+                transparent
+            );
+
+            opacity: 0.85;
+            transition: opacity 0.25s ease;
+        }
+
+        .discover-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--leaf-bright);
+            box-shadow:
+                0 16px 35px rgba(4, 18, 8, 0.32),
+                0 0 22px rgba(99, 198, 83, 0.12);
+        }
+
+        .discover-card:hover::before {
+            opacity: 1;
+        }
+
+        .discover-symbol {
+            display: block;
+            margin-bottom: 0.65rem;
+
+            color: var(--leaf-bright);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .discover-card h3 {
+            margin: 0 0 0.55rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .discover-card p {
+            margin: 0;
+
+            color: var(--muted);
+            font-size: 0.94rem;
+            line-height: 1.55;
+        }
+
+        .discover-card .discover-link {
+            display: inline-block;
+            margin-top: 0.9rem;
+
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+
+        /* ========================================
+           OPHAVSRET
+        ======================================== */
+
+        .copyright {
+            position: relative;
+            z-index: 1;
+
+            width: min(900px, calc(100% - 2rem));
+            margin: 0 auto;
+            padding: 0 0 1rem;
+
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.75;
+            text-align: center;
+        }
+
+        .copyright p {
+            margin: 0 0 0.7rem;
+        }
+
+        .copyright .copyright-brand {
+            margin-top: 1.5rem;
+            padding-bottom: 2.5rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+
+        /* ========================================
+           SIDEFOD
+        ======================================== */
+
+        .site-footer {
+            position: relative;
+            z-index: 1;
+            margin-top: 2rem;
+
+            background: #0d2417;
+            border-top: 1px solid rgba(131, 225, 107, 0.3);
+        }
+
+        .footer-inner {
+            width: min(var(--content-width), calc(100% - 2rem));
+            margin: auto;
+            padding: 2rem 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            text-underline-offset: 3px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--leaf-light);
+        }
+
+
+        /* ========================================
+           TABLET
+        ======================================== */
+
+        @media (max-width: 980px) {
+            .nav-wrap {
+                flex-wrap: wrap;
+                padding: 0.8rem 0;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .main-nav {
+                display: none;
+                width: 100%;
+
+                flex-direction: column;
+                align-items: stretch;
+
+                padding: 0.4rem 0 1rem;
+            }
+
+            .main-nav.open {
+                display: flex;
+            }
+
+            .main-nav a {
+                border-radius: 12px;
+            }
+
+            .main-nav .nav-highlight {
+                margin-top: 0.35rem;
+                text-align: center;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .discover-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .knowledge-strip {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 350px;
+            }
+        }
+
+
+        /* ========================================
+           SMARTPHONES
+        ======================================== */
+
+        @media (max-width: 650px) {
+            body {
+                font-size: 16px;
+            }
+
+            .brand {
+                gap: 0.5rem;
+                font-size: 1.35rem;
+            }
+
+            .brand-mark {
+                font-size: 1.55rem;
+            }
+
+            .language-switcher {
+                top: 0.7rem;
+                right: 0.7rem;
+            }
+
+            .hero {
+                min-height: 330px;
+                padding: 5rem 1rem 3.5rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(3rem, 14vw, 4.6rem);
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .intro {
+                padding: 1.5rem 1.25rem;
+                border-radius: 20px;
+            }
+
+            .intro h2 {
+                font-size: 2.1rem;
+            }
+
+            .intro p {
+                line-height: 1.75;
+            }
+
+            .knowledge-strip {
+                gap: 0.8rem;
+            }
+
+            .knowledge-item {
+                padding: 1.2rem 1rem;
+            }
+
+            .category-section {
+                padding-top: 0.5rem;
+                padding-bottom: 1rem;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 440px;
+                margin: 0 auto;
+            }
+
+            .category-card {
+                min-height: 160px;
+                padding: 1.3rem;
+            }
+
+            .story-section {
+                padding-top: 1.5rem;
+            }
+
+            .story-card {
+                padding: 1.5rem 1.25rem;
+                border-radius: 20px;
+            }
+
+            .story-card p,
+            .notice p {
+                line-height: 1.75;
+            }
+
+            .notice {
+                padding: 1.25rem;
+                border-radius: 16px;
+            }
+
+            .discover-section {
+                padding-top: 1rem;
+                padding-bottom: 3rem;
+            }
+
+            .discover-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 440px;
+                margin: 0 auto;
+            }
+
+            .discover-card {
+                min-height: 160px;
+                padding: 1.4rem 1rem;
+            }
+
+            .copyright {
+                font-size: 0.88rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .brand {
+                font-size: 1.15rem;
+            }
+
+            .menu-toggle {
+                padding: 0.5rem 0.65rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .intro,
+            .story-card {
+                padding: 1.25rem 1rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#inhalt">Spring til indholdet</a>
+
+    <div class="stars" aria-hidden="true"></div>
+
+
+    <!-- ========================================
+         SIDEHOVED OG HOVEDNAVIGATION
+    ======================================== -->
+
+    <header class="site-header">
+        <div class="nav-wrap">
+
+            <a class="brand" href="index.html" aria-label="Lilians urtemagi – Forside">
+                <span class="brand-mark" aria-hidden="true">✦</span>
+                <span>Lilians urtemagi</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="main-nav"
+            >
+                <span class="menu-icon" aria-hidden="true">☰</span>
+                <span class="menu-label">Menu</span>
+            </button>
+
+            <nav class="main-nav" id="main-nav" aria-label="Hovednavigation">
+                <a href="/dänisch/kräuter.html" aria-current="page">Urteverden</a>
+                <a href="/dänisch/musik.html">Musik</a>
+                <a href="/dänisch/buecher.html">Bøger</a>
+                <a href="/dänisch/about.html">Om mig</a>
+                <a class="nav-highlight" href="index.html#neues-buch">Ny bog ✦</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- ========================================
+         TITELOMRÅDE
+    ======================================== -->
+
+    <section class="hero" aria-labelledby="hero-title">
+
+        <div class="language-switcher" aria-label="Vælg sprog">
+            <a href="index.html" aria-label="Tysk" title="Tysk">
+                <img src="defavicon.png" alt="">
+            </a>
+
+            <a href="/englisch/index.html" aria-label="Engelsk" title="Engelsk">
+                <img src="enfavicon.png" alt="">
+            </a>
+
+            <a href="/dänisch/index.html" aria-label="Dansk" title="Dansk">
+                <img src="dkfavicon.png" alt="">
+            </a>
+        </div>
+
+        <div class="hero-inner">
+
+            <span class="eyebrow">
+                Planteviden · Urteformidling · Forbindelse med naturen
+            </span>
+
+            <h1 id="hero-title">
+                Min
+                <span>urteverden</span>
+            </h1>
+
+            <p>
+                Naturen er fuld af små skatte. Gå på opdagelse sammen med mig
+                i den fascinerende verden af krydderurter, planter og svampe –
+                med planteviden, naturlige opskrifter og masser af nysgerrighed
+                over for naturens mangfoldighed.
+            </p>
+
+            <div class="hero-divider" aria-hidden="true"></div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         HOVEDINDHOLD
+    ======================================== -->
+
+    <main id="inhalt">
+
+        <!-- KRYDDERURTER OG NATURLIG SUNDHED -->
+
+        <section class="section" aria-labelledby="intro-title">
+
+            <div class="intro">
+
+                <h2 id="intro-title">Krydderurter &amp; naturlig sundhed</h2>
+
+                <p>
+                    Naturen byder på utallige skatte, som kan følge os på vores
+                    vej mod sundhed og velvære. Jeg beskæftiger mig indgående
+                    med krydderurter og planter og vil gerne præsentere dig
+                    for naturlige idéer, der kan støtte dit velbefindende
+                    og din personlige pleje.
+                </p>
+
+                <p>
+                    Mine urteidéer – fra te og røgelsesritualer til
+                    kosmetiske anvendelser – skal inspirere dig til at
+                    pleje din indre balance og opdage en tættere forbindelse
+                    med naturen.
+                </p>
+
+                <p>
+                    De planter, jeg bruger i mine opskrifter, er for mig
+                    mere end blot ingredienser: De minder os om, hvor meget
+                    der er at opdage ude i naturen, og hvor gavnlige små,
+                    bevidste ritualer i hverdagen kan være.
+                </p>
+
+                <p>
+                    <strong>
+                        Min viden vokser med hver plante, hver ny erkendelse
+                        og hvert spørgsmål, jeg endnu ikke kan besvare.
+                    </strong>
+                    For naturen er utrolig mangfoldig – og der er altid
+                    noget nyt at lære.
+                </p>
+
+            </div>
+
+            <div class="knowledge-strip" aria-label="Min vej med naturen">
+
+                <article class="knowledge-item">
+                    <span class="knowledge-symbol" aria-hidden="true">✿</span>
+                    <h3>Urteformidling</h3>
+                    <p>
+                        Jeg har studeret urteformidling og udvider løbende
+                        min viden om planter, deres kendetegn og de mange
+                        forskellige måder, de kan anvendes på.
+                    </p>
+                </article>
+
+                <article class="knowledge-item">
+                    <span class="knowledge-symbol" aria-hidden="true">❧</span>
+                    <h3>Altid mere at lære</h3>
+                    <p>
+                        Jeg beskæftiger mig fortsat indgående med krydderurter
+                        og planter, videreuddanner mig løbende og er åben
+                        over for nye erkendelser. Man bliver aldrig færdig
+                        med at lære. Jeg holder især af at afprøve nye
+                        oxymeler, salver og cremer. Nogle af de opskrifter,
+                        jeg selv har afprøvet og fundet gode, deler jeg
+                        længere nede under afsnittet med opskrifter.
+                    </p>
+                </article>
+
+                <article class="knowledge-item">
+                    <span class="knowledge-symbol" aria-hidden="true">◌</span>
+                    <h3>TCM &amp; svampe</h3>
+                    <p>
+                        I de seneste to år har jeg desuden beskæftiget mig
+                        med traditionel kinesisk medicin (TCM) og svampe –
+                        to spændende fagområder, som jeg gradvist fordyber
+                        mig mere og mere i.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- ========================================
+             FIRE TEMAOMRÅDER
+        ======================================== -->
+
+        <section class="section discover-section" aria-labelledby="discover-title">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">Oplev endnu mere</span>
+
+                <h2 id="discover-title">Træd ind i min verden</h2>
+
+                <p>
+                    Krydderurter, musik, bøger og nye historier –
+                    opdag de forskellige sider af Lilians urtemagi.
+                </p>
+
+            </div>
+
+            <div class="discover-grid">
+
+                <a class="discover-card" href="rezepte.html" aria-current="page">
+                    <span class="discover-symbol" aria-hidden="true">✿</span>
+                    <h3>Mine yndlingsopskrifter</h3>
+                    <p>
+                        Oplev opskrifter, som jeg, mine venner og min familie
+                        synes er så naturlige som muligt. Uden kemi og uden
+                        tvivlsomme tilsætningsstoffer. Til hud, hår og små
+                        skavanker i hverdagen.
+                    </p>
+                    <span class="discover-link">Se mine yndlingsopskrifter →</span>
+                </a>
+
+                <a class="discover-card" href="musik.html">
+                    <span class="discover-symbol" aria-hidden="true">♫</span>
+                    <h3>Musik</h3>
+                    <p>
+                        Sange fulde af følelser, tanker og historier
+                        til livets mange øjeblikke.
+                    </p>
+                    <span class="discover-link">Oplev musikken →</span>
+                </a>
+
+                <a class="discover-card" href="buecher.html">
+                    <span class="discover-symbol" aria-hidden="true">✧</span>
+                    <h3>Bøger</h3>
+                    <p>
+                        Dyk ned i drømmerejser, nærværende fortællinger
+                        og fantasifulde boguniverser.
+                    </p>
+                    <span class="discover-link">Se mine bøger →</span>
+                </a>
+
+                <a class="discover-card" href="index.html#neues-buch">
+                    <span class="discover-symbol" aria-hidden="true">☆</span>
+                    <h3>Ny bog</h3>
+                    <p>
+                        Få et indblik i nye bogidéer og historier,
+                        som lige nu er ved at finde vej ud i verden.
+                    </p>
+                    <span class="discover-link">Læs mere →</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             OPHAVSRET
+        ======================================== -->
+
+        <section class="copyright" aria-label="Oplysninger om ophavsret">
+
+            <p>
+                Indholdet er udarbejdet af mig selv og er beskyttet af ophavsret.
+            </p>
+
+            <p>
+                Kopiering, videregivelse eller brug – også af uddrag –
+                er ikke tilladt uden mit udtrykkelige skriftlige samtykke.
+            </p>
+
+            <p class="copyright-brand">
+                © Lilian's urtemagi
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================
+         SIDEFOD
+    ======================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div>
+                © Lilians urtemagi ·
+                Skabt med kærlighed, nysgerrighed og et strejf af magi.
+            </div>
+
+            <div class="footer-links">
+                <a href="/dänisch/kontakt.html">Kontakt</a>
+                <a href="/dänisch/impressum.html">Juridiske oplysninger</a>
+                <a href="/dänisch/agb.html">Handelsbetingelser</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ========================================
+         JAVASCRIPT: MOBILMENU
+    ======================================== -->
+
+    <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const mainNav = document.querySelector("#main-nav");
+        const menuIcon = document.querySelector(".menu-icon");
+        const menuLabel = document.querySelector(".menu-label");
+
+        function closeMenu() {
+            mainNav.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuIcon.textContent = "☰";
+            menuLabel.textContent = "Menu";
+        }
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = mainNav.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuIcon.textContent = isOpen ? "✕" : "☰";
+            menuLabel.textContent = isOpen ? "Luk" : "Menu";
+        });
+
+        // Luk menuen, når et link vælges.
+        mainNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        // Escape lukker mobilmenuen.
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+    </script>
+
+</body>
+</html>
